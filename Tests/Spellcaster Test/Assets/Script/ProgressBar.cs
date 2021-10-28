@@ -1,0 +1,41 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.UI;
+
+public class ProgressBar : MonoBehaviour
+{
+    public int max;
+    public int current;
+    //Gets the image that fills up the basic attack bar
+    public Image progressbar;
+    Spellcaster spell;
+
+    // Start is called before the first frame update
+
+    void Start()
+    {
+        //Finds the SpellCaster Script
+        spell = GameObject.Find("Wizard").GetComponent<Spellcaster>();
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        //If the current fill is less than the maximum value (The bar is not full) and the countdown is more than 0 (The move is recharging)
+        if (spell.timer > 0)
+        {
+            //Percentage of the timer for the progress bar
+            float percent = spell.timer / 5;
+            //Fills the progress bar starting from the bottom (Because Lerp is (1,0) if it was (0,1) then progress bar will start from the top and go down)
+            progressbar.fillAmount = Mathf.Lerp(1, 0, percent);
+            
+        }
+        else if (spell.timer <= 0) 
+        {
+
+        }
+    }
+
+
+}

@@ -57,8 +57,6 @@ public class PlayerController : MonoBehaviourPun
             transform.Rotate(new Vector3(0, turn * turnSpeed * Time.deltaTime, 0));
             if (fpcam != null)
                 fpcam.Rotate(new Vector3(-tilt * tiltSpeed * Time.deltaTime, 0));
-
-
         }
 
 

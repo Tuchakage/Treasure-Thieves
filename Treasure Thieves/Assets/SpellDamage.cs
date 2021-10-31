@@ -3,14 +3,16 @@ using System.Collections.Generic;
 using UnityEngine;
 using Photon.Pun;
 
-public class SpellDamage : MonoBehaviour
+public class SpellDamage : MonoBehaviourPun
 {
     [SerializeField]
     private float dmg;
+
+    public PhotonView photonView;
+
     // Start is called before the first frame update
     void Start()
     {
-        
     }
 
     // Update is called once per frame
@@ -19,16 +21,18 @@ public class SpellDamage : MonoBehaviour
         
     }
 
-    private void OnTriggerEnter(Collider col)
+    private void OnParticleCollision(GameObject col)
     {
         //Depending on the spell game object depends on the amount of damage the enemy will take
-        if (this.gameObject.name == "Basic Attack") 
+        if (this.gameObject.tag == "Basic Attack" && col.gameObject.tag == "Player")
         {
             //Gets the Photon View of the object it collided with
-            PhotonView photonView = PhotonView.Get(col);
+            photonView = PhotonView.Get(col);
             //Gets the TakeDamage() function and applys it to the target
             photonView.RPC("TakeDamage", RpcTarget.All, dmg);
-            Debug.Log("Basic Attack has hit " + col.gameObject.name);
+            //Destroy Object when it hits a player
+            //Destroy(transform.parent.gameObject);
+            //Debug.Log("Basic Attack has hit " + col.gameObject.name);
         }
     }
 

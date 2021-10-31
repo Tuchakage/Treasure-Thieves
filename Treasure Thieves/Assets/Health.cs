@@ -21,15 +21,12 @@ public class Health : MonoBehaviourPun
     [PunRPC]
     void TakeDamage(float damagetaken)
     {
-        health -= damagetaken;
-    }
-
-    private void OnCollisionEnter(Collision col)
-    {
-        //If the player that you are controlling gets hit
-        if (photonView.IsMine)
+        //Makes sure that when you deal damage you dont take damage from your own attack
+        if (!photonView.IsMine) 
         {
-
+            health -= damagetaken;
+            Debug.Log("Lost Health");
         }
+
     }
 }

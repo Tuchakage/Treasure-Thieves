@@ -466,7 +466,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a99da9f16bf48a6409a5f7e0447ab328, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  projectile: {fileID: 6256681316163809565, guid: 1b9e716b6a6bd1e428c92b909cfde200, type: 3}
+  hs: {fileID: 0}
+  basicattack: {fileID: 6256681316163809565, guid: 1b9e716b6a6bd1e428c92b909cfde200, type: 3}
+  dmg: 0
+  timer: 0
+  cooldown: 0
 --- !u!114 &4916900950849512746
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -480,6 +484,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 100
+  attackname: 
 --- !u!1 &4875361649284038004
 GameObject:
   m_ObjectHideFlags: 0

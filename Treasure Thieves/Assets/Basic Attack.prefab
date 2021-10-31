@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 7410120070598134921}
   - component: {fileID: 491324084970375853}
   - component: {fileID: 2632289749997424457}
-  - component: {fileID: 8335364992202951595}
   m_Layer: 0
   m_Name: Lightning Bolt
   m_TagString: Basic Attack
@@ -4807,19 +4806,6 @@ ParticleSystemRenderer:
   m_Mesh2: {fileID: 0}
   m_Mesh3: {fileID: 0}
   m_MaskInteraction: 0
---- !u!114 &8335364992202951595
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4302452054453557238}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a541a126cac2aea4ca21a08959bd506f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  dmg: 5
 --- !u!1 &6256681316163809565
 GameObject:
   m_ObjectHideFlags: 0

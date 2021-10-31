@@ -335,7 +335,6 @@
 -r:"Library/Bee/artifacts/1900b0aE.dag/UnityEditor.UI.ref.dll"
 -r:"Library/Bee/artifacts/1900b0aE.dag/UnityEngine.UI.ref.dll"
 -r:"Library/Bee/artifacts/1900b0aE.dag/VSSettingsProvider.ref.dll"
-"Assets/DamageManager.cs"
 "Assets/DestroyParticles.cs"
 "Assets/Health.cs"
 "Assets/NetworkManager.cs"
@@ -355,7 +354,6 @@
 "Assets/Photon/PhotonRealtime/Demos/DemoLoadBalancing/ConnectAndJoinRandomLb.cs"
 "Assets/PlayerController.cs"
 "Assets/Spellcaster.cs"
-"Assets/SpellDamage.cs"
 -langversion:8.0
 
 /deterministic

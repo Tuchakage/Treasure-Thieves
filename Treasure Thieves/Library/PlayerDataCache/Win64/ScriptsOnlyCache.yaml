@@ -1,6 +1,7 @@
 ScriptsOnlyBuild:
   usedScripts:
     Assembly-CSharp.dll:
+    - BasicEnemyAI
     - DestroyParticles
     - Health
     - NetworkManager
@@ -16,6 +17,8 @@ ScriptsOnlyBuild:
     - Photon.Pun.Demo.PunBasics.PlayerUI
     - Photon.Pun.Demo.SlotRacer.PlayerControl
     - Photon.Pun.Demo.SlotRacer.Utils.SplineWalker
+    PhotonUnityNetworking.Editor.dll:
+    - Photon.Pun.PunSceneSettings
     PhotonUnityNetworking.dll:
     - Photon.Pun.PhotonAnimatorView
     - Photon.Pun.PhotonRigidbodyView
@@ -88,59 +91,61 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 1516}
     - Class: 114
-      Script: {instanceID: 1568}
+      Script: {instanceID: 1578}
     - Class: 114
-      Script: {instanceID: 1608}
+      Script: {instanceID: 1618}
     - Class: 114
-      Script: {instanceID: 1756}
+      Script: {instanceID: 1766}
     - Class: 114
-      Script: {instanceID: 2564}
+      Script: {instanceID: 2574}
     - Class: 114
-      Script: {instanceID: 2770}
+      Script: {instanceID: 2780}
     - Class: 114
-      Script: {instanceID: 2814}
+      Script: {instanceID: 2824}
     - Class: 114
-      Script: {instanceID: 2970}
+      Script: {instanceID: 2980}
     - Class: 114
-      Script: {instanceID: 3050}
+      Script: {instanceID: 3060}
     - Class: 114
-      Script: {instanceID: 3760}
+      Script: {instanceID: 3772}
     - Class: 114
-      Script: {instanceID: 3762}
+      Script: {instanceID: 3774}
     - Class: 114
-      Script: {instanceID: 3922}
+      Script: {instanceID: 3934}
     - Class: 114
-      Script: {instanceID: 4912}
+      Script: {instanceID: 4924}
     - Class: 114
-      Script: {instanceID: 4936}
+      Script: {instanceID: 4948}
     - Class: 114
-      Script: {instanceID: 5046}
+      Script: {instanceID: 5058}
     - Class: 114
-      Script: {instanceID: 5190}
+      Script: {instanceID: 5202}
     - Class: 114
-      Script: {instanceID: 5218}
+      Script: {instanceID: 5230}
     - Class: 114
-      Script: {instanceID: 5346}
+      Script: {instanceID: 5358}
     - Class: 114
-      Script: {instanceID: 5386}
+      Script: {instanceID: 5398}
     - Class: 114
-      Script: {instanceID: 5564}
+      Script: {instanceID: 5576}
     - Class: 114
-      Script: {instanceID: 6022}
+      Script: {instanceID: 6034}
     - Class: 114
-      Script: {instanceID: 6030}
+      Script: {instanceID: 6042}
     - Class: 114
-      Script: {instanceID: 6600}
+      Script: {instanceID: 6612}
     - Class: 114
-      Script: {instanceID: 7082}
+      Script: {instanceID: 6734}
     - Class: 114
-      Script: {instanceID: 7434}
+      Script: {instanceID: 7096}
     - Class: 114
-      Script: {instanceID: 7556}
+      Script: {instanceID: 7448}
     - Class: 114
-      Script: {instanceID: 7656}
+      Script: {instanceID: 7570}
     - Class: 114
-      Script: {instanceID: 7840}
+      Script: {instanceID: 7670}
+    - Class: 114
+      Script: {instanceID: 7854}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -170,6 +175,8 @@ ScriptsOnlyBuild:
     - Class: 224
       Script: {instanceID: 0}
     - Class: 225
+      Script: {instanceID: 0}
+    - Class: 238
       Script: {instanceID: 0}
     - Class: 850595691
       Script: {instanceID: 0}
@@ -738,6 +745,12 @@ ScriptsOnlyBuild:
     assemblyName: Unity.VisualScripting.Flow.dll
     namespaceName: Unity.VisualScripting
     className: ScriptGraphAsset
+  - hash:
+      serializedVersion: 2
+      Hash: 0d85f4fda1e0e70cd92c084d12f05cdc
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: NavScript
   - hash:
       serializedVersion: 2
       Hash: cba6cca6bb3290c4c00d709cf63843db
@@ -1524,6 +1537,12 @@ ScriptsOnlyBuild:
     assemblyName: Unity.VisualScripting.Core.dll
     namespaceName: Unity.VisualScripting
     className: UnityOnScrollRectValueChangedMessageListener
+  - hash:
+      serializedVersion: 2
+      Hash: 4a7864cdf9742557bf6bbcf245e0d162
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: BasicEnemyAI
   - hash:
       serializedVersion: 2
       Hash: d9aa52c5a283a9b8a790e55c0dee9ccf

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Photon.Pun;
 
-public class Health : MonoBehaviourPun
+public class Health : MonoBehaviourPunCallbacks, IPunObservable
 {
     public float health = 100;
 
@@ -28,32 +28,25 @@ public class Health : MonoBehaviourPun
         }
     }
 
-    [PunRPC]
     void TakeDamage(float damagetaken)
     {
         //Makes sure that when you deal damage you dont take damage from your own attack
-        if (!photonView.IsMine) 
-        {
-            health -= damagetaken;
-            Debug.Log("Lost Health");
-        }
+        health -= damagetaken;
+        Debug.Log("Lost Health");
 
     }
 
     private void OnParticleCollision(GameObject col)
     {
         //Makes sure that when you get hit its from someone else and not yourself
-        if (!photonView.IsMine) 
+        if (photonView.IsMine) 
         {
             //Depending on the attack the player will lose a certain amount of health
             if (col.gameObject.tag == "Basic Attack" && this.gameObject.tag == "Player")
             {
                 // This is here so the game can find the amount of damage this attack does
                 attackname = "Basic Attack";
-                //Gets the Photon View of the object it collided with
-                PhotonView photonView = PhotonView.Get(this);
-                //Gets the TakeDamage() function and applys it to the target
-                photonView.RPC("TakeDamage", RpcTarget.All, spell.DealDamage());
+                TakeDamage(5);
                 //Destroy The Spell Game Object
                 Destroy(col.transform.parent.gameObject);
                 //Debug.Log("Basic Attack has hit " + col.gameObject.name);
@@ -61,4 +54,20 @@ public class Health : MonoBehaviourPun
         }
 
     }
+
+    //This function allows the variables inside to be sent over the network
+    public void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info)
+    {
+        if (stream.IsWriting)
+        {
+            //We own this player so send the other computers the data
+            stream.SendNext(health);
+        }
+        else
+        {
+            //Network player that receives the data
+            health = (float)stream.ReceiveNext();
+        }
+    }
+
 }

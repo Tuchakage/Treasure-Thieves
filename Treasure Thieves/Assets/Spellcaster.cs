@@ -27,30 +27,28 @@ public class Spellcaster : MonoBehaviourPun
     // Update is called once per frame
     void Update()
     {
-        if (timer > 0)
-        {
-            //When the cooldown for basic attack is more than 1 then it will start counting down
-            timer -= Time.deltaTime;
-        }
-
         //Makes sure i am controlling my own player
         if (photonView.IsMine) 
         {
+            if (timer > 0)
+            {
+                //When the cooldown for basic attack is more than 1 then it will start counting down
+                timer -= Time.deltaTime;
+            }
+
             if (Input.GetKeyDown(KeyCode.Space))
             {
                 photonView.RPC("Shoot", RpcTarget.All);
                 //If there is no cooldown (Its at 0) then player can use the basic attack
-                if (timer <= 0) 
+                if (timer <= 0)
                 {
-                    
+
                     cooldown = 1.0f;
                     //Add cooldown to the basic attack
                     timer = cooldown;
                 }
-
             }
-        }
-
+        } 
     }
 
     //This will send the Damage value of the attack to the Health Script

@@ -38,11 +38,12 @@ public class Spellcaster : MonoBehaviourPun
 
             if (Input.GetKeyDown(KeyCode.Space))
             {
-                photonView.RPC("Shoot", RpcTarget.All);
+
                 //If there is no cooldown (Its at 0) then player can use the basic attack
                 if (timer <= 0)
                 {
-
+                    //Shoots out the lightning bolt
+                    photonView.RPC("Shoot", RpcTarget.All);
                     cooldown = 1.0f;
                     //Add cooldown to the basic attack
                     timer = cooldown;
@@ -66,14 +67,19 @@ public class Spellcaster : MonoBehaviourPun
     [PunRPC]
     void Shoot() 
     {
-        //Spawn in the fireball gameobject
-        GameObject lightning = PhotonNetwork.Instantiate(basicattack.name, wand.transform.position, Quaternion.identity) as GameObject;
-        //Make sure its not a child of the Player Game Object
-        lightning.transform.parent = null;
-        //Get the rigidbody of the spell game object that was just spawned
-        Rigidbody rb = lightning.GetComponent<Rigidbody>();
-        //Shoot the spell forward
-        rb.velocity = transform.forward * 20;
+        //Makes sure i only spawn in the Lightning Bolt from my character
+        if (photonView.IsMine) 
+        {
+            //Spawn in the lightning bolt gameobject
+            GameObject lightning = PhotonNetwork.Instantiate(basicattack.name, wand.transform.position, Quaternion.identity) as GameObject;
+            //Make sure its not a child of the Player Game Object
+            lightning.transform.parent = null;
+            //Get the rigidbody of the spell game object that was just spawned
+            Rigidbody rb = lightning.GetComponent<Rigidbody>();
+            //Shoot the spell forward
+            rb.velocity = transform.forward * 20;
+        }
+
     }
 
 }

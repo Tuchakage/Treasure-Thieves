@@ -64,16 +64,16 @@ public class Health : MonoBehaviourPunCallbacks, IPunObservable
                     // This is here so the game can find the amount of damage this attack does
                     attackname = "Basic Attack";
                     TakeDamage(spell.DealDamage());
-                    //Destroy The Spell Game Object
-                    Destroy(col.transform.parent.gameObject);
+                    //Destroy The Spell Game Object For Everyone
+                    photonView.RPC("DestroyObject", RpcTarget.All, col.transform.parent.gameObject.GetComponent<PhotonView>().ViewID); 
                     //Debug.Log("Basic Attack has hit " + col.gameObject.name);
                 }
             }
             else //If they are hitting themselves
             {
                 Debug.Log("Hitting yourself");
-                //Destroy The Game Object
-                Destroy(col.transform.parent.gameObject);
+                //Destroy The Spell Game Object For Everyone
+                photonView.RPC("DestroyObject", RpcTarget.All, col.transform.parent.gameObject.GetComponent<PhotonView>().ViewID);
                 //Allow the player to shoot again without any cooldown
                 spell.timer = 0;
             }
@@ -95,6 +95,14 @@ public class Health : MonoBehaviourPunCallbacks, IPunObservable
             //Network player that receives the data
             health = (float)stream.ReceiveNext();
         }
+    }
+
+
+    [PunRPC]
+    void DestroyObject(int go)
+    {
+        //Find the Id of the Game Object that needs to be destroyed
+        Destroy(PhotonView.Find(go).gameObject);
     }
 
 }

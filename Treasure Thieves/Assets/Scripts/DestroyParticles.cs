@@ -1,8 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Photon.Pun;
 
-public class DestroyParticles : MonoBehaviour
+public class DestroyParticles : MonoBehaviourPun
 {
     private ParticleSystem ps;
     // Start is called before the first frame update
@@ -18,7 +19,14 @@ public class DestroyParticles : MonoBehaviour
         //If the particle system is not alive then destroy the game Object
         if (!ps.IsAlive()) 
         {
-            Destroy(this.gameObject);
+            photonView.RPC("DestroyObject", RpcTarget.All, this.GetComponent<PhotonView>().ViewID);
         }
+    }
+
+    [PunRPC]
+    void DestroyObject(int go)
+    {
+        //Find the Id of the Game Object that needs to be destroyed
+        Destroy(PhotonView.Find(go).gameObject);
     }
 }

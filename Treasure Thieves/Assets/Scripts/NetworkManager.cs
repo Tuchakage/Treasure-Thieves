@@ -16,11 +16,14 @@ public class NetworkManager : MonoBehaviourPunCallbacks
     [SerializeField]
     private Text nickname, status, room, players;
     [SerializeField]
-    private Button buttonPlay, buttonLeave;
+    private Button buttonPlay, buttonLeave, class1, class2;
     [SerializeField]
     private InputField playerName;
 
     public GameObject player;
+
+    [SerializeField] private GameObject player_class1;
+    [SerializeField] private GameObject player_class2;
 
 
     // Start is called before the first frame update
@@ -136,6 +139,14 @@ public class NetworkManager : MonoBehaviourPunCallbacks
     }
 
 
+    public void changeToClass1()
+    {
+        player = player_class1;
+    }
 
+    public void changeToClass2()
+    {
+        player = player_class2;
+    }
 
 }

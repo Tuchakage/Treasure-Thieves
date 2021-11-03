@@ -41,16 +41,43 @@ public class Health : MonoBehaviourPunCallbacks, IPunObservable
         //Makes sure that when you get hit its from someone else and not yourself
         if (photonView.IsMine) 
         {
-            //Depending on the attack the player will lose a certain amount of health
-            if (col.gameObject.tag == "Basic Attack" && this.gameObject.tag == "Player")
+            //Gets The "OwnerOfSpell" script from the spell the player collided with
+            OwnerOfSpell ownerofspell = col.transform.parent.gameObject.GetComponent<OwnerOfSpell>();
+            Debug.Log("Ok: " + ownerofspell);
+
+            //Get the Owner Id Of The Spell
+            int ownerid = ownerofspell.GetOwner();
+
+            //Find the player id of the owner of the attack and get the Spellcaster script
+            spell = PhotonView.Find(ownerid).GetComponent<Spellcaster>();
+
+            Debug.Log("Owner Of Attack: " + PhotonView.Get(PhotonView.Find(ownerid).gameObject));
+
+            //Make Sure the player isnt get hit by its own spell
+            if (ownerid != this.GetComponent<PhotonView>().ViewID) //If they are not getting hit by their own spell (So being attacked)
             {
-                // This is here so the game can find the amount of damage this attack does
-                attackname = "Basic Attack";
-                TakeDamage(5);
-                //Destroy The Spell Game Object
-                Destroy(col.transform.parent.gameObject);
-                //Debug.Log("Basic Attack has hit " + col.gameObject.name);
+                Debug.Log("Being attacked");
+
+                //Depending on the attack the player will lose a certain amount of health
+                if (col.gameObject.tag == "Basic Attack")
+                {
+                    // This is here so the game can find the amount of damage this attack does
+                    attackname = "Basic Attack";
+                    TakeDamage(spell.DealDamage());
+                    //Destroy The Spell Game Object
+                    Destroy(col.transform.parent.gameObject);
+                    //Debug.Log("Basic Attack has hit " + col.gameObject.name);
+                }
             }
+            else //If they are hitting themselves
+            {
+                Debug.Log("Hitting yourself");
+                //Destroy The Game Object
+                Destroy(col.transform.parent.gameObject);
+                //Allow the player to shoot again without any cooldown
+                spell.timer = 0;
+            }
+
         }
 
     }

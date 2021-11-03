@@ -72,12 +72,17 @@ public class Spellcaster : MonoBehaviourPun
         {
             //Spawn in the lightning bolt gameobject
             GameObject lightning = PhotonNetwork.Instantiate(basicattack.name, wand.transform.position, Quaternion.identity) as GameObject;
+
+            OwnerOfSpell findowner = lightning.GetComponent<OwnerOfSpell>();
+            //Set the Owner of the Spell that was spawned in to this player Id
+            findowner.SetOwner(this.GetComponent<PhotonView>().ViewID);
             //Make sure its not a child of the Player Game Object
             lightning.transform.parent = null;
             //Get the rigidbody of the spell game object that was just spawned
             Rigidbody rb = lightning.GetComponent<Rigidbody>();
             //Shoot the spell forward
             rb.velocity = transform.forward * 20;
+
         }
 
     }

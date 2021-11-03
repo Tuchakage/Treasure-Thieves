@@ -354,6 +354,7 @@
 "Assets/Scripts/Health.cs"
 "Assets/Scripts/NavScript.cs"
 "Assets/Scripts/NetworkManager.cs"
+"Assets/Scripts/OwnerOfSpell.cs"
 "Assets/Scripts/PlayerController.cs"
 "Assets/Scripts/Spellcaster.cs"
 -langversion:8.0

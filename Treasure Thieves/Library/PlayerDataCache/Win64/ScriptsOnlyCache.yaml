@@ -5,6 +5,7 @@ ScriptsOnlyBuild:
     - DestroyParticles
     - Health
     - NetworkManager
+    - OwnerOfSpell
     - PlayerController
     - Spellcaster
     PhotonUnityNetworking.Demos.dll:
@@ -17,8 +18,6 @@ ScriptsOnlyBuild:
     - Photon.Pun.Demo.PunBasics.PlayerUI
     - Photon.Pun.Demo.SlotRacer.PlayerControl
     - Photon.Pun.Demo.SlotRacer.Utils.SplineWalker
-    PhotonUnityNetworking.Editor.dll:
-    - Photon.Pun.PunSceneSettings
     PhotonUnityNetworking.dll:
     - Photon.Pun.PhotonAnimatorView
     - Photon.Pun.PhotonRigidbodyView
@@ -91,61 +90,63 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 1516}
     - Class: 114
-      Script: {instanceID: 1578}
+      Script: {instanceID: 1568}
     - Class: 114
-      Script: {instanceID: 1618}
+      Script: {instanceID: 1608}
     - Class: 114
-      Script: {instanceID: 1766}
+      Script: {instanceID: 1756}
     - Class: 114
-      Script: {instanceID: 2574}
+      Script: {instanceID: 2522}
     - Class: 114
-      Script: {instanceID: 2780}
+      Script: {instanceID: 2566}
     - Class: 114
-      Script: {instanceID: 2824}
+      Script: {instanceID: 2772}
     - Class: 114
-      Script: {instanceID: 2980}
+      Script: {instanceID: 2816}
     - Class: 114
-      Script: {instanceID: 3060}
+      Script: {instanceID: 2972}
     - Class: 114
-      Script: {instanceID: 3772}
+      Script: {instanceID: 3052}
     - Class: 114
-      Script: {instanceID: 3774}
+      Script: {instanceID: 3764}
     - Class: 114
-      Script: {instanceID: 3934}
+      Script: {instanceID: 3766}
     - Class: 114
-      Script: {instanceID: 4924}
+      Script: {instanceID: 3926}
     - Class: 114
-      Script: {instanceID: 4948}
+      Script: {instanceID: 4916}
     - Class: 114
-      Script: {instanceID: 5058}
+      Script: {instanceID: 4940}
     - Class: 114
-      Script: {instanceID: 5202}
+      Script: {instanceID: 5050}
     - Class: 114
-      Script: {instanceID: 5230}
+      Script: {instanceID: 5194}
     - Class: 114
-      Script: {instanceID: 5358}
+      Script: {instanceID: 5222}
     - Class: 114
-      Script: {instanceID: 5398}
+      Script: {instanceID: 5350}
     - Class: 114
-      Script: {instanceID: 5576}
+      Script: {instanceID: 5390}
+    - Class: 114
+      Script: {instanceID: 5568}
+    - Class: 114
+      Script: {instanceID: 6026}
     - Class: 114
       Script: {instanceID: 6034}
     - Class: 114
-      Script: {instanceID: 6042}
+      Script: {instanceID: 6604}
     - Class: 114
-      Script: {instanceID: 6612}
+      Script: {instanceID: 6726}
     - Class: 114
-      Script: {instanceID: 6734}
+      Script: {instanceID: 7088}
     - Class: 114
-      Script: {instanceID: 7096}
+      Script: {instanceID: 7440}
     - Class: 114
-      Script: {instanceID: 7448}
+      Script: {instanceID: 7562}
     - Class: 114
-      Script: {instanceID: 7570}
+      Script: {instanceID: 7662}
     - Class: 114
-      Script: {instanceID: 7670}
-    - Class: 114
-      Script: {instanceID: 7854}
+      Script: {instanceID: 7846}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -439,6 +440,12 @@ ScriptsOnlyBuild:
     assemblyName: PhotonUnityNetworking.Utilities.dll
     namespaceName: Photon.Pun.UtilityScripts
     className: CountdownTimer
+  - hash:
+      serializedVersion: 2
+      Hash: 4c30d171fb474ab3c51379177ea1a535
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: OwnerOfSpell
   - hash:
       serializedVersion: 2
       Hash: cc4274b586df3c02688bac01b88bd16c

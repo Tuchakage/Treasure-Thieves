@@ -33,6 +33,8 @@ public class NetworkManager : MonoBehaviourPunCallbacks
         buttonPlay.gameObject.SetActive(false);
         buttonLeave.gameObject.SetActive(false);
         playerName.gameObject.SetActive(false);
+        class1.gameObject.SetActive(false);
+        class2.gameObject.SetActive(false);
 
         //If not connected to the Photon Network then connect
         if (!PhotonNetwork.IsConnected)
@@ -79,6 +81,10 @@ public class NetworkManager : MonoBehaviourPunCallbacks
         //Makes sure the leave button doesnt show
         buttonLeave.gameObject.SetActive(false);
 
+        //Show the class changing buttons before connecting to lobby
+        class1.gameObject.SetActive(true);
+        class2.gameObject.SetActive(true);
+
         //Gets the Players name and sets the text to the player name
         playerName.text = PlayerPrefs.GetString("PlayerName");
     }
@@ -119,6 +125,10 @@ public class NetworkManager : MonoBehaviourPunCallbacks
         playerName.gameObject.SetActive(false);
         //Shows the leave button
         buttonLeave.gameObject.SetActive(true);
+        
+        //Disable Class Changing Buttons
+        class1.gameObject.SetActive(false);
+        class2.gameObject.SetActive(false);
 
         //Spawn Players
         PhotonNetwork.Instantiate(player.name,
@@ -141,12 +151,18 @@ public class NetworkManager : MonoBehaviourPunCallbacks
 
     public void changeToClass1()
     {
+        //Default is already set to Spell Caster
+
+        //Change player prefab to spellcaster if warrior has been chosen
         player = player_class1;
+        Debug.Log("Class type changed to Spellcaster");
     }
 
     public void changeToClass2()
     {
+        //Change player prefab to warrior
         player = player_class2;
+        Debug.Log("Class type changed to warrior");
     }
 
 }

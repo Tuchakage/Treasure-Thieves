@@ -19,8 +19,6 @@ ScriptsOnlyBuild:
     - Photon.Pun.Demo.SlotRacer.PlayerControl
     - Photon.Pun.Demo.SlotRacer.Utils.SplineWalker
     PhotonUnityNetworking.Editor.dll:
-    - Photon.Pun.PhotonTransformViewEditor
-    - Photon.Pun.PhotonViewInspector
     - Photon.Pun.PunSceneSettings
     PhotonUnityNetworking.dll:
     - Photon.Pun.PhotonAnimatorView
@@ -94,63 +92,63 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 1516}
     - Class: 114
-      Script: {instanceID: 1580}
+      Script: {instanceID: 1568}
     - Class: 114
-      Script: {instanceID: 1620}
+      Script: {instanceID: 1608}
     - Class: 114
-      Script: {instanceID: 1768}
+      Script: {instanceID: 1756}
     - Class: 114
-      Script: {instanceID: 2534}
+      Script: {instanceID: 2522}
     - Class: 114
-      Script: {instanceID: 2578}
+      Script: {instanceID: 2566}
     - Class: 114
-      Script: {instanceID: 2784}
+      Script: {instanceID: 2772}
     - Class: 114
-      Script: {instanceID: 2828}
+      Script: {instanceID: 2816}
     - Class: 114
-      Script: {instanceID: 2984}
+      Script: {instanceID: 2972}
     - Class: 114
-      Script: {instanceID: 3064}
+      Script: {instanceID: 3052}
     - Class: 114
-      Script: {instanceID: 3776}
+      Script: {instanceID: 3764}
     - Class: 114
-      Script: {instanceID: 3778}
+      Script: {instanceID: 3766}
     - Class: 114
-      Script: {instanceID: 3938}
+      Script: {instanceID: 3926}
     - Class: 114
-      Script: {instanceID: 4928}
+      Script: {instanceID: 4916}
     - Class: 114
-      Script: {instanceID: 4952}
+      Script: {instanceID: 4940}
     - Class: 114
-      Script: {instanceID: 5062}
+      Script: {instanceID: 5050}
     - Class: 114
-      Script: {instanceID: 5206}
+      Script: {instanceID: 5194}
     - Class: 114
-      Script: {instanceID: 5234}
+      Script: {instanceID: 5222}
     - Class: 114
-      Script: {instanceID: 5362}
+      Script: {instanceID: 5350}
     - Class: 114
-      Script: {instanceID: 5402}
+      Script: {instanceID: 5390}
     - Class: 114
-      Script: {instanceID: 5580}
+      Script: {instanceID: 5568}
     - Class: 114
-      Script: {instanceID: 6038}
+      Script: {instanceID: 6026}
     - Class: 114
-      Script: {instanceID: 6046}
+      Script: {instanceID: 6034}
     - Class: 114
-      Script: {instanceID: 6616}
+      Script: {instanceID: 6604}
     - Class: 114
-      Script: {instanceID: 6738}
+      Script: {instanceID: 6726}
     - Class: 114
-      Script: {instanceID: 7100}
+      Script: {instanceID: 7088}
     - Class: 114
-      Script: {instanceID: 7452}
+      Script: {instanceID: 7440}
     - Class: 114
-      Script: {instanceID: 7574}
+      Script: {instanceID: 7562}
     - Class: 114
-      Script: {instanceID: 7674}
+      Script: {instanceID: 7662}
     - Class: 114
-      Script: {instanceID: 7858}
+      Script: {instanceID: 7846}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -1208,7 +1206,7 @@ ScriptsOnlyBuild:
     className: GroupTrack
   - hash:
       serializedVersion: 2
-      Hash: fad12bd6ab39f24a6adcef8942f40099
+      Hash: 9c865d826e42dd4fe9824e236b7022d9
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: NetworkManager

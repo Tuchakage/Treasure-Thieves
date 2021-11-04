@@ -9,11 +9,13 @@ public class Health : MonoBehaviourPunCallbacks, IPunObservable
 
     Spellcaster spell;
 
+    NetworkManager nm;
     // Start is called before the first frame update
     void Start()
     {
         //Gets The Spellcaster script
         spell = GetComponent<Spellcaster>();
+        nm = GameObject.Find("NetworkManager").GetComponent<NetworkManager>();
     }
 
     // Update is called once per frame
@@ -22,7 +24,10 @@ public class Health : MonoBehaviourPunCallbacks, IPunObservable
         // When the health is less than or equal to 0 then destroy the Player Game Object
         if (health <= 0) 
         {
-            Destroy(this.gameObject);
+            //Tells the Network Manager that the player is not alive which means display the Respawn Button
+            nm.isAlive = false;
+            //Destroy The Player Game Object
+            photonView.RPC("DestroyObject", RpcTarget.All, GetComponent<PhotonView>().ViewID);
         }
     }
 

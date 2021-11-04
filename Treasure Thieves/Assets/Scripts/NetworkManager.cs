@@ -16,11 +16,14 @@ public class NetworkManager : MonoBehaviourPunCallbacks
     [SerializeField]
     private Text nickname, status, room, players;
     [SerializeField]
-    private Button buttonPlay, buttonLeave, class1, class2;
+    private Button buttonPlay, buttonLeave, buttonRespawn, class1, class2;
     [SerializeField]
     private InputField playerName;
 
+    // Game Object of player
     public GameObject player;
+    //Checks if the player is alive
+    public bool isAlive;
 
     [SerializeField] private GameObject player_class1;
     [SerializeField] private GameObject player_class2;
@@ -35,6 +38,7 @@ public class NetworkManager : MonoBehaviourPunCallbacks
         playerName.gameObject.SetActive(false);
         class1.gameObject.SetActive(false);
         class2.gameObject.SetActive(false);
+        buttonRespawn.gameObject.SetActive(false);
 
         //If not connected to the Photon Network then connect
         if (!PhotonNetwork.IsConnected)
@@ -56,6 +60,11 @@ public class NetworkManager : MonoBehaviourPunCallbacks
             //Checks the names of each player
             foreach (var item in mydict)
                 players.text += string.Format("{0,2}. {1}\n", (i++), item.Value.NickName);
+
+            if (!isAlive) 
+            {
+                buttonRespawn.gameObject.SetActive(true);
+            }
 
         }
         else if (PhotonNetwork.IsConnected)
@@ -80,6 +89,8 @@ public class NetworkManager : MonoBehaviourPunCallbacks
         playerName.gameObject.SetActive(true);
         //Makes sure the leave button doesnt show
         buttonLeave.gameObject.SetActive(false);
+        //Make sure the Respawn button doesnt show
+        buttonRespawn.gameObject.SetActive(false);
 
         //Show the class changing buttons before connecting to lobby
         class1.gameObject.SetActive(true);
@@ -125,7 +136,7 @@ public class NetworkManager : MonoBehaviourPunCallbacks
         playerName.gameObject.SetActive(false);
         //Shows the leave button
         buttonLeave.gameObject.SetActive(true);
-        
+
         //Disable Class Changing Buttons
         class1.gameObject.SetActive(false);
         class2.gameObject.SetActive(false);
@@ -135,6 +146,9 @@ public class NetworkManager : MonoBehaviourPunCallbacks
          new Vector3(Random.Range(-15, 15), 1, Random.Range(-15, 15)),
         Quaternion.Euler(0, Random.Range(-180, 180), 0)
         , 0);
+
+        //Player Will Be Alive
+        isAlive = true;
 
     }
 
@@ -165,4 +179,18 @@ public class NetworkManager : MonoBehaviourPunCallbacks
         Debug.Log("Class type changed to warrior");
     }
 
+    public void Respawn() 
+    {
+        //Spawn Players
+        PhotonNetwork.Instantiate(player.name,
+         new Vector3(Random.Range(-15, 15), 1, Random.Range(-15, 15)),
+        Quaternion.Euler(0, Random.Range(-180, 180), 0)
+        , 0);
+
+        //Player Will Be Alive
+        isAlive = true;
+
+        //Disable The Respawn Button
+        buttonRespawn.gameObject.SetActive(false);
+    }
 }

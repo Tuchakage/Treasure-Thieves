@@ -9,8 +9,6 @@ public class Health : MonoBehaviourPunCallbacks, IPunObservable
 
     Spellcaster spell;
 
-    [SerializeField]
-    public string attackname; // This will make it so that the game can find the name of the attack and find the amount of damage it does
     // Start is called before the first frame update
     void Start()
     {
@@ -61,8 +59,7 @@ public class Health : MonoBehaviourPunCallbacks, IPunObservable
                 //Depending on the attack the player will lose a certain amount of health
                 if (col.gameObject.tag == "Basic Attack")
                 {
-                    // This is here so the game can find the amount of damage this attack does
-                    attackname = "Basic Attack";
+                    //Attacked Player will take damage and check how much damage the attack should deal from the owner of the attack
                     TakeDamage(spell.DealDamage());
                     //Destroy The Spell Game Object For Everyone
                     photonView.RPC("DestroyObject", RpcTarget.All, col.transform.parent.gameObject.GetComponent<PhotonView>().ViewID); 

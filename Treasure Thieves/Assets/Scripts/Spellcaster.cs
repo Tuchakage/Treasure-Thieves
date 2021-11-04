@@ -3,15 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 using Photon.Pun;
 
-public class Spellcaster : MonoBehaviourPun
+public class Spellcaster : MonoBehaviourPunCallbacks, IPunObservable
 {
-    [SerializeField]
-    private Health hs;
-
     public GameObject basicattack;
     public float dmg;
     //Where the spells will spawn from
     public Transform wand;
+    public string attackname; //Name Of The Attack The Player Is Using
 
     //Timer for the cool down
     public float timer;
@@ -20,8 +18,7 @@ public class Spellcaster : MonoBehaviourPun
     // Start is called before the first frame update
     void Start()
     {
-        //Find The Health Script
-        hs = GetComponent<Health>();
+
     }
 
     // Update is called once per frame
@@ -56,11 +53,10 @@ public class Spellcaster : MonoBehaviourPun
     public float DealDamage()
     {
         //Depending on the spell game object depends on the amount of damage the attack will do
-        if (hs.attackname == "Basic Attack")
+        if (attackname == "Basic Attack")
         {
             dmg = 5;
         }
-
         return dmg;
     }
 
@@ -82,8 +78,25 @@ public class Spellcaster : MonoBehaviourPun
             Rigidbody rb = lightning.GetComponent<Rigidbody>();
             //Shoot the spell forward
             rb.velocity = transform.forward * 20;
+            attackname = "Basic Attack";
 
         }
 
+    }
+
+    //This function allows the variables inside to be sent over the network
+    public void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info)
+    {
+        if (stream.IsWriting)
+        {
+            //We own this player so send the other computers the data
+            stream.SendNext(attackname);
+        }
+        else
+        {
+            //Network player that receives the data
+            attackname = (string)stream.ReceiveNext();
+
+        }
     }
 }

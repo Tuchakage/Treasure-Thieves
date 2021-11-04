@@ -3167,8 +3167,8 @@ MonoBehaviour:
   players: {fileID: 749465584}
   buttonPlay: {fileID: 1730527753}
   buttonLeave: {fileID: 643202239}
-  class1: {fileID: 0}
-  class2: {fileID: 0}
+  class1: {fileID: 1207449656}
+  class2: {fileID: 662777746}
   playerName: {fileID: 55036115}
   player: {fileID: 4875361648148998235, guid: acedb9da75d1330409a01c45ae58aabc, type: 3}
   player_class1: {fileID: 4875361648148998235, guid: acedb9da75d1330409a01c45ae58aabc, type: 3}

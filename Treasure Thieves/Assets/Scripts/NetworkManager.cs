@@ -16,29 +16,44 @@ public class NetworkManager : MonoBehaviourPunCallbacks
     [SerializeField]
     private Text nickname, status, room, players;
     [SerializeField]
-    private Button buttonPlay, buttonLeave, buttonRespawn, class1, class2;
+    private Button buttonPlay, buttonLeave, buttonRespawn;
     [SerializeField]
     private InputField playerName;
+    [SerializeField]
+    private Button blue_SpellClass, blue_WarriorClass, red_SpellClass, red_WarriorClass, redTeam, blueTeam; //Team Buttons
+
+    public int teamPick = 0;
 
     // Game Object of player
     public GameObject player;
     //Checks if the player is alive
     public bool isAlive;
 
-    [SerializeField] private GameObject player_class1;
-    [SerializeField] private GameObject player_class2;
+    //Prefabs for all character
+    [SerializeField] private GameObject bp_SC_Prefab;
+    [SerializeField] private GameObject bp_WR_Prefab;
+    [SerializeField] private GameObject rp_SC_Prefab;
+    [SerializeField] private GameObject rp_WR_Prefab;
 
 
     // Start is called before the first frame update
     void Start()
     {
+        teamPick = 0;
         status.text = "Connecting...";
         buttonPlay.gameObject.SetActive(false);
         buttonLeave.gameObject.SetActive(false);
         playerName.gameObject.SetActive(false);
-        class1.gameObject.SetActive(false);
-        class2.gameObject.SetActive(false);
         buttonRespawn.gameObject.SetActive(false);
+
+
+        redTeam.gameObject.SetActive(false);
+        blueTeam.gameObject.SetActive(false);
+
+        blue_SpellClass.gameObject.SetActive(false);
+        blue_WarriorClass.gameObject.SetActive(false);
+        red_SpellClass.gameObject.SetActive(false);
+        red_WarriorClass.gameObject.SetActive(false);
 
         //If not connected to the Photon Network then connect
         if (!PhotonNetwork.IsConnected)
@@ -64,6 +79,22 @@ public class NetworkManager : MonoBehaviourPunCallbacks
             if (!isAlive) 
             {
                 buttonRespawn.gameObject.SetActive(true);
+
+                //Respawn Option to change classes
+                if (teamPick == 1)
+                {
+                    blue_SpellClass.gameObject.SetActive(true);
+                    blue_WarriorClass.gameObject.SetActive(true);
+                    red_SpellClass.gameObject.SetActive(false);
+                    red_WarriorClass.gameObject.SetActive(false);
+                } else if (teamPick == 2)
+                {
+                    red_SpellClass.gameObject.SetActive(true);
+                    red_WarriorClass.gameObject.SetActive(true);
+                    blue_SpellClass.gameObject.SetActive(false);
+                    blue_WarriorClass.gameObject.SetActive(false);
+                }
+
             }
 
         }
@@ -83,8 +114,10 @@ public class NetworkManager : MonoBehaviourPunCallbacks
         //Once connected to Photon server...
         Debug.Log("OnConnectedToMaster was called by PUN.");
         status.text = "Connected to Photon.";
-        //Show the Play button
-        buttonPlay.gameObject.SetActive(true);
+
+     
+        //Do not show the Play button
+        buttonPlay.gameObject.SetActive(false);
         //Show the box where players can write their own names
         playerName.gameObject.SetActive(true);
         //Makes sure the leave button doesnt show
@@ -92,9 +125,13 @@ public class NetworkManager : MonoBehaviourPunCallbacks
         //Make sure the Respawn button doesnt show
         buttonRespawn.gameObject.SetActive(false);
 
-        //Show the class changing buttons before connecting to lobby
-        class1.gameObject.SetActive(true);
-        class2.gameObject.SetActive(true);
+        //Make sure player can pick a team
+        redTeam.gameObject.SetActive(true);
+        blueTeam.gameObject.SetActive(true);
+        blue_SpellClass.gameObject.SetActive(false);
+        blue_WarriorClass.gameObject.SetActive(false);
+        red_SpellClass.gameObject.SetActive(false);
+        red_WarriorClass.gameObject.SetActive(false);
 
         //Gets the Players name and sets the text to the player name
         playerName.text = PlayerPrefs.GetString("PlayerName");
@@ -137,9 +174,14 @@ public class NetworkManager : MonoBehaviourPunCallbacks
         //Shows the leave button
         buttonLeave.gameObject.SetActive(true);
 
+        redTeam.gameObject.SetActive(false);
+        blueTeam.gameObject.SetActive(false);
+
         //Disable Class Changing Buttons
-        class1.gameObject.SetActive(false);
-        class2.gameObject.SetActive(false);
+        blue_SpellClass.gameObject.SetActive(false);
+        blue_WarriorClass.gameObject.SetActive(false);
+        red_SpellClass.gameObject.SetActive(false);
+        red_WarriorClass.gameObject.SetActive(false);
 
         //Spawn Players
         PhotonNetwork.Instantiate(player.name,
@@ -163,20 +205,63 @@ public class NetworkManager : MonoBehaviourPunCallbacks
     }
 
 
-    public void changeToClass1()
+    public void blue_Team_Pick()
     {
-        //Default is already set to Spell Caster
+        //Choose Blue Team
+        teamPick = 1;
+        //Default Pick The Spell Caster Character
+        player = bp_SC_Prefab;
+        //Debug.Log("I am blue team");
+        //Reactivate the play so the player can play the game
+        buttonPlay.gameObject.SetActive(true);
+        //Blue Team Active Buttons 
+        blue_SpellClass.gameObject.SetActive(true);
+        blue_WarriorClass.gameObject.SetActive(true);
+        red_SpellClass.gameObject.SetActive(false);
+        red_WarriorClass.gameObject.SetActive(false);
 
-        //Change player prefab to spellcaster if warrior has been chosen
-        player = player_class1;
-        Debug.Log("Class type changed to Spellcaster");
     }
 
-    public void changeToClass2()
+    public void red_Team_Pick()
+    {
+        //Choose Red Team
+        teamPick = 2;
+        //Default Pick The Spell Caster Character
+        player = rp_SC_Prefab;
+        //Reactivate the play so the player can play the game
+        buttonPlay.gameObject.SetActive(true);
+        //Debug.Log("I am red team");
+        //Red Team Active Buttons 
+        red_SpellClass.gameObject.SetActive(true);
+        red_WarriorClass.gameObject.SetActive(true);
+        blue_SpellClass.gameObject.SetActive(false);
+        blue_WarriorClass.gameObject.SetActive(false);
+    }
+
+    public void pick_BP_Spell_Class()
+    {
+        //Change player prefab to spellcaster
+        player = bp_SC_Prefab;
+       //Debug.Log("Blue Team: Class type changed to Spellcaster");
+    }
+    public void pick_BP_Warrior_Class()
     {
         //Change player prefab to warrior
-        player = player_class2;
-        Debug.Log("Class type changed to warrior");
+        player = bp_WR_Prefab;
+        //Debug.Log("Class type changed to warrior");
+    }
+
+    public void pick_RP_Spell_Class()
+    {
+        //Change player prefab to spellcaster
+        player = rp_SC_Prefab;
+        //Debug.Log("Class type changed to spellcaster");
+    }
+    public void pick_RP_Warrior_Class()
+    {
+        //Change player prefab to warrior
+        player = rp_WR_Prefab;
+        //Debug.Log("Class type changed to warrior");
     }
 
     public void Respawn() 
@@ -192,5 +277,11 @@ public class NetworkManager : MonoBehaviourPunCallbacks
 
         //Disable The Respawn Button
         buttonRespawn.gameObject.SetActive(false);
+
+        //Disable Classes
+        blue_SpellClass.gameObject.SetActive(false);
+        blue_WarriorClass.gameObject.SetActive(false);
+        red_SpellClass.gameObject.SetActive(false);
+        red_WarriorClass.gameObject.SetActive(false);
     }
 }

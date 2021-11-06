@@ -10,6 +10,9 @@ public class Health : MonoBehaviourPunCallbacks, IPunObservable
     Spellcaster spell;
 
     NetworkManager nm;
+
+    Teams ct;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -53,6 +56,7 @@ public class Health : MonoBehaviourPunCallbacks, IPunObservable
 
             //Find the player id of the owner of the attack and get the Spellcaster script
             spell = PhotonView.Find(ownerid).GetComponent<Spellcaster>();
+            ct = PhotonView.Find(ownerid).GetComponent<Teams>();
 
             Debug.Log("Owner Of Attack: " + PhotonView.Get(PhotonView.Find(ownerid).gameObject));
 
@@ -64,11 +68,18 @@ public class Health : MonoBehaviourPunCallbacks, IPunObservable
                 //Depending on the attack the player will lose a certain amount of health
                 if (col.gameObject.tag == "Basic Attack")
                 {
-                    //Attacked Player will take damage and check how much damage the attack should deal from the owner of the attack
-                    TakeDamage(spell.DealDamage());
-                    //Destroy The Spell Game Object For Everyone
-                    photonView.RPC("DestroyObject", RpcTarget.All, col.transform.parent.gameObject.GetComponent<PhotonView>().ViewID); 
-                    //Debug.Log("Basic Attack has hit " + col.gameObject.name);
+                    if(ct.teamid != this.GetComponent<Teams>().teamid)
+                    {
+                        //Attacked Player will take damage and check how much damage the attack should deal from the owner of the attack
+                        TakeDamage(spell.DealDamage());
+                        //Destroy The Spell Game Object For Everyone
+                        photonView.RPC("DestroyObject", RpcTarget.All, col.transform.parent.gameObject.GetComponent<PhotonView>().ViewID); 
+                        Debug.Log("Basic Attack has hit " + col.gameObject.name);
+                    } else
+                    {
+                        Debug.Log("Friendly Fire on the red team");
+                    }
+
                 }
             }
             else //If they are hitting themselves

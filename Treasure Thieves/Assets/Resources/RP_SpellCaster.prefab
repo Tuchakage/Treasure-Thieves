@@ -517,6 +517,7 @@ GameObject:
   - component: {fileID: 5143767490974263344}
   - component: {fileID: 4282943479310754687}
   - component: {fileID: 8643041264762236527}
+  - component: {fileID: 4472181385875627654}
   m_Layer: 6
   m_Name: RP_SpellCaster
   m_TagString: Player
@@ -698,3 +699,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 100
+--- !u!114 &4472181385875627654
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8099395139130336030}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6d5019d4303d48243b2753c6fb9f4b2b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  teamid: 0

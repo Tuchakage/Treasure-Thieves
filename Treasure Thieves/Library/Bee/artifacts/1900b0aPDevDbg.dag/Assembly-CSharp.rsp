@@ -323,6 +323,7 @@
 "Assets/Scripts/OwnerOfSpell.cs"
 "Assets/Scripts/PlayerController.cs"
 "Assets/Scripts/Spellcaster.cs"
+"Assets/Scripts/Teams.cs"
 -langversion:8.0
 
 /deterministic

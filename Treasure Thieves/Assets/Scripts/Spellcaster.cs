@@ -15,6 +15,8 @@ public class Spellcaster : MonoBehaviourPunCallbacks, IPunObservable
     public float timer;
     //The max cooldown value (Where the timer will start counting down from
     public float cooldown;
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -55,7 +57,7 @@ public class Spellcaster : MonoBehaviourPunCallbacks, IPunObservable
         //Depending on the spell game object depends on the amount of damage the attack will do
         if (attackname == "Basic Attack")
         {
-            dmg = 100;
+            dmg = 10;
         }
         return dmg;
     }

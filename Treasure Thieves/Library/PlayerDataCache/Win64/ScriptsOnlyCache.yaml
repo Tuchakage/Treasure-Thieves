@@ -8,6 +8,7 @@ ScriptsOnlyBuild:
     - OwnerOfSpell
     - PlayerController
     - Spellcaster
+    - Teams
     PhotonUnityNetworking.Demos.dll:
     - Photon.Pun.Demo.Asteroids.Asteroid
     - Photon.Pun.Demo.Asteroids.Bullet
@@ -18,8 +19,6 @@ ScriptsOnlyBuild:
     - Photon.Pun.Demo.PunBasics.PlayerUI
     - Photon.Pun.Demo.SlotRacer.PlayerControl
     - Photon.Pun.Demo.SlotRacer.Utils.SplineWalker
-    PhotonUnityNetworking.Editor.dll:
-    - Photon.Pun.PunSceneSettings
     PhotonUnityNetworking.dll:
     - Photon.Pun.PhotonAnimatorView
     - Photon.Pun.PhotonRigidbodyView
@@ -92,63 +91,65 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 1516}
     - Class: 114
-      Script: {instanceID: 1580}
+      Script: {instanceID: 1570}
     - Class: 114
-      Script: {instanceID: 1620}
+      Script: {instanceID: 1610}
     - Class: 114
-      Script: {instanceID: 1768}
+      Script: {instanceID: 1758}
     - Class: 114
-      Script: {instanceID: 2534}
+      Script: {instanceID: 2524}
     - Class: 114
-      Script: {instanceID: 2578}
+      Script: {instanceID: 2568}
     - Class: 114
-      Script: {instanceID: 2784}
+      Script: {instanceID: 2774}
     - Class: 114
-      Script: {instanceID: 2828}
+      Script: {instanceID: 2818}
     - Class: 114
-      Script: {instanceID: 2984}
+      Script: {instanceID: 2974}
     - Class: 114
-      Script: {instanceID: 3064}
+      Script: {instanceID: 3054}
     - Class: 114
-      Script: {instanceID: 3776}
+      Script: {instanceID: 3766}
     - Class: 114
-      Script: {instanceID: 3778}
+      Script: {instanceID: 3768}
     - Class: 114
-      Script: {instanceID: 3938}
+      Script: {instanceID: 3928}
     - Class: 114
-      Script: {instanceID: 4928}
+      Script: {instanceID: 4918}
     - Class: 114
-      Script: {instanceID: 4952}
+      Script: {instanceID: 4942}
     - Class: 114
-      Script: {instanceID: 5062}
+      Script: {instanceID: 5052}
     - Class: 114
-      Script: {instanceID: 5206}
+      Script: {instanceID: 5196}
     - Class: 114
-      Script: {instanceID: 5234}
+      Script: {instanceID: 5224}
     - Class: 114
-      Script: {instanceID: 5362}
+      Script: {instanceID: 5352}
     - Class: 114
-      Script: {instanceID: 5402}
+      Script: {instanceID: 5392}
     - Class: 114
-      Script: {instanceID: 5580}
+      Script: {instanceID: 5570}
     - Class: 114
-      Script: {instanceID: 6038}
+      Script: {instanceID: 6028}
     - Class: 114
-      Script: {instanceID: 6046}
+      Script: {instanceID: 6036}
     - Class: 114
-      Script: {instanceID: 6616}
+      Script: {instanceID: 6606}
     - Class: 114
-      Script: {instanceID: 6738}
+      Script: {instanceID: 6728}
     - Class: 114
-      Script: {instanceID: 7100}
+      Script: {instanceID: 7090}
     - Class: 114
-      Script: {instanceID: 7452}
+      Script: {instanceID: 7442}
     - Class: 114
-      Script: {instanceID: 7574}
+      Script: {instanceID: 7564}
     - Class: 114
-      Script: {instanceID: 7674}
+      Script: {instanceID: 7664}
     - Class: 114
-      Script: {instanceID: 7858}
+      Script: {instanceID: 7848}
+    - Class: 114
+      Script: {instanceID: 23938}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -1206,7 +1207,7 @@ ScriptsOnlyBuild:
     className: GroupTrack
   - hash:
       serializedVersion: 2
-      Hash: 9c865d826e42dd4fe9824e236b7022d9
+      Hash: bbb963f0676d642c7b7ba4906751739e
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: NetworkManager
@@ -1888,6 +1889,12 @@ ScriptsOnlyBuild:
     assemblyName: Unity.VisualScripting.Core.dll
     namespaceName: Unity.VisualScripting
     className: UnityOnSliderValueChangedMessageListener
+  - hash:
+      serializedVersion: 2
+      Hash: 266bd479765573cc3c7330c355f7b299
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: Teams
   platform: 19
   scenePathNames:
   - Assets/Scenes/SampleScene.unity

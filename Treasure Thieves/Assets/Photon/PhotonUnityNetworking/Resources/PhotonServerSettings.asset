@@ -43,6 +43,8 @@ MonoBehaviour:
   - Shoot
   - OnDestroy
   - DestroyObject
+  - AttachToPlayer
+  - DetachFromPlayer
   DisableAutoOpenWizard: 1
   ShowSettings: 1
   DevRegionSetOnce: 1

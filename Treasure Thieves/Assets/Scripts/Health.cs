@@ -11,6 +11,8 @@ public class Health : MonoBehaviourPunCallbacks, IPunObservable
 
     NetworkManager nm;
 
+    PlayerController pc;
+
     Teams ct;
 
     // Start is called before the first frame update
@@ -19,6 +21,8 @@ public class Health : MonoBehaviourPunCallbacks, IPunObservable
         //Gets The Spellcaster script
         spell = GetComponent<Spellcaster>();
         nm = GameObject.Find("NetworkManager").GetComponent<NetworkManager>();
+        //Get The Player Controller from this Player Object
+        pc = GetComponent<PlayerController>();
     }
 
     // Update is called once per frame
@@ -70,6 +74,8 @@ public class Health : MonoBehaviourPunCallbacks, IPunObservable
                 {
                     if(ct.teamid != this.GetComponent<Teams>().teamid)
                     {
+                        //Attacked Player will no longer be able to carry the Treasure
+                        pc.carrying = false;
                         //Attacked Player will take damage and check how much damage the attack should deal from the owner of the attack
                         TakeDamage(spell.DealDamage());
                         //Destroy The Spell Game Object For Everyone
@@ -79,6 +85,8 @@ public class Health : MonoBehaviourPunCallbacks, IPunObservable
                     {
                         Debug.Log("Friendly Fire on the red team");
                     }
+
+                    
 
                 }
             }

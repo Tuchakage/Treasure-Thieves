@@ -1,25 +1,25 @@
 m_ProjectFiles:
   m_ManifestFileStatus:
-    m_FilePath: C:/Users/hbahe/Documents/Repo/Treasure-Thieves/Treasure Thieves/Packages/manifest.json
+    m_FilePath: D:/Users/tucha/Documents/GitHub/Treasure-Thieves/Treasure Thieves/Packages/manifest.json
     m_PathExists: 1
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 637714694623554851
+      ticks: 637714897950250119
     m_Hash: 2399787332
   m_LockFileStatus:
-    m_FilePath: C:/Users/hbahe/Documents/Repo/Treasure-Thieves/Treasure Thieves/Packages/packages-lock.json
+    m_FilePath: D:/Users/tucha/Documents/GitHub/Treasure-Thieves/Treasure Thieves/Packages/packages-lock.json
     m_PathExists: 1
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 637714694623554851
+      ticks: 637714897950260128
     m_Hash: 1917356388
 m_EmbeddedPackageManifests:
   m_ManifestsStatus: {}
 m_LocalPackages:
   m_LocalFileStatus: []
-m_ProjectPath: C:/Users/hbahe/Documents/Repo/Treasure-Thieves/Treasure Thieves/Packages
+m_ProjectPath: D:/Users/tucha/Documents/GitHub/Treasure-Thieves/Treasure Thieves/Packages
 m_EditorVersion: 2021.1.10f1 (b15f561b2cef)
 m_ResolvedPackages:
 - packageId: com.unity.collab-proxy@1.5.7
@@ -27,7 +27,7 @@ m_ResolvedPackages:
   isDirectDependency: 1
   version: 1.5.7
   source: 1
-  resolvedPath: C:\Users\hbahe\Documents\Repo\Treasure-Thieves\Treasure Thieves\Library\PackageCache\com.unity.collab-proxy@1.5.7
+  resolvedPath: D:\Users\tucha\Documents\GitHub\Treasure-Thieves\Treasure Thieves\Library\PackageCache\com.unity.collab-proxy@1.5.7
   assetPath: Packages/com.unity.collab-proxy
   name: com.unity.collab-proxy
   displayName: Version Control
@@ -148,7 +148,7 @@ m_ResolvedPackages:
   isDirectDependency: 1
   version: 3.0.6
   source: 1
-  resolvedPath: C:\Users\hbahe\Documents\Repo\Treasure-Thieves\Treasure Thieves\Library\PackageCache\com.unity.ide.rider@3.0.6
+  resolvedPath: D:\Users\tucha\Documents\GitHub\Treasure-Thieves\Treasure Thieves\Library\PackageCache\com.unity.ide.rider@3.0.6
   assetPath: Packages/com.unity.ide.rider
   name: com.unity.ide.rider
   displayName: JetBrains Rider Editor
@@ -229,7 +229,7 @@ m_ResolvedPackages:
   isDirectDependency: 1
   version: 2.0.8
   source: 1
-  resolvedPath: C:\Users\hbahe\Documents\Repo\Treasure-Thieves\Treasure Thieves\Library\PackageCache\com.unity.ide.visualstudio@2.0.8
+  resolvedPath: D:\Users\tucha\Documents\GitHub\Treasure-Thieves\Treasure Thieves\Library\PackageCache\com.unity.ide.visualstudio@2.0.8
   assetPath: Packages/com.unity.ide.visualstudio
   name: com.unity.ide.visualstudio
   displayName: Visual Studio Editor
@@ -307,7 +307,7 @@ m_ResolvedPackages:
   isDirectDependency: 1
   version: 1.2.3
   source: 1
-  resolvedPath: C:\Users\hbahe\Documents\Repo\Treasure-Thieves\Treasure Thieves\Library\PackageCache\com.unity.ide.vscode@1.2.3
+  resolvedPath: D:\Users\tucha\Documents\GitHub\Treasure-Thieves\Treasure Thieves\Library\PackageCache\com.unity.ide.vscode@1.2.3
   assetPath: Packages/com.unity.ide.vscode
   name: com.unity.ide.vscode
   displayName: Visual Studio Code Editor
@@ -371,7 +371,7 @@ m_ResolvedPackages:
   isDirectDependency: 1
   version: 1.1.24
   source: 1
-  resolvedPath: C:\Users\hbahe\Documents\Repo\Treasure-Thieves\Treasure Thieves\Library\PackageCache\com.unity.test-framework@1.1.24
+  resolvedPath: D:\Users\tucha\Documents\GitHub\Treasure-Thieves\Treasure Thieves\Library\PackageCache\com.unity.test-framework@1.1.24
   assetPath: Packages/com.unity.test-framework
   name: com.unity.test-framework
   displayName: Test Framework
@@ -417,12 +417,14 @@ m_ResolvedPackages:
     - 1.1.26
     - 1.1.27
     - 1.1.29
+    - 1.1.30
     compatible:
     - 1.1.24
     - 1.1.26
     - 1.1.27
     - 1.1.29
-    verified: 1.1.29
+    - 1.1.30
+    verified: 1.1.30
   dependencies:
   - name: com.unity.ext.nunit
     version: 1.0.6
@@ -468,7 +470,7 @@ m_ResolvedPackages:
   isDirectDependency: 1
   version: 3.0.6
   source: 1
-  resolvedPath: C:\Users\hbahe\Documents\Repo\Treasure-Thieves\Treasure Thieves\Library\PackageCache\com.unity.textmeshpro@3.0.6
+  resolvedPath: D:\Users\tucha\Documents\GitHub\Treasure-Thieves\Treasure Thieves\Library\PackageCache\com.unity.textmeshpro@3.0.6
   assetPath: Packages/com.unity.textmeshpro
   name: com.unity.textmeshpro
   displayName: TextMeshPro
@@ -629,7 +631,7 @@ m_ResolvedPackages:
   isDirectDependency: 1
   version: 1.5.5
   source: 1
-  resolvedPath: C:\Users\hbahe\Documents\Repo\Treasure-Thieves\Treasure Thieves\Library\PackageCache\com.unity.timeline@1.5.5
+  resolvedPath: D:\Users\tucha\Documents\GitHub\Treasure-Thieves\Treasure Thieves\Library\PackageCache\com.unity.timeline@1.5.5
   assetPath: Packages/com.unity.timeline
   name: com.unity.timeline
   displayName: Timeline
@@ -710,6 +712,7 @@ m_ResolvedPackages:
     - 1.6.0-pre.5
     - 1.6.1
     - 1.6.2
+    - 1.6.3
     compatible:
     - 1.5.5
     - 1.5.6
@@ -719,6 +722,7 @@ m_ResolvedPackages:
     - 1.6.0-pre.5
     - 1.6.1
     - 1.6.2
+    - 1.6.3
     verified: 1.5.6
   dependencies:
   - name: com.unity.modules.director
@@ -772,7 +776,7 @@ m_ResolvedPackages:
   isDirectDependency: 1
   version: 1.0.0
   source: 2
-  resolvedPath: C:\Users\hbahe\Documents\Repo\Treasure-Thieves\Treasure Thieves\Library\PackageCache\com.unity.ugui@1.0.0
+  resolvedPath: D:\Users\tucha\Documents\GitHub\Treasure-Thieves\Treasure Thieves\Library\PackageCache\com.unity.ugui@1.0.0
   assetPath: Packages/com.unity.ugui
   name: com.unity.ugui
   displayName: Unity UI
@@ -837,7 +841,7 @@ m_ResolvedPackages:
   isDirectDependency: 1
   version: 1.6.1
   source: 1
-  resolvedPath: C:\Users\hbahe\Documents\Repo\Treasure-Thieves\Treasure Thieves\Library\PackageCache\com.unity.visualscripting@1.6.1
+  resolvedPath: D:\Users\tucha\Documents\GitHub\Treasure-Thieves\Treasure Thieves\Library\PackageCache\com.unity.visualscripting@1.6.1
   assetPath: Packages/com.unity.visualscripting
   name: com.unity.visualscripting
   displayName: Visual Scripting
@@ -846,7 +850,7 @@ m_ResolvedPackages:
     email: 
     url: 
   category: 
-  type: 
+  type: tool
   description: "Visual Scripting, previously known as BOLT, is an alternative workflow
     to design behaviours. Instead of the classic method of writing a C# script, visual
     scripting offers a way to design behaviours intuitively without code, by connecting
@@ -858,22 +862,9 @@ m_ResolvedPackages:
   errors: []
   versions:
     all:
-    - 1.5.0
-    - 1.5.1-pre.3
-    - 1.5.1-pre.5
-    - 1.5.1
-    - 1.5.2
-    - 1.6.0-pre.3
-    - 1.6.0
     - 1.6.1
-    - 1.7.1
-    - 1.7.2
-    - 1.7.3
     compatible:
     - 1.6.1
-    - 1.7.1
-    - 1.7.2
-    - 1.7.3
     verified: 1.6.1
   dependencies:
   - name: com.unity.ugui
@@ -922,7 +913,7 @@ m_ResolvedPackages:
   entitlements:
     isAllowed: 1
   isAssetStorePackage: 0
-  datePublishedTicks: 637547228050000000
+  datePublishedTicks: 0
   documentationUrl: 
   hasRepository: 1
   repository:
@@ -938,7 +929,7 @@ m_ResolvedPackages:
   isDirectDependency: 1
   version: 1.0.0
   source: 2
-  resolvedPath: C:\Users\hbahe\Documents\Repo\Treasure-Thieves\Treasure Thieves\Library\PackageCache\com.unity.modules.ai@1.0.0
+  resolvedPath: D:\Users\tucha\Documents\GitHub\Treasure-Thieves\Treasure Thieves\Library\PackageCache\com.unity.modules.ai@1.0.0
   assetPath: Packages/com.unity.modules.ai
   name: com.unity.modules.ai
   displayName: AI
@@ -989,7 +980,7 @@ m_ResolvedPackages:
   isDirectDependency: 1
   version: 1.0.0
   source: 2
-  resolvedPath: C:\Users\hbahe\Documents\Repo\Treasure-Thieves\Treasure Thieves\Library\PackageCache\com.unity.modules.androidjni@1.0.0
+  resolvedPath: D:\Users\tucha\Documents\GitHub\Treasure-Thieves\Treasure Thieves\Library\PackageCache\com.unity.modules.androidjni@1.0.0
   assetPath: Packages/com.unity.modules.androidjni
   name: com.unity.modules.androidjni
   displayName: Android JNI
@@ -1039,7 +1030,7 @@ m_ResolvedPackages:
   isDirectDependency: 1
   version: 1.0.0
   source: 2
-  resolvedPath: C:\Users\hbahe\Documents\Repo\Treasure-Thieves\Treasure Thieves\Library\PackageCache\com.unity.modules.animation@1.0.0
+  resolvedPath: D:\Users\tucha\Documents\GitHub\Treasure-Thieves\Treasure Thieves\Library\PackageCache\com.unity.modules.animation@1.0.0
   assetPath: Packages/com.unity.modules.animation
   name: com.unity.modules.animation
   displayName: Animation
@@ -1090,7 +1081,7 @@ m_ResolvedPackages:
   isDirectDependency: 1
   version: 1.0.0
   source: 2
-  resolvedPath: C:\Users\hbahe\Documents\Repo\Treasure-Thieves\Treasure Thieves\Library\PackageCache\com.unity.modules.assetbundle@1.0.0
+  resolvedPath: D:\Users\tucha\Documents\GitHub\Treasure-Thieves\Treasure Thieves\Library\PackageCache\com.unity.modules.assetbundle@1.0.0
   assetPath: Packages/com.unity.modules.assetbundle
   name: com.unity.modules.assetbundle
   displayName: Asset Bundle
@@ -1141,7 +1132,7 @@ m_ResolvedPackages:
   isDirectDependency: 1
   version: 1.0.0
   source: 2
-  resolvedPath: C:\Users\hbahe\Documents\Repo\Treasure-Thieves\Treasure Thieves\Library\PackageCache\com.unity.modules.audio@1.0.0
+  resolvedPath: D:\Users\tucha\Documents\GitHub\Treasure-Thieves\Treasure Thieves\Library\PackageCache\com.unity.modules.audio@1.0.0
   assetPath: Packages/com.unity.modules.audio
   name: com.unity.modules.audio
   displayName: Audio
@@ -1192,7 +1183,7 @@ m_ResolvedPackages:
   isDirectDependency: 1
   version: 1.0.0
   source: 2
-  resolvedPath: C:\Users\hbahe\Documents\Repo\Treasure-Thieves\Treasure Thieves\Library\PackageCache\com.unity.modules.cloth@1.0.0
+  resolvedPath: D:\Users\tucha\Documents\GitHub\Treasure-Thieves\Treasure Thieves\Library\PackageCache\com.unity.modules.cloth@1.0.0
   assetPath: Packages/com.unity.modules.cloth
   name: com.unity.modules.cloth
   displayName: Cloth
@@ -1247,7 +1238,7 @@ m_ResolvedPackages:
   isDirectDependency: 1
   version: 1.0.0
   source: 2
-  resolvedPath: C:\Users\hbahe\Documents\Repo\Treasure-Thieves\Treasure Thieves\Library\PackageCache\com.unity.modules.director@1.0.0
+  resolvedPath: D:\Users\tucha\Documents\GitHub\Treasure-Thieves\Treasure Thieves\Library\PackageCache\com.unity.modules.director@1.0.0
   assetPath: Packages/com.unity.modules.director
   name: com.unity.modules.director
   displayName: Director
@@ -1306,7 +1297,7 @@ m_ResolvedPackages:
   isDirectDependency: 1
   version: 1.0.0
   source: 2
-  resolvedPath: C:\Users\hbahe\Documents\Repo\Treasure-Thieves\Treasure Thieves\Library\PackageCache\com.unity.modules.imageconversion@1.0.0
+  resolvedPath: D:\Users\tucha\Documents\GitHub\Treasure-Thieves\Treasure Thieves\Library\PackageCache\com.unity.modules.imageconversion@1.0.0
   assetPath: Packages/com.unity.modules.imageconversion
   name: com.unity.modules.imageconversion
   displayName: Image Conversion
@@ -1358,7 +1349,7 @@ m_ResolvedPackages:
   isDirectDependency: 1
   version: 1.0.0
   source: 2
-  resolvedPath: C:\Users\hbahe\Documents\Repo\Treasure-Thieves\Treasure Thieves\Library\PackageCache\com.unity.modules.imgui@1.0.0
+  resolvedPath: D:\Users\tucha\Documents\GitHub\Treasure-Thieves\Treasure Thieves\Library\PackageCache\com.unity.modules.imgui@1.0.0
   assetPath: Packages/com.unity.modules.imgui
   name: com.unity.modules.imgui
   displayName: IMGUI
@@ -1409,7 +1400,7 @@ m_ResolvedPackages:
   isDirectDependency: 1
   version: 1.0.0
   source: 2
-  resolvedPath: C:\Users\hbahe\Documents\Repo\Treasure-Thieves\Treasure Thieves\Library\PackageCache\com.unity.modules.jsonserialize@1.0.0
+  resolvedPath: D:\Users\tucha\Documents\GitHub\Treasure-Thieves\Treasure Thieves\Library\PackageCache\com.unity.modules.jsonserialize@1.0.0
   assetPath: Packages/com.unity.modules.jsonserialize
   name: com.unity.modules.jsonserialize
   displayName: JSONSerialize
@@ -1460,7 +1451,7 @@ m_ResolvedPackages:
   isDirectDependency: 1
   version: 1.0.0
   source: 2
-  resolvedPath: C:\Users\hbahe\Documents\Repo\Treasure-Thieves\Treasure Thieves\Library\PackageCache\com.unity.modules.particlesystem@1.0.0
+  resolvedPath: D:\Users\tucha\Documents\GitHub\Treasure-Thieves\Treasure Thieves\Library\PackageCache\com.unity.modules.particlesystem@1.0.0
   assetPath: Packages/com.unity.modules.particlesystem
   name: com.unity.modules.particlesystem
   displayName: Particle System
@@ -1511,7 +1502,7 @@ m_ResolvedPackages:
   isDirectDependency: 1
   version: 1.0.0
   source: 2
-  resolvedPath: C:\Users\hbahe\Documents\Repo\Treasure-Thieves\Treasure Thieves\Library\PackageCache\com.unity.modules.physics@1.0.0
+  resolvedPath: D:\Users\tucha\Documents\GitHub\Treasure-Thieves\Treasure Thieves\Library\PackageCache\com.unity.modules.physics@1.0.0
   assetPath: Packages/com.unity.modules.physics
   name: com.unity.modules.physics
   displayName: Physics
@@ -1562,7 +1553,7 @@ m_ResolvedPackages:
   isDirectDependency: 1
   version: 1.0.0
   source: 2
-  resolvedPath: C:\Users\hbahe\Documents\Repo\Treasure-Thieves\Treasure Thieves\Library\PackageCache\com.unity.modules.physics2d@1.0.0
+  resolvedPath: D:\Users\tucha\Documents\GitHub\Treasure-Thieves\Treasure Thieves\Library\PackageCache\com.unity.modules.physics2d@1.0.0
   assetPath: Packages/com.unity.modules.physics2d
   name: com.unity.modules.physics2d
   displayName: Physics 2D
@@ -1613,7 +1604,7 @@ m_ResolvedPackages:
   isDirectDependency: 1
   version: 1.0.0
   source: 2
-  resolvedPath: C:\Users\hbahe\Documents\Repo\Treasure-Thieves\Treasure Thieves\Library\PackageCache\com.unity.modules.screencapture@1.0.0
+  resolvedPath: D:\Users\tucha\Documents\GitHub\Treasure-Thieves\Treasure Thieves\Library\PackageCache\com.unity.modules.screencapture@1.0.0
   assetPath: Packages/com.unity.modules.screencapture
   name: com.unity.modules.screencapture
   displayName: Screen Capture
@@ -1668,7 +1659,7 @@ m_ResolvedPackages:
   isDirectDependency: 1
   version: 1.0.0
   source: 2
-  resolvedPath: C:\Users\hbahe\Documents\Repo\Treasure-Thieves\Treasure Thieves\Library\PackageCache\com.unity.modules.terrain@1.0.0
+  resolvedPath: D:\Users\tucha\Documents\GitHub\Treasure-Thieves\Treasure Thieves\Library\PackageCache\com.unity.modules.terrain@1.0.0
   assetPath: Packages/com.unity.modules.terrain
   name: com.unity.modules.terrain
   displayName: Terrain
@@ -1719,7 +1710,7 @@ m_ResolvedPackages:
   isDirectDependency: 1
   version: 1.0.0
   source: 2
-  resolvedPath: C:\Users\hbahe\Documents\Repo\Treasure-Thieves\Treasure Thieves\Library\PackageCache\com.unity.modules.terrainphysics@1.0.0
+  resolvedPath: D:\Users\tucha\Documents\GitHub\Treasure-Thieves\Treasure Thieves\Library\PackageCache\com.unity.modules.terrainphysics@1.0.0
   assetPath: Packages/com.unity.modules.terrainphysics
   name: com.unity.modules.terrainphysics
   displayName: Terrain Physics
@@ -1778,7 +1769,7 @@ m_ResolvedPackages:
   isDirectDependency: 1
   version: 1.0.0
   source: 2
-  resolvedPath: C:\Users\hbahe\Documents\Repo\Treasure-Thieves\Treasure Thieves\Library\PackageCache\com.unity.modules.tilemap@1.0.0
+  resolvedPath: D:\Users\tucha\Documents\GitHub\Treasure-Thieves\Treasure Thieves\Library\PackageCache\com.unity.modules.tilemap@1.0.0
   assetPath: Packages/com.unity.modules.tilemap
   name: com.unity.modules.tilemap
   displayName: Tilemap
@@ -1832,7 +1823,7 @@ m_ResolvedPackages:
   isDirectDependency: 1
   version: 1.0.0
   source: 2
-  resolvedPath: C:\Users\hbahe\Documents\Repo\Treasure-Thieves\Treasure Thieves\Library\PackageCache\com.unity.modules.ui@1.0.0
+  resolvedPath: D:\Users\tucha\Documents\GitHub\Treasure-Thieves\Treasure Thieves\Library\PackageCache\com.unity.modules.ui@1.0.0
   assetPath: Packages/com.unity.modules.ui
   name: com.unity.modules.ui
   displayName: UI
@@ -1883,7 +1874,7 @@ m_ResolvedPackages:
   isDirectDependency: 1
   version: 1.0.0
   source: 2
-  resolvedPath: C:\Users\hbahe\Documents\Repo\Treasure-Thieves\Treasure Thieves\Library\PackageCache\com.unity.modules.uielements@1.0.0
+  resolvedPath: D:\Users\tucha\Documents\GitHub\Treasure-Thieves\Treasure Thieves\Library\PackageCache\com.unity.modules.uielements@1.0.0
   assetPath: Packages/com.unity.modules.uielements
   name: com.unity.modules.uielements
   displayName: UIElements
@@ -1950,7 +1941,7 @@ m_ResolvedPackages:
   isDirectDependency: 1
   version: 1.0.0
   source: 2
-  resolvedPath: C:\Users\hbahe\Documents\Repo\Treasure-Thieves\Treasure Thieves\Library\PackageCache\com.unity.modules.umbra@1.0.0
+  resolvedPath: D:\Users\tucha\Documents\GitHub\Treasure-Thieves\Treasure Thieves\Library\PackageCache\com.unity.modules.umbra@1.0.0
   assetPath: Packages/com.unity.modules.umbra
   name: com.unity.modules.umbra
   displayName: Umbra
@@ -2001,7 +1992,7 @@ m_ResolvedPackages:
   isDirectDependency: 1
   version: 1.0.0
   source: 2
-  resolvedPath: C:\Users\hbahe\Documents\Repo\Treasure-Thieves\Treasure Thieves\Library\PackageCache\com.unity.modules.unityanalytics@1.0.0
+  resolvedPath: D:\Users\tucha\Documents\GitHub\Treasure-Thieves\Treasure Thieves\Library\PackageCache\com.unity.modules.unityanalytics@1.0.0
   assetPath: Packages/com.unity.modules.unityanalytics
   name: com.unity.modules.unityanalytics
   displayName: Unity Analytics
@@ -2060,7 +2051,7 @@ m_ResolvedPackages:
   isDirectDependency: 1
   version: 1.0.0
   source: 2
-  resolvedPath: C:\Users\hbahe\Documents\Repo\Treasure-Thieves\Treasure Thieves\Library\PackageCache\com.unity.modules.unitywebrequest@1.0.0
+  resolvedPath: D:\Users\tucha\Documents\GitHub\Treasure-Thieves\Treasure Thieves\Library\PackageCache\com.unity.modules.unitywebrequest@1.0.0
   assetPath: Packages/com.unity.modules.unitywebrequest
   name: com.unity.modules.unitywebrequest
   displayName: Unity Web Request
@@ -2111,7 +2102,7 @@ m_ResolvedPackages:
   isDirectDependency: 1
   version: 1.0.0
   source: 2
-  resolvedPath: C:\Users\hbahe\Documents\Repo\Treasure-Thieves\Treasure Thieves\Library\PackageCache\com.unity.modules.unitywebrequestassetbundle@1.0.0
+  resolvedPath: D:\Users\tucha\Documents\GitHub\Treasure-Thieves\Treasure Thieves\Library\PackageCache\com.unity.modules.unitywebrequestassetbundle@1.0.0
   assetPath: Packages/com.unity.modules.unitywebrequestassetbundle
   name: com.unity.modules.unitywebrequestassetbundle
   displayName: Unity Web Request Asset Bundle
@@ -2170,7 +2161,7 @@ m_ResolvedPackages:
   isDirectDependency: 1
   version: 1.0.0
   source: 2
-  resolvedPath: C:\Users\hbahe\Documents\Repo\Treasure-Thieves\Treasure Thieves\Library\PackageCache\com.unity.modules.unitywebrequestaudio@1.0.0
+  resolvedPath: D:\Users\tucha\Documents\GitHub\Treasure-Thieves\Treasure Thieves\Library\PackageCache\com.unity.modules.unitywebrequestaudio@1.0.0
   assetPath: Packages/com.unity.modules.unitywebrequestaudio
   name: com.unity.modules.unitywebrequestaudio
   displayName: Unity Web Request Audio
@@ -2229,7 +2220,7 @@ m_ResolvedPackages:
   isDirectDependency: 1
   version: 1.0.0
   source: 2
-  resolvedPath: C:\Users\hbahe\Documents\Repo\Treasure-Thieves\Treasure Thieves\Library\PackageCache\com.unity.modules.unitywebrequesttexture@1.0.0
+  resolvedPath: D:\Users\tucha\Documents\GitHub\Treasure-Thieves\Treasure Thieves\Library\PackageCache\com.unity.modules.unitywebrequesttexture@1.0.0
   assetPath: Packages/com.unity.modules.unitywebrequesttexture
   name: com.unity.modules.unitywebrequesttexture
   displayName: Unity Web Request Texture
@@ -2288,7 +2279,7 @@ m_ResolvedPackages:
   isDirectDependency: 1
   version: 1.0.0
   source: 2
-  resolvedPath: C:\Users\hbahe\Documents\Repo\Treasure-Thieves\Treasure Thieves\Library\PackageCache\com.unity.modules.unitywebrequestwww@1.0.0
+  resolvedPath: D:\Users\tucha\Documents\GitHub\Treasure-Thieves\Treasure Thieves\Library\PackageCache\com.unity.modules.unitywebrequestwww@1.0.0
   assetPath: Packages/com.unity.modules.unitywebrequestwww
   name: com.unity.modules.unitywebrequestwww
   displayName: Unity Web Request WWW
@@ -2363,7 +2354,7 @@ m_ResolvedPackages:
   isDirectDependency: 1
   version: 1.0.0
   source: 2
-  resolvedPath: C:\Users\hbahe\Documents\Repo\Treasure-Thieves\Treasure Thieves\Library\PackageCache\com.unity.modules.vehicles@1.0.0
+  resolvedPath: D:\Users\tucha\Documents\GitHub\Treasure-Thieves\Treasure Thieves\Library\PackageCache\com.unity.modules.vehicles@1.0.0
   assetPath: Packages/com.unity.modules.vehicles
   name: com.unity.modules.vehicles
   displayName: Vehicles
@@ -2418,7 +2409,7 @@ m_ResolvedPackages:
   isDirectDependency: 1
   version: 1.0.0
   source: 2
-  resolvedPath: C:\Users\hbahe\Documents\Repo\Treasure-Thieves\Treasure Thieves\Library\PackageCache\com.unity.modules.video@1.0.0
+  resolvedPath: D:\Users\tucha\Documents\GitHub\Treasure-Thieves\Treasure Thieves\Library\PackageCache\com.unity.modules.video@1.0.0
   assetPath: Packages/com.unity.modules.video
   name: com.unity.modules.video
   displayName: Video
@@ -2481,7 +2472,7 @@ m_ResolvedPackages:
   isDirectDependency: 1
   version: 1.0.0
   source: 2
-  resolvedPath: C:\Users\hbahe\Documents\Repo\Treasure-Thieves\Treasure Thieves\Library\PackageCache\com.unity.modules.vr@1.0.0
+  resolvedPath: D:\Users\tucha\Documents\GitHub\Treasure-Thieves\Treasure Thieves\Library\PackageCache\com.unity.modules.vr@1.0.0
   assetPath: Packages/com.unity.modules.vr
   name: com.unity.modules.vr
   displayName: VR
@@ -2546,7 +2537,7 @@ m_ResolvedPackages:
   isDirectDependency: 1
   version: 1.0.0
   source: 2
-  resolvedPath: C:\Users\hbahe\Documents\Repo\Treasure-Thieves\Treasure Thieves\Library\PackageCache\com.unity.modules.wind@1.0.0
+  resolvedPath: D:\Users\tucha\Documents\GitHub\Treasure-Thieves\Treasure Thieves\Library\PackageCache\com.unity.modules.wind@1.0.0
   assetPath: Packages/com.unity.modules.wind
   name: com.unity.modules.wind
   displayName: Wind
@@ -2597,7 +2588,7 @@ m_ResolvedPackages:
   isDirectDependency: 1
   version: 1.0.0
   source: 2
-  resolvedPath: C:\Users\hbahe\Documents\Repo\Treasure-Thieves\Treasure Thieves\Library\PackageCache\com.unity.modules.xr@1.0.0
+  resolvedPath: D:\Users\tucha\Documents\GitHub\Treasure-Thieves\Treasure Thieves\Library\PackageCache\com.unity.modules.xr@1.0.0
   assetPath: Packages/com.unity.modules.xr
   name: com.unity.modules.xr
   displayName: XR
@@ -2660,7 +2651,7 @@ m_ResolvedPackages:
   isDirectDependency: 0
   version: 1.0.0
   source: 2
-  resolvedPath: C:\Users\hbahe\Documents\Repo\Treasure-Thieves\Treasure Thieves\Library\PackageCache\com.unity.modules.subsystems@1.0.0
+  resolvedPath: D:\Users\tucha\Documents\GitHub\Treasure-Thieves\Treasure Thieves\Library\PackageCache\com.unity.modules.subsystems@1.0.0
   assetPath: Packages/com.unity.modules.subsystems
   name: com.unity.modules.subsystems
   displayName: Subsystems
@@ -2715,7 +2706,7 @@ m_ResolvedPackages:
   isDirectDependency: 0
   version: 1.0.0
   source: 2
-  resolvedPath: C:\Users\hbahe\Documents\Repo\Treasure-Thieves\Treasure Thieves\Library\PackageCache\com.unity.modules.uielementsnative@1.0.0
+  resolvedPath: D:\Users\tucha\Documents\GitHub\Treasure-Thieves\Treasure Thieves\Library\PackageCache\com.unity.modules.uielementsnative@1.0.0
   assetPath: Packages/com.unity.modules.uielementsnative
   name: com.unity.modules.uielementsnative
   displayName: UIElements Native
@@ -2777,7 +2768,7 @@ m_ResolvedPackages:
   isDirectDependency: 0
   version: 1.0.6
   source: 1
-  resolvedPath: C:\Users\hbahe\Documents\Repo\Treasure-Thieves\Treasure Thieves\Library\PackageCache\com.unity.ext.nunit@1.0.6
+  resolvedPath: D:\Users\tucha\Documents\GitHub\Treasure-Thieves\Treasure Thieves\Library\PackageCache\com.unity.ext.nunit@1.0.6
   assetPath: Packages/com.unity.ext.nunit
   name: com.unity.ext.nunit
   displayName: Custom NUnit
@@ -2836,7 +2827,7 @@ m_ResolvedPackages:
   isDirectDependency: 0
   version: 2.0.0
   source: 1
-  resolvedPath: C:\Users\hbahe\Documents\Repo\Treasure-Thieves\Treasure Thieves\Library\PackageCache\com.unity.nuget.newtonsoft-json@2.0.0
+  resolvedPath: D:\Users\tucha\Documents\GitHub\Treasure-Thieves\Treasure Thieves\Library\PackageCache\com.unity.nuget.newtonsoft-json@2.0.0
   assetPath: Packages/com.unity.nuget.newtonsoft-json
   name: com.unity.nuget.newtonsoft-json
   displayName: Newtonsoft Json
@@ -2845,7 +2836,7 @@ m_ResolvedPackages:
     email: 
     url: 
   category: 
-  type: 
+  type: library
   description: 'Newtonsoft Json for use in Unity projects and Unity packages. Currently
     synced to version 12.0.2.
 
@@ -2860,14 +2851,6 @@ m_ResolvedPackages:
   errors: []
   versions:
     all:
-    - 1.0.0-preview.2
-    - 1.0.0-preview.3
-    - 1.0.0-preview.4
-    - 1.0.1-preview.1
-    - 1.1.2
-    - 2.0.0-preview
-    - 2.0.0-preview.1
-    - 2.0.0-preview.2
     - 2.0.0
     compatible:
     - 2.0.0
@@ -2887,7 +2870,7 @@ m_ResolvedPackages:
   entitlements:
     isAllowed: 1
   isAssetStorePackage: 0
-  datePublishedTicks: 637237898320000000
+  datePublishedTicks: 0
   documentationUrl: 
   hasRepository: 1
   repository:

@@ -12,10 +12,13 @@ public class PlayerController : MonoBehaviourPun
     [SerializeField]
     private Transform fpcam;    // first person camera
     [SerializeField]
-    private Camera topcam; //top view camera
+    private Camera topcam; // top view camera
 
     [SerializeField]
     TextMesh nickname;
+
+    bool pickUpTreasure = false; // Check if the Player can pick up the Treasure
+    public bool carrying = false; // Player is carrying the Treasure, also used to notify the treasure that it is being carried
 
     // Start is called before the first frame update
     void Start()
@@ -57,6 +60,18 @@ public class PlayerController : MonoBehaviourPun
             transform.Rotate(new Vector3(0, turn * turnSpeed * Time.deltaTime, 0));
             if (fpcam != null)
                 fpcam.Rotate(new Vector3(-tilt * tiltSpeed * Time.deltaTime, 0));
+
+
+            if (Input.GetKeyDown(KeyCode.F))
+            {
+                //If the player can pickup the treasure
+                if (pickUpTreasure)
+                {
+                    carrying = true;
+                    Debug.Log("Pickup Treasure");
+                }
+            }
+
         }
 
 
@@ -67,6 +82,21 @@ public class PlayerController : MonoBehaviourPun
             //nicknames of other players are always facing towards me
             nickname.transform.LookAt(Camera.current.transform);
             nickname.transform.Rotate(0, 180, 0);
+        }
+    }
+
+    //The Treasure Trigger will tell the player if it can be picked up
+    public void NotifyPickup(bool canyou) 
+    {
+
+        pickUpTreasure = canyou;
+        if (canyou)
+        {
+            Debug.Log("You can pick up Treasure");
+        }
+        else 
+        {
+            Debug.Log("You cannot pick up Treasure");
         }
     }
 }

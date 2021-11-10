@@ -322,6 +322,7 @@ MonoBehaviour:
   fpcam: {fileID: 1758694879877216123}
   topcam: {fileID: 0}
   nickname: {fileID: 4017912050557711365}
+  carrying: 0
 --- !u!114 &7586462866617077875
 MonoBehaviour:
   m_ObjectHideFlags: 0

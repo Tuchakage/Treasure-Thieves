@@ -94,67 +94,67 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 1524}
     - Class: 114
-      Script: {instanceID: 1690}
+      Script: {instanceID: 1576}
     - Class: 114
-      Script: {instanceID: 1730}
+      Script: {instanceID: 1616}
     - Class: 114
-      Script: {instanceID: 1878}
+      Script: {instanceID: 1764}
     - Class: 114
-      Script: {instanceID: 2644}
+      Script: {instanceID: 2530}
     - Class: 114
-      Script: {instanceID: 2688}
+      Script: {instanceID: 2574}
     - Class: 114
-      Script: {instanceID: 2894}
+      Script: {instanceID: 2780}
     - Class: 114
-      Script: {instanceID: 2938}
+      Script: {instanceID: 2824}
     - Class: 114
-      Script: {instanceID: 3094}
+      Script: {instanceID: 2980}
     - Class: 114
-      Script: {instanceID: 3174}
+      Script: {instanceID: 3060}
     - Class: 114
-      Script: {instanceID: 3886}
+      Script: {instanceID: 3582}
     - Class: 114
-      Script: {instanceID: 3888}
+      Script: {instanceID: 3774}
     - Class: 114
-      Script: {instanceID: 4048}
+      Script: {instanceID: 3776}
     - Class: 114
-      Script: {instanceID: 4220}
+      Script: {instanceID: 3936}
     - Class: 114
-      Script: {instanceID: 5040}
+      Script: {instanceID: 4108}
     - Class: 114
-      Script: {instanceID: 5064}
+      Script: {instanceID: 4928}
     - Class: 114
-      Script: {instanceID: 5174}
+      Script: {instanceID: 4952}
     - Class: 114
-      Script: {instanceID: 5318}
+      Script: {instanceID: 5062}
     - Class: 114
-      Script: {instanceID: 5346}
+      Script: {instanceID: 5206}
     - Class: 114
-      Script: {instanceID: 5474}
+      Script: {instanceID: 5234}
     - Class: 114
-      Script: {instanceID: 5514}
+      Script: {instanceID: 5362}
     - Class: 114
-      Script: {instanceID: 5692}
+      Script: {instanceID: 5402}
     - Class: 114
-      Script: {instanceID: 6150}
+      Script: {instanceID: 5580}
     - Class: 114
-      Script: {instanceID: 6158}
+      Script: {instanceID: 6038}
     - Class: 114
-      Script: {instanceID: 6728}
+      Script: {instanceID: 6046}
     - Class: 114
-      Script: {instanceID: 6850}
+      Script: {instanceID: 6616}
     - Class: 114
-      Script: {instanceID: 7212}
+      Script: {instanceID: 6738}
     - Class: 114
-      Script: {instanceID: 7564}
+      Script: {instanceID: 7100}
     - Class: 114
-      Script: {instanceID: 7686}
+      Script: {instanceID: 7452}
     - Class: 114
-      Script: {instanceID: 7786}
+      Script: {instanceID: 7574}
     - Class: 114
-      Script: {instanceID: 7970}
+      Script: {instanceID: 7674}
     - Class: 114
-      Script: {instanceID: 60938}
+      Script: {instanceID: 7858}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -754,6 +754,12 @@ ScriptsOnlyBuild:
     assemblyName: PhotonUnityNetworking.Demos.dll
     namespaceName: Photon.Pun.Demo.Cockpit.Forms
     className: SetRoomCustomPropertyUIForm
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: TreasureTrigger
   - hash:
       serializedVersion: 2
       Hash: 2574ac7d50617d23cdefe4ad22f5e1ad
@@ -1900,12 +1906,6 @@ ScriptsOnlyBuild:
     assemblyName: Unity.VisualScripting.Core.dll
     namespaceName: Unity.VisualScripting
     className: UnityOnSliderValueChangedMessageListener
-  - hash:
-      serializedVersion: 2
-      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: TreasureTrigger
   platform: 19
   scenePathNames:
   - Assets/Scenes/SampleScene.unity

@@ -447,6 +447,7 @@ MonoBehaviour:
   fpcam: {fileID: 4875361649284038005}
   topcam: {fileID: 0}
   nickname: {fileID: 7782956291579903499}
+  pickUpTreasure: 0
   carrying: 0
 --- !u!114 &3641274589086292605
 MonoBehaviour:

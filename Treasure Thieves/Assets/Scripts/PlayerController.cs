@@ -17,6 +17,7 @@ public class PlayerController : MonoBehaviourPun
     [SerializeField]
     TextMesh nickname;
 
+    [SerializeField]
     bool pickUpTreasure = false; // Check if the Player can pick up the Treasure
     public bool carrying = false; // Player is carrying the Treasure, also used to notify the treasure that it is being carried
 
@@ -67,11 +68,28 @@ public class PlayerController : MonoBehaviourPun
                 //If the player can pickup the treasure
                 if (pickUpTreasure)
                 {
+                    //Start Carrying the Treasure
                     carrying = true;
+                    //Cannot pick up the treasure again because its already holding it
+                    pickUpTreasure = false;
                     Debug.Log("Pickup Treasure");
                 }
             }
+            else if (Input.GetKeyUp(KeyCode.F)) 
+            {
+                //If the Treasure cannot be picked up yet and you try to pick something up make sure the carrying variable is false so that the player cant just walk and pickup the Treasure
+                if (!pickUpTreasure && !carrying) 
+                {
+                    //Make sure the player cant pick it up
+                    carrying = false;
+                }
+            }
 
+            if (Input.GetKeyDown(KeyCode.G))
+            {
+                carrying = false;
+                //Debug.Log("Drop");
+            }
         }
 
 

@@ -317,6 +317,7 @@
 "Assets/Photon/PhotonRealtime/Demos/DemoLoadBalancing/ConnectAndJoinRandomLb.cs"
 "Assets/Scripts/BasicEnemyAI.cs"
 "Assets/Scripts/DestroyParticles.cs"
+"Assets/Scripts/Goal.cs"
 "Assets/Scripts/Health.cs"
 "Assets/Scripts/NavScript.cs"
 "Assets/Scripts/NetworkManager.cs"

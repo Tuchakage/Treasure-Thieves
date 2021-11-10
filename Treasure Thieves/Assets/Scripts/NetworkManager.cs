@@ -6,7 +6,7 @@ using Photon.Realtime;
 using UnityEngine.UI;
 
 //This script inherits from MonoBehaviourPunCallbacks instead of just MonoBehaviour
-public class NetworkManager : MonoBehaviourPunCallbacks
+public class NetworkManager : MonoBehaviourPunCallbacks, IPunObservable
 {
     //Max Players in a room
     [SerializeField]
@@ -14,13 +14,15 @@ public class NetworkManager : MonoBehaviourPunCallbacks
 
     //Variables to connect our Network Manager to the UI elements
     [SerializeField]
-    private Text nickname, status, room, players;
+    private Text nickname, status, room, players, bluescoretext, redscoretext;
     [SerializeField]
     private Button buttonPlay, buttonLeave, buttonRespawn;
     [SerializeField]
     private InputField playerName;
     [SerializeField]
     private Button blue_SpellClass, blue_WarriorClass, red_SpellClass, red_WarriorClass, redTeam, blueTeam; //Team Buttons
+    [SerializeField]
+    public int bluescore, redscore; //Used for the Scores
 
     public int teamPick = 0;
 
@@ -54,7 +56,9 @@ public class NetworkManager : MonoBehaviourPunCallbacks
         blue_WarriorClass.gameObject.SetActive(false);
         red_SpellClass.gameObject.SetActive(false);
         red_WarriorClass.gameObject.SetActive(false);
-
+        //Make sure the blue and red score is 0
+        bluescore = 0;
+        redscore = 0;
         //If not connected to the Photon Network then connect
         if (!PhotonNetwork.IsConnected)
             PhotonNetwork.ConnectUsingSettings();
@@ -65,6 +69,9 @@ public class NetworkManager : MonoBehaviourPunCallbacks
     {
         if (PhotonNetwork.InRoom)
         {
+            //Keep updating the score
+            bluescoretext.text = "Blue Score: " + bluescore;
+            redscoretext.text = "Red Score: " + redscore;
             nickname.text = "Hello, " + PhotonNetwork.NickName;
             room.text = "Room: " + PhotonNetwork.CurrentRoom.Name;
             players.text = "Players: " + PhotonNetwork.CurrentRoom.PlayerCount + " of " + PhotonNetwork.CurrentRoom.MaxPlayers;
@@ -283,5 +290,22 @@ public class NetworkManager : MonoBehaviourPunCallbacks
         blue_WarriorClass.gameObject.SetActive(false);
         red_SpellClass.gameObject.SetActive(false);
         red_WarriorClass.gameObject.SetActive(false);
+    }
+
+    //This function allows the variables inside to be sent over the network
+    public void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info)
+    {
+        if (stream.IsWriting)
+        {
+            //We own this player so send the other computers the data
+            stream.SendNext(bluescore);
+            stream.SendNext(redscore);
+        }
+        else
+        {
+            //Network player that receives the data
+            bluescore = (int)stream.ReceiveNext();
+            redscore = (int)stream.ReceiveNext();
+        }
     }
 }

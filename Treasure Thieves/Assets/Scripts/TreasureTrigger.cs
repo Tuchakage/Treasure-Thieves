@@ -9,6 +9,7 @@ public class TreasureTrigger : MonoBehaviourPun
     bool canBePickedUp; //Check if the treasure can be picked up
     GameObject parentObject;
     Rigidbody rb; // The Rigidbody of the Treasure Game Object
+
     // Start is called before the first frame update
     void Start()
     {
@@ -16,6 +17,8 @@ public class TreasureTrigger : MonoBehaviourPun
         parentObject = this.gameObject.transform.parent.gameObject;
         //Find the Rigidbody of the Treasure Game Object (Parent GameObject)
         rb = parentObject.GetComponent<Rigidbody>();
+
+
     }
 
     // Update is called once per frame

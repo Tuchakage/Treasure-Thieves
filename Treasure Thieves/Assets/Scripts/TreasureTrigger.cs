@@ -73,6 +73,8 @@ public class TreasureTrigger : MonoBehaviourPun
         rb.useGravity = false;
         //Stops the Game Object from floating away (Puts it in place)
         rb.isKinematic = true;
+        //Set Collision to false
+        parentObject.gameObject.GetComponent<BoxCollider>().isTrigger = true;
         //Gets The Transform of the Player Object
         Transform playerObject = PhotonView.Find(idofplayer).transform;
         //Set the parent GameObject to be the child GameObject of the player
@@ -94,6 +96,8 @@ public class TreasureTrigger : MonoBehaviourPun
         rb.useGravity = true;
         //Allows the Gravity to work for the treasure
         rb.isKinematic = false;
+        //Set Collision to true
+        parentObject.gameObject.GetComponent<BoxCollider>().isTrigger = false;
         Debug.Log("Dropped");
     }
 }

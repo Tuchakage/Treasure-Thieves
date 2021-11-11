@@ -515,6 +515,10 @@ PrefabInstance:
       propertyPath: sceneViewId
       value: 6
       objectReference: {fileID: 0}
+    - target: {fileID: 727567031188102060, guid: 43c95e9787db69a4fa21a9c458b4f7e8, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
     - target: {fileID: 727567031379599888, guid: 43c95e9787db69a4fa21a9c458b4f7e8, type: 3}
       propertyPath: sceneViewId
       value: 9
@@ -571,7 +575,17 @@ PrefabInstance:
       propertyPath: m_Name
       value: BlueTreasure
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 727567031379599894, guid: 43c95e9787db69a4fa21a9c458b4f7e8, type: 3}
+      propertyPath: m_TagString
+      value: BlueTreasure
+      objectReference: {fileID: 0}
+    - target: {fileID: 727567031379599895, guid: 43c95e9787db69a4fa21a9c458b4f7e8, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 1114040585, guid: 43c95e9787db69a4fa21a9c458b4f7e8, type: 3}
+    - {fileID: 1114040586, guid: 43c95e9787db69a4fa21a9c458b4f7e8, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 43c95e9787db69a4fa21a9c458b4f7e8, type: 3}
 --- !u!1 &45176470
 GameObject:
@@ -1767,6 +1781,10 @@ PrefabInstance:
       propertyPath: sceneViewId
       value: 8
       objectReference: {fileID: 0}
+    - target: {fileID: 727567031188102060, guid: 43c95e9787db69a4fa21a9c458b4f7e8, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
     - target: {fileID: 727567031379599888, guid: 43c95e9787db69a4fa21a9c458b4f7e8, type: 3}
       propertyPath: sceneViewId
       value: 1
@@ -1823,7 +1841,17 @@ PrefabInstance:
       propertyPath: m_Name
       value: RedTreasure
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 727567031379599894, guid: 43c95e9787db69a4fa21a9c458b4f7e8, type: 3}
+      propertyPath: m_TagString
+      value: RedTreasure
+      objectReference: {fileID: 0}
+    - target: {fileID: 727567031379599895, guid: 43c95e9787db69a4fa21a9c458b4f7e8, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 1114040585, guid: 43c95e9787db69a4fa21a9c458b4f7e8, type: 3}
+    - {fileID: 1114040586, guid: 43c95e9787db69a4fa21a9c458b4f7e8, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 43c95e9787db69a4fa21a9c458b4f7e8, type: 3}
 --- !u!1 &231898676
 GameObject:

@@ -531,7 +531,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   basicattack: {fileID: 6256681316163809565, guid: 1b9e716b6a6bd1e428c92b909cfde200, type: 3}
-  dmg: 0
+  dmg: 30
   wand: {fileID: 1331065919493969455}
   attackname: 
   timer: 0
@@ -593,6 +593,8 @@ GameObject:
   - component: {fileID: 4875361649284038005}
   - component: {fileID: 4875361649284038007}
   - component: {fileID: 4875361649284038006}
+  - component: {fileID: 5263275613045522773}
+  - component: {fileID: 3645535954864066835}
   m_Layer: 7
   m_Name: Camera
   m_TagString: Untagged
@@ -665,6 +667,45 @@ AudioListener:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4875361649284038004}
   m_Enabled: 1
+--- !u!114 &5263275613045522773
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4875361649284038004}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa584fbee541324448dd18d8409c7a41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ObservedComponentsFoldoutOpen: 1
+  Group: 0
+  prefixField: -1
+  Synchronization: 1
+  OwnershipTransfer: 0
+  observableSearch: 0
+  ObservedComponents:
+  - {fileID: 3645535954864066835}
+  sceneViewId: 0
+  InstantiationId: 0
+  isRuntimeInstantiated: 0
+--- !u!114 &3645535954864066835
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4875361649284038004}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 627855c7f81362d41938ffe0b1475957, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SynchronizePosition: 1
+  m_SynchronizeRotation: 1
+  m_SynchronizeScale: 0
+  m_UseLocal: 1
 --- !u!1 &4875361649354861595
 GameObject:
   m_ObjectHideFlags: 0

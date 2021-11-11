@@ -23,9 +23,9 @@ public class PlayerLook : MonoBehaviourPun
     {
         Cursor.lockState = CursorLockMode.Confined;
         Cursor.visible = false;
-        if (photonView.IsMine)
+        if (!photonView.IsMine)
         {
-            _cam = GetComponentInChildren<Camera>();
+            Destroy(GetComponentInChildren<Camera>().gameObject);
         }
     }
 

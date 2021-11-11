@@ -52,7 +52,7 @@ public class PlayerController : MonoBehaviourPun
         if (photonView.IsMine && fpcam != null)
         {
             //Find the Top View Camera
-            topcam = Camera.main;
+            //topcam = Camera.main;
             //Disable the top view camera
             //topcam.enabled = false;
             //Gets the Camera object and then enable the Camera component

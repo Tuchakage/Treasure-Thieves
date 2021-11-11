@@ -33,8 +33,6 @@ public class PlayerController : MonoBehaviourPun
 
     [SerializeField]
     private Transform fpcam;    // first person camera
-    [SerializeField]
-    private Camera topcam; // top view camera
 
     [SerializeField]
     TextMesh nickname;
@@ -51,11 +49,6 @@ public class PlayerController : MonoBehaviourPun
         //If your player is there and your fp camera is there
         if (photonView.IsMine && fpcam != null)
         {
-            //Find the Top View Camera
-            //topcam = Camera.main;
-            //Disable the top view camera
-            //topcam.enabled = false;
-            //Gets the Camera object and then enable the Camera component
             //Gets player Rigidbody
             _playerRB = GetComponent<Rigidbody>();
             fpcam.GetComponent<Camera>().enabled = true;
@@ -64,8 +57,6 @@ public class PlayerController : MonoBehaviourPun
 
         else  //If its not my client and its another player 
         {
-            //Fp cam wont get enabled for the other players (Camera only sees my POV and not other players)
-            //fpcam.GetComponent<Camera>().enabled = false;
             //Gets the other players nickname
             nickname.text = photonView.Owner.NickName;
         }
@@ -78,24 +69,17 @@ public class PlayerController : MonoBehaviourPun
         //Makes sure i am controlling my own player
         if (photonView.IsMine)
         {
-            /*float forward = Input.GetAxis("Vertical");
-            float turn = Input.GetAxis("Horizontal") + Input.GetAxis("Mouse X");
-            float tilt = Input.GetAxis("Mouse Y");
-            transform.Translate(new Vector3(0, 0, forward * walkSpeed * Time.deltaTime));
-            transform.Rotate(new Vector3(0, turn * turnSpeed * Time.deltaTime, 0));
-            if (fpcam != null)
-                fpcam.Rotate(new Vector3(-tilt * tiltSpeed * Time.deltaTime, 0));*/
             _isGrounded = Physics.Raycast(transform.position, Vector3.down, _playerHeight / 2 + 0.1f);
 
             PlayerInput();
             ControlDrag();
             
             //if the player is on the floor and press the jump key then the player should jump
-            if (Input.GetKeyDown(_jumpKey) && _isGrounded)
+            /*if (Input.GetKeyDown(_jumpKey) && _isGrounded)
             {
                 //RENABLE AFTER DEMO
-                //Jump();
-            }
+                Jump();
+            }*/
             
             if (Input.GetKeyDown(KeyCode.F))
             {
@@ -158,10 +142,10 @@ public class PlayerController : MonoBehaviourPun
         {
             _playerRB.AddForce(_movementMultiplier * _moveSpeed * _moveDir.normalized, ForceMode.Acceleration);
         }
-        else if (!_isGrounded)
+        /*else if (!_isGrounded)
         {
             _playerRB.AddForce(_movementMultiplier * _airMultiplier * _moveSpeed * _moveDir.normalized, ForceMode.Acceleration);
-        }
+        }*/
     }
 
     //Adding drag to the player to not make them move as if they are floating
@@ -171,17 +155,18 @@ public class PlayerController : MonoBehaviourPun
         {
             _playerRB.drag = _groundDrag;
         }
-        else
+        /*else
         {
             _playerRB.drag = _airDrag;
-        }
+        }*/
     }
 
     //Player Jump
-    void Jump()
+    /*void Jump()
     {
         _playerRB.AddForce(transform.up * _jumpForce, ForceMode.Impulse);    
     }
+    */
     
     //The Treasure Trigger will tell the player if it can be picked up
     public void NotifyPickup(bool canyou) 

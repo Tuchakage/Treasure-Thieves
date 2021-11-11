@@ -58,6 +58,6 @@ public class PlayerLook : MonoBehaviourPun
         _yRot += _mouseX * _sensX * _multiplier;
         _xRot -= _mouseY * _sensY * _multiplier;
 
-        _xRot = Mathf.Clamp(_xRot, 45f, 45f);
+        _xRot = Mathf.Clamp(_xRot, 15f, 15f);
     }
 }

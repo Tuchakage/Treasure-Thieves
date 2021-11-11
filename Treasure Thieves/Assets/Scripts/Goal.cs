@@ -12,16 +12,10 @@ public class Goal : MonoBehaviourPun
         nm = GameObject.Find("NetworkManager").GetComponent<NetworkManager>();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     private void OnTriggerEnter(Collider col)
     {
         //If the Treasure is dropped into the Blue Goal
-        if (this.gameObject.name == "Blue Goal Trigger" && col.gameObject.tag == "Treasure")
+        if (this.gameObject.name == "Blue Goal Trigger" && col.gameObject.tag == "RedTreasure")
         {
             //Blue Team will gain a point
             photonView.RPC("IncreaseBlueScore", RpcTarget.All);
@@ -30,7 +24,7 @@ public class Goal : MonoBehaviourPun
             photonView.RPC("DestroyObject", RpcTarget.All, col.gameObject.GetComponent<PhotonView>().ViewID);
 
         }
-        else if (this.gameObject.name == "Red Goal Trigger" && col.gameObject.tag == "Treasure") // The treasure is dropped into the Red Goal
+        else if (this.gameObject.name == "Red Goal Trigger" && col.gameObject.tag == "BlueTreasure") // The treasure is dropped into the Red Goal
         {
             //red Team will gain a point
             photonView.RPC("IncreaseRedScore", RpcTarget.All);

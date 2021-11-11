@@ -5,7 +5,8 @@ TagManager:
   serializedVersion: 2
   tags:
   - Basic Attack
-  - Treasure
+  - RedTreasure
+  - BlueTreasure
   layers:
   - Default
   - TransparentFX

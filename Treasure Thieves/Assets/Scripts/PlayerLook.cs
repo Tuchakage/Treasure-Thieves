@@ -27,6 +27,10 @@ public class PlayerLook : MonoBehaviourPun
         {
             Destroy(GetComponentInChildren<Camera>().gameObject);
         }
+        else
+        {
+            _cam = GetComponentInChildren<Camera>();
+        }
     }
 
     // Update is called once per frame

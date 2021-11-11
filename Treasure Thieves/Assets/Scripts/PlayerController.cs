@@ -1,13 +1,35 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Photon.Pun;
+using UnityEngine.AI;
+
 public class PlayerController : MonoBehaviourPun
 {
     // Link: https://canvas.kingston.ac.uk/courses/19811/pages/pun-guided-programming-part-3-multiplayer-movement
-    public float turnSpeed = 180;
-    public float tiltSpeed = 180;
-    public float walkSpeed = 1;
+    //public float turnSpeed = 180;
+    //public float tiltSpeed = 180;
+    //public float walkSpeed = 1;
+
+    [Header("PlayerMovement")] 
+    public float _moveSpeed = 5f; //Player movement speed;
+    [SerializeField] private float _horizontalMovement;
+    [SerializeField] private float _verticalMovement;
+    [SerializeField] private float _movementMultiplier = 10f;
+    [SerializeField] private float _airMultiplier = 0.4f;
+    [SerializeField] private Vector3 _moveDir; //Player move direction
+    [SerializeField] private Rigidbody _playerRB; //Player Rigidbody
+
+    [Header("PlayerJumping")] 
+    [SerializeField] private float _playerHeight = 2f;
+    [SerializeField] private bool _isGrounded;
+    [SerializeField] private float _jumpForce;
+    [SerializeField] private float _groundDrag = 6f; //Player ground Drag
+    [SerializeField] private float _airDrag = 2f; //Player Air Drag
+    
+    [Header("Keybinds")]
+    [SerializeField] private KeyCode _jumpKey = KeyCode.Space;
 
     [SerializeField]
     private Transform fpcam;    // first person camera
@@ -24,7 +46,7 @@ public class PlayerController : MonoBehaviourPun
     // Start is called before the first frame update
     void Start()
     {
-         Cursor.lockState = CursorLockMode.Confined;
+
         //photonView.IsMine - It only gets your client and only i can control it
         //If your player is there and your fp camera is there
         if (photonView.IsMine && fpcam != null)
@@ -34,6 +56,8 @@ public class PlayerController : MonoBehaviourPun
             //Disable the top view camera
             //topcam.enabled = false;
             //Gets the Camera object and then enable the Camera component
+            //Gets player Rigidbody
+            _playerRB = GetComponent<Rigidbody>();
             fpcam.GetComponent<Camera>().enabled = true;
             nickname.text = " ";
         }
@@ -54,15 +78,24 @@ public class PlayerController : MonoBehaviourPun
         //Makes sure i am controlling my own player
         if (photonView.IsMine)
         {
-            float forward = Input.GetAxis("Vertical");
+            /*float forward = Input.GetAxis("Vertical");
             float turn = Input.GetAxis("Horizontal") + Input.GetAxis("Mouse X");
             float tilt = Input.GetAxis("Mouse Y");
             transform.Translate(new Vector3(0, 0, forward * walkSpeed * Time.deltaTime));
             transform.Rotate(new Vector3(0, turn * turnSpeed * Time.deltaTime, 0));
             if (fpcam != null)
-                fpcam.Rotate(new Vector3(-tilt * tiltSpeed * Time.deltaTime, 0));
+                fpcam.Rotate(new Vector3(-tilt * tiltSpeed * Time.deltaTime, 0));*/
+            _isGrounded = Physics.Raycast(transform.position, Vector3.down, _playerHeight / 2 + 0.1f);
 
-
+            PlayerInput();
+            ControlDrag();
+            
+            //if the player is on the floor and press the jump key then the player should jump
+            if (Input.GetKeyDown(_jumpKey) && _isGrounded)
+            {
+                Jump();
+            }
+            
             if (Input.GetKeyDown(KeyCode.F))
             {
                 //If the player can pickup the treasure
@@ -103,6 +136,52 @@ public class PlayerController : MonoBehaviourPun
         }
     }
 
+    private void FixedUpdate()
+    {
+        MovePlayer();
+    }
+
+    //Player Movement Input
+    void PlayerInput()
+    {
+        _horizontalMovement = Input.GetAxisRaw("Horizontal");
+        _verticalMovement = Input.GetAxisRaw("Vertical");
+
+        _moveDir = transform.forward * _verticalMovement + transform.right * _horizontalMovement;
+    }
+
+    //Move the player using force
+    void MovePlayer()
+    {
+        if (_isGrounded)
+        {
+            _playerRB.AddForce(_movementMultiplier * _moveSpeed * _moveDir.normalized, ForceMode.Acceleration);
+        }
+        else if (!_isGrounded)
+        {
+            _playerRB.AddForce(_movementMultiplier * _airMultiplier * _moveSpeed * _moveDir.normalized, ForceMode.Acceleration);
+        }
+    }
+
+    //Adding drag to the player to not make them move as if they are floating
+    void ControlDrag()
+    {
+        if (_isGrounded)
+        {
+            _playerRB.drag = _groundDrag;
+        }
+        else
+        {
+            _playerRB.drag = _airDrag;
+        }
+    }
+
+    //Player Jump
+    void Jump()
+    {
+        _playerRB.AddForce(transform.up * _jumpForce, ForceMode.Impulse);    
+    }
+    
     //The Treasure Trigger will tell the player if it can be picked up
     public void NotifyPickup(bool canyou) 
     {

@@ -35,7 +35,7 @@ public class Spellcaster : MonoBehaviourPunCallbacks, IPunObservable
                 timer -= Time.deltaTime;
             }
 
-            if (Input.GetKeyDown(KeyCode.Space))
+            if (Input.GetMouseButton(1))
             {
 
                 //If there is no cooldown (Its at 0) then player can use the basic attack

@@ -8,6 +8,7 @@ ScriptsOnlyBuild:
     - NetworkManager
     - OwnerOfSpell
     - PlayerController
+    - PlayerLook
     - Spellcaster
     - Teams
     - TreasureTrigger
@@ -30,6 +31,7 @@ ScriptsOnlyBuild:
     - Photon.Pun.PhotonView
     - Photon.Pun.ServerSettings
     Unity.Rider.Editor.dll:
+    - Packages.Rider.Editor.RiderScriptEditorData
     - Packages.Rider.Editor.UnitTesting.CallbackData
     UnityEditor.TestRunner.dll:
     - UnityEditor.TestTools.TestRunner.Api.CallbacksHolder
@@ -158,9 +160,13 @@ ScriptsOnlyBuild:
       Script: {instanceID: 7790}
     - Class: 114
       Script: {instanceID: 7974}
+    - Class: 114
+      Script: {instanceID: 95516}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
+      Script: {instanceID: 0}
+    - Class: 134
       Script: {instanceID: 0}
     - Class: 135
       Script: {instanceID: 0}
@@ -1833,7 +1839,7 @@ ScriptsOnlyBuild:
     className: PunTurnManager
   - hash:
       serializedVersion: 2
-      Hash: 43c7c46510c2f77580673c0548e28f4b
+      Hash: db17f7536d47dc57f9f737a875792f64
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: PlayerController
@@ -1915,8 +1921,14 @@ ScriptsOnlyBuild:
     assemblyName: Unity.VisualScripting.Core.dll
     namespaceName: Unity.VisualScripting
     className: UnityOnSliderValueChangedMessageListener
+  - hash:
+      serializedVersion: 2
+      Hash: 3ae90c347eb6f65186b268e8a1d0941a
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: PlayerLook
   platform: 19
   scenePathNames:
   - Assets/Scenes/SampleScene.unity
-  playerPath: D:/Users/tucha/Documents/^ Y3 Uni/Multiplayer and Game Console Programming/Testing/Jarek
+  playerPath: C:/Users/hbahe/Documents/Repo/Treasure-Thieves/Treasure Thieves/BuildVersion/Jarek
     Lesson 1.exe

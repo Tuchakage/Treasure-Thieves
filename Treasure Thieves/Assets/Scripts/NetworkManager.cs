@@ -4,6 +4,8 @@ using UnityEngine;
 using Photon.Pun;
 using Photon.Realtime;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
+using ExitGames.Client.Photon;
 
 //This script inherits from MonoBehaviourPunCallbacks instead of just MonoBehaviour
 public class NetworkManager : MonoBehaviourPunCallbacks, IPunObservable
@@ -14,7 +16,7 @@ public class NetworkManager : MonoBehaviourPunCallbacks, IPunObservable
 
     //Variables to connect our Network Manager to the UI elements
     [SerializeField]
-    private Text nickname, status, room, players, bluescoretext, redscoretext;
+    private Text nickname, status, room, players, bluescoretext, redscoretext, bluewinnertext, redwinnertext;
     [SerializeField]
     private Button buttonPlay, buttonLeave, buttonRespawn;
     [SerializeField]
@@ -25,7 +27,7 @@ public class NetworkManager : MonoBehaviourPunCallbacks, IPunObservable
     public int bluescore, redscore; //Used for the Scores
 
     public int teamPick = 0;
-
+    public bool win = false; // Used to identify if there is a winner
     // Game Object of player
     public GameObject player;
     //Checks if the player is alive
@@ -59,6 +61,9 @@ public class NetworkManager : MonoBehaviourPunCallbacks, IPunObservable
         //Make sure the blue and red score is 0
         bluescore = 0;
         redscore = 0;
+        //Make sure the winner Text is empty
+        bluewinnertext.text = " ";
+        redwinnertext.text = " ";
         //If not connected to the Photon Network then connect
         if (!PhotonNetwork.IsConnected)
             PhotonNetwork.ConnectUsingSettings();
@@ -83,7 +88,7 @@ public class NetworkManager : MonoBehaviourPunCallbacks, IPunObservable
             foreach (var item in mydict)
                 players.text += string.Format("{0,2}. {1}\n", (i++), item.Value.NickName);
 
-            if (!isAlive) 
+            if (!isAlive)
             {
                 buttonRespawn.gameObject.SetActive(true);
 
@@ -94,7 +99,8 @@ public class NetworkManager : MonoBehaviourPunCallbacks, IPunObservable
                     blue_WarriorClass.gameObject.SetActive(true);
                     red_SpellClass.gameObject.SetActive(false);
                     red_WarriorClass.gameObject.SetActive(false);
-                } else if (teamPick == 2)
+                }
+                else if (teamPick == 2)
                 {
                     red_SpellClass.gameObject.SetActive(true);
                     red_WarriorClass.gameObject.SetActive(true);
@@ -102,6 +108,14 @@ public class NetworkManager : MonoBehaviourPunCallbacks, IPunObservable
                     blue_WarriorClass.gameObject.SetActive(false);
                 }
 
+            }
+
+            //Keep checking the score
+            CheckScore();
+            //If there is a winner then End the game
+            if (win)
+            {
+                EndGame();
             }
 
         }
@@ -122,7 +136,7 @@ public class NetworkManager : MonoBehaviourPunCallbacks, IPunObservable
         Debug.Log("OnConnectedToMaster was called by PUN.");
         status.text = "Connected to Photon.";
 
-     
+
         //Do not show the Play button
         buttonPlay.gameObject.SetActive(false);
         //Show the box where players can write their own names
@@ -184,6 +198,7 @@ public class NetworkManager : MonoBehaviourPunCallbacks, IPunObservable
         redTeam.gameObject.SetActive(false);
         blueTeam.gameObject.SetActive(false);
 
+
         //Disable Class Changing Buttons
         blue_SpellClass.gameObject.SetActive(false);
         blue_WarriorClass.gameObject.SetActive(false);
@@ -211,6 +226,47 @@ public class NetworkManager : MonoBehaviourPunCallbacks, IPunObservable
         status.text = otherPlayer.NickName + " has just left.";
     }
 
+    public override void OnLeftRoom()
+    {
+        base.OnLeftRoom();
+        //Restart the original scene
+        SceneManager.LoadScene(0);
+    }
+    private void EndGame()
+    {
+        //Disable The Room
+        if (PhotonNetwork.IsMasterClient)
+        {
+            PhotonNetwork.DestroyAll();
+            PhotonNetwork.CurrentRoom.IsVisible = false;
+            PhotonNetwork.CurrentRoom.IsOpen = false;
+        }
+        //Wait X seconds and then return to the main menu
+        StartCoroutine(End(3f));
+    }
+
+    private IEnumerator End(float p_wait)
+    {
+        yield return new WaitForSeconds(p_wait);
+        //Disconnect
+        PhotonNetwork.AutomaticallySyncScene = false;
+        PhotonNetwork.LeaveRoom();
+    }
+
+    //Checks to see who the winner is
+    void CheckScore()
+    {
+        if (bluescore == 3)
+        {
+            win = true;
+            bluewinnertext.text = "BLUE TEAM WINS";
+        }
+        else if (redscore == 3)
+        {
+            win = true;
+            redwinnertext.text = "RED TEAM WINS";
+        }
+    }
 
     public void blue_Team_Pick()
     {
@@ -249,7 +305,7 @@ public class NetworkManager : MonoBehaviourPunCallbacks, IPunObservable
     {
         //Change player prefab to spellcaster
         player = bp_SC_Prefab;
-       //Debug.Log("Blue Team: Class type changed to Spellcaster");
+        //Debug.Log("Blue Team: Class type changed to Spellcaster");
     }
     public void pick_BP_Warrior_Class()
     {
@@ -271,7 +327,7 @@ public class NetworkManager : MonoBehaviourPunCallbacks, IPunObservable
         //Debug.Log("Class type changed to warrior");
     }
 
-    public void Respawn() 
+    public void Respawn()
     {
         //Spawn Players
         PhotonNetwork.Instantiate(player.name,
@@ -300,12 +356,14 @@ public class NetworkManager : MonoBehaviourPunCallbacks, IPunObservable
             //We own this player so send the other computers the data
             stream.SendNext(bluescore);
             stream.SendNext(redscore);
+            stream.SendNext(win);
         }
         else
         {
             //Network player that receives the data
             bluescore = (int)stream.ReceiveNext();
             redscore = (int)stream.ReceiveNext();
+            win = (bool)stream.ReceiveNext();
         }
     }
 }

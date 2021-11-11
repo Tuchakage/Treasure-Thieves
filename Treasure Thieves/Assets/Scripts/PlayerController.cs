@@ -13,7 +13,7 @@ public class PlayerController : MonoBehaviourPun
     //public float walkSpeed = 1;
 
     [Header("PlayerMovement")] 
-    public float _moveSpeed = 5f; //Player movement speed;
+    public float _moveSpeed = 10f; //Player movement speed;
     [SerializeField] private float _horizontalMovement;
     [SerializeField] private float _verticalMovement;
     [SerializeField] private float _movementMultiplier = 10f;
@@ -93,7 +93,8 @@ public class PlayerController : MonoBehaviourPun
             //if the player is on the floor and press the jump key then the player should jump
             if (Input.GetKeyDown(_jumpKey) && _isGrounded)
             {
-                Jump();
+                //RENABLE AFTER DEMO
+                //Jump();
             }
             
             if (Input.GetKeyDown(KeyCode.F))

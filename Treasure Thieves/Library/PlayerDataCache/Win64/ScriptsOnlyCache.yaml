@@ -31,7 +31,6 @@ ScriptsOnlyBuild:
     - Photon.Pun.PhotonView
     - Photon.Pun.ServerSettings
     Unity.Rider.Editor.dll:
-    - Packages.Rider.Editor.RiderScriptEditorData
     - Packages.Rider.Editor.UnitTesting.CallbackData
     UnityEditor.TestRunner.dll:
     - UnityEditor.TestTools.TestRunner.Api.CallbacksHolder
@@ -97,71 +96,71 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 1524}
     - Class: 114
-      Script: {instanceID: 1580}
+      Script: {instanceID: 1694}
     - Class: 114
-      Script: {instanceID: 1620}
+      Script: {instanceID: 1734}
     - Class: 114
-      Script: {instanceID: 1768}
+      Script: {instanceID: 1882}
     - Class: 114
-      Script: {instanceID: 2288}
+      Script: {instanceID: 2402}
     - Class: 114
-      Script: {instanceID: 2536}
+      Script: {instanceID: 2650}
     - Class: 114
-      Script: {instanceID: 2580}
+      Script: {instanceID: 2694}
     - Class: 114
-      Script: {instanceID: 2786}
+      Script: {instanceID: 2900}
     - Class: 114
-      Script: {instanceID: 2830}
+      Script: {instanceID: 2944}
     - Class: 114
-      Script: {instanceID: 2986}
+      Script: {instanceID: 3100}
     - Class: 114
-      Script: {instanceID: 3066}
+      Script: {instanceID: 3180}
     - Class: 114
-      Script: {instanceID: 3588}
+      Script: {instanceID: 3702}
     - Class: 114
-      Script: {instanceID: 3780}
+      Script: {instanceID: 3894}
     - Class: 114
-      Script: {instanceID: 3782}
+      Script: {instanceID: 3896}
     - Class: 114
-      Script: {instanceID: 3942}
+      Script: {instanceID: 4056}
     - Class: 114
-      Script: {instanceID: 4114}
+      Script: {instanceID: 4228}
     - Class: 114
-      Script: {instanceID: 4934}
+      Script: {instanceID: 5048}
     - Class: 114
-      Script: {instanceID: 4958}
+      Script: {instanceID: 5072}
     - Class: 114
-      Script: {instanceID: 5068}
+      Script: {instanceID: 5182}
     - Class: 114
-      Script: {instanceID: 5212}
+      Script: {instanceID: 5326}
     - Class: 114
-      Script: {instanceID: 5240}
+      Script: {instanceID: 5354}
     - Class: 114
-      Script: {instanceID: 5368}
+      Script: {instanceID: 5482}
     - Class: 114
-      Script: {instanceID: 5408}
+      Script: {instanceID: 5522}
     - Class: 114
-      Script: {instanceID: 5586}
+      Script: {instanceID: 5700}
     - Class: 114
-      Script: {instanceID: 6044}
+      Script: {instanceID: 6158}
     - Class: 114
-      Script: {instanceID: 6052}
+      Script: {instanceID: 6166}
     - Class: 114
-      Script: {instanceID: 6622}
+      Script: {instanceID: 6736}
     - Class: 114
-      Script: {instanceID: 6672}
+      Script: {instanceID: 6786}
     - Class: 114
-      Script: {instanceID: 6746}
+      Script: {instanceID: 6860}
     - Class: 114
-      Script: {instanceID: 7108}
+      Script: {instanceID: 7222}
     - Class: 114
-      Script: {instanceID: 7460}
+      Script: {instanceID: 7574}
     - Class: 114
-      Script: {instanceID: 7582}
+      Script: {instanceID: 7696}
     - Class: 114
-      Script: {instanceID: 7682}
+      Script: {instanceID: 7796}
     - Class: 114
-      Script: {instanceID: 7866}
+      Script: {instanceID: 7980}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -771,7 +770,7 @@ ScriptsOnlyBuild:
     className: SetRoomCustomPropertyUIForm
   - hash:
       serializedVersion: 2
-      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+      Hash: afeb31aeed2009bff87bde433a7ef4b4
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: TreasureTrigger
@@ -1930,5 +1929,5 @@ ScriptsOnlyBuild:
   platform: 19
   scenePathNames:
   - Assets/Scenes/SampleScene.unity
-  playerPath: C:/Users/hbahe/Documents/Repo/Treasure-Thieves/Treasure Thieves/BuildVersion/Jarek
+  playerPath: D:/Users/tucha/Documents/GitHub/Treasure-Thieves/Build Version/Jarek
     Lesson 1.exe

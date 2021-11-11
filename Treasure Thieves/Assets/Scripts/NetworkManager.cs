@@ -33,6 +33,8 @@ public class NetworkManager : MonoBehaviourPunCallbacks, IPunObservable
     //Checks if the player is alive
     public bool isAlive;
 
+    Vector3 spawnLocation; //Set the spawn location
+    Quaternion spawnRotation; //Set Spawn Rotation
     //Prefabs for all character
     [SerializeField] private GameObject bp_SC_Prefab;
     [SerializeField] private GameObject bp_WR_Prefab;
@@ -207,10 +209,10 @@ public class NetworkManager : MonoBehaviourPunCallbacks, IPunObservable
 
         //Spawn Players
         PhotonNetwork.Instantiate(player.name,
-         new Vector3(Random.Range(-15, 15), 1, Random.Range(-15, 15)),
-        Quaternion.Euler(0, Random.Range(-180, 180), 0)
+         new Vector3(spawnLocation.x, 1, spawnLocation.z),
+        Quaternion.Euler(0, spawnRotation.y, 0)
         , 0);
-
+  
         //Player Will Be Alive
         isAlive = true;
 
@@ -256,15 +258,17 @@ public class NetworkManager : MonoBehaviourPunCallbacks, IPunObservable
     //Checks to see who the winner is
     void CheckScore()
     {
-        if (bluescore == 3)
+        if (bluescore == 1)
         {
             win = true;
             bluewinnertext.text = "BLUE TEAM WINS";
+            buttonLeave.gameObject.SetActive(false);
         }
-        else if (redscore == 3)
+        else if (redscore == 1)
         {
             win = true;
             redwinnertext.text = "RED TEAM WINS";
+            buttonLeave.gameObject.SetActive(false);
         }
     }
 
@@ -282,7 +286,10 @@ public class NetworkManager : MonoBehaviourPunCallbacks, IPunObservable
         blue_WarriorClass.gameObject.SetActive(true);
         red_SpellClass.gameObject.SetActive(false);
         red_WarriorClass.gameObject.SetActive(false);
-
+        //Spawn Location For Blue Team
+        spawnLocation = new Vector3(88.551f, 1.07f, 5.1f);
+        //Spawn Rotation For Blue Team
+        spawnRotation = Quaternion.Euler(0, -90, 0);
     }
 
     public void red_Team_Pick()
@@ -299,6 +306,10 @@ public class NetworkManager : MonoBehaviourPunCallbacks, IPunObservable
         red_WarriorClass.gameObject.SetActive(true);
         blue_SpellClass.gameObject.SetActive(false);
         blue_WarriorClass.gameObject.SetActive(false);
+        //Spawn Location For Red Team
+        spawnLocation = new Vector3(-58.29f, 1.07f, 5.1f);
+        //Spawn Rotation For Red Team
+        spawnRotation = Quaternion.Euler(0, 90, 0);
     }
 
     public void pick_BP_Spell_Class()

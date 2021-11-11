@@ -19,7 +19,7 @@ MonoBehaviour:
     width: 1920
     height: 997
   m_ShowMode: 4
-  m_Title: Game
+  m_Title: Scene
   m_RootView: {fileID: 6}
   m_MinSize: {x: 875, y: 300}
   m_MaxSize: {x: 10000, y: 10000}
@@ -48,7 +48,7 @@ MonoBehaviour:
   m_MinSize: {x: 679, y: 492}
   m_MaxSize: {x: 14002, y: 14042}
   vertical: 0
-  controlID: 102
+  controlID: 89
 --- !u!114 &3
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -68,8 +68,8 @@ MonoBehaviour:
     y: 0
     width: 553
     height: 947
-  m_MinSize: {x: 275, y: 50}
-  m_MaxSize: {x: 4000, y: 4000}
+  m_MinSize: {x: 276, y: 71}
+  m_MaxSize: {x: 4001, y: 4021}
   m_ActualView: {fileID: 15}
   m_Panes:
   - {fileID: 15}
@@ -224,7 +224,7 @@ MonoBehaviour:
   m_MinSize: {x: 403, y: 492}
   m_MaxSize: {x: 10001, y: 14042}
   vertical: 1
-  controlID: 103
+  controlID: 16
 --- !u!114 &10
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -249,7 +249,7 @@ MonoBehaviour:
   m_MinSize: {x: 403, y: 221}
   m_MaxSize: {x: 8003, y: 4021}
   vertical: 0
-  controlID: 104
+  controlID: 17
 --- !u!114 &11
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -374,14 +374,14 @@ MonoBehaviour:
   m_LastFolders:
   - Assets/Resources
   m_LastFoldersGridSize: -1
-  m_LastProjectPath: C:\Users\hbahe\Documents\Repo\Treasure-Thieves\Treasure Thieves
+  m_LastProjectPath: D:\Users\tucha\Documents\GitHub\Treasure-Thieves\Treasure Thieves
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: cc5a0000
-    m_LastClickedID: 23244
-    m_ExpandedIDs: 00000000ca5a0000cc5a0000ce5a0000d05a0000e65a0000
+    m_SelectedIDs: c8eb0000
+    m_LastClickedID: 60360
+    m_ExpandedIDs: 00000000c6eb0000c8eb0000caeb0000cceb0000d2eb000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -409,7 +409,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 00000000ca5a0000cc5a0000ce5a0000d05a0000
+    m_ExpandedIDs: 00000000c6eb0000c8eb0000caeb0000cceb0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -436,7 +436,7 @@ MonoBehaviour:
   m_ListAreaState:
     m_SelectedInstanceIDs: 
     m_LastClickedInstanceID: 0
-    m_HadKeyboardFocusLastEvent: 0
+    m_HadKeyboardFocusLastEvent: 1
     m_ExpandedInstanceIDs: c623000000000000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
@@ -531,9 +531,9 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: 
+      m_SelectedIDs: ece90000
       m_LastClickedID: 0
-      m_ExpandedIDs: c4e0ffff06e1ffff4ce3ffffaaf3ffff5af5ffff9af5ffffe0f7ffff48fbffff
+      m_ExpandedIDs: 5209ffff9209ffffd80bffffe24fffff2250ffff6852ffffc468ffff0469ffff4a6bffff0e96ffff4c96ffffb298ffffa8a0ffffa0f9000046390100ce5c0100f45e0100225f0100
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -593,9 +593,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 111.85, y: 1.0700002, z: 4.7}
+    m_Target: {x: 79.59144, y: 2.3258896, z: 6.674079}
     speed: 2
-    m_Value: {x: 111.85, y: 1.0700002, z: 4.7}
+    m_Value: {x: 79.59144, y: 2.3258896, z: 6.674079}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -642,20 +642,20 @@ MonoBehaviour:
     m_GridAxis: 1
     m_gridOpacity: 0.5
   m_Rotation:
-    m_Target: {x: 0.36230296, y: 0.083721004, z: -0.032683436, w: 0.9277364}
+    m_Target: {x: 0.027897397, y: -0.7288499, z: 0.029771326, w: 0.68348855}
     speed: 2
-    m_Value: {x: 0.36229652, y: 0.083719514, z: -0.032682855, w: 0.92771995}
+    m_Value: {x: 0.027852105, y: -0.72985846, z: 0.029812492, w: 0.6823797}
   m_Size:
-    m_Target: 3.1018913
+    m_Target: 4.166025
     speed: 2
-    m_Value: 3.1018913
+    m_Value: 3.866025
   m_Ortho:
     m_Target: 0
     speed: 2
     m_Value: 0
   m_CameraSettings:
-    m_Speed: 1.1804098
-    m_SpeedNormalized: 0.5899999
+    m_Speed: 2
+    m_SpeedNormalized: 1
     m_SpeedMin: 0.001
     m_SpeedMax: 2
     m_EasingEnabled: 1
@@ -666,7 +666,7 @@ MonoBehaviour:
     m_FarClip: 10000
     m_DynamicClip: 1
     m_OcclusionCulling: 0
-  m_LastSceneViewRotation: {x: -0.04433491, y: -0.95057523, z: 0.26185998, w: -0.16093145}
+  m_LastSceneViewRotation: {x: 0.35893226, y: -0.09913703, z: 0.038379397, w: 0.9273096}
   m_LastSceneViewOrtho: 0
   m_ReplacementShader: {fileID: 0}
   m_ReplacementString: 

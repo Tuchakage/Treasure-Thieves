@@ -5,7 +5,9 @@ using Photon.Pun;
 
 public class TreasureTrigger : MonoBehaviourPun
 {
+    [SerializeField]
     bool isPickedUp; //Check if the Treasure has been picked up
+    [SerializeField]
     bool canBePickedUp; //Check if the treasure can be picked up
     GameObject parentObject;
     Rigidbody rb; // The Rigidbody of the Treasure Game Object
@@ -65,7 +67,20 @@ public class TreasureTrigger : MonoBehaviourPun
             }
         }
     }
+    private void OnTriggerExit(Collider col)
+    {
+        if (col.gameObject.tag == "Player") 
+        {
+            //Get the Player ID of the object 
+            int playerid = col.gameObject.GetComponent<PhotonView>().ViewID;
+            //Get the Player Controller script from the player that has exited The Trigger
+            PlayerController playerController = PhotonView.Find(playerid).GetComponent<PlayerController>();
+         
+            //Tell the player that it cannot pick up the Treasure
+            playerController.NotifyPickup(false);
+        }
 
+    }
     [PunRPC]
     void AttachToPlayer(int idofplayer) 
     {

@@ -32,6 +32,11 @@ public class PlayerLook : MonoBehaviourPun
     // Update is called once per frame
     void Update()
     {
+        if (Input.GetKey(KeyCode.Escape))
+        {
+            Cursor.visible = true;
+        }
+        
         if (photonView.IsMine)
         {
             CameraInput();

@@ -342,10 +342,9 @@ public class NetworkManager : MonoBehaviourPunCallbacks, IPunObservable
     {
         //Spawn Players
         PhotonNetwork.Instantiate(player.name,
-         new Vector3(Random.Range(-15, 15), 1, Random.Range(-15, 15)),
-        Quaternion.Euler(0, Random.Range(-180, 180), 0)
+         new Vector3(spawnLocation.x, 1, spawnLocation.z),
+        Quaternion.Euler(0, spawnRotation.y, 0)
         , 0);
-
         //Player Will Be Alive
         isAlive = true;
 

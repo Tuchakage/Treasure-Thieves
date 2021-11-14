@@ -348,7 +348,6 @@ MonoBehaviour:
   _airDrag: 2
   _jumpKey: 32
   fpcam: {fileID: 1758694879877216123}
-  topcam: {fileID: 0}
   nickname: {fileID: 4017912050557711365}
   pickUpTreasure: 0
   carrying: 0

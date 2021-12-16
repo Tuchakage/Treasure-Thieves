@@ -5994,7 +5994,7 @@ MonoBehaviour:
   win: 0
   player: {fileID: 0}
   isAlive: 0
-  bp_SC_Prefab: {fileID: 4875361648148998235, guid: acedb9da75d1330409a01c45ae58aabc, type: 3}
+  bp_SC_Prefab: {fileID: 6871852172254074157, guid: fbb71b4c2c7a9eb478a65900a5667ab7, type: 3}
   bp_WR_Prefab: {fileID: 1758694878599570005, guid: 446589e845794e44bb06e2afc0073f33, type: 3}
   rp_SC_Prefab: {fileID: 8099395139130336030, guid: cb6834b696b3c9149aad5b2775a63a0a, type: 3}
   rp_WR_Prefab: {fileID: 6527419841132574444, guid: 20d2ea6584494924085a2354d2c727b8, type: 3}

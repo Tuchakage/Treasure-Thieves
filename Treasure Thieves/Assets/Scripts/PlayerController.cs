@@ -93,6 +93,8 @@ public class PlayerController : MonoBehaviourPun
                 {
                     //Start Carrying the Treasure
                     carrying = true;
+                    //Treasure Animation is true
+                    _playeranim.SetBool("Carrying", true);
                     //Cannot pick up the treasure again because its already holding it
                     pickUpTreasure = false;
                     Debug.Log("Pickup Treasure");
@@ -111,6 +113,7 @@ public class PlayerController : MonoBehaviourPun
             if (Input.GetKeyDown(KeyCode.G))
             {
                 carrying = false;
+                _playeranim.SetBool("Carrying", false);
                 //Debug.Log("Drop");
             }
         }

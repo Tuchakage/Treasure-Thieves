@@ -1852,7 +1852,7 @@ GameObject:
   - component: {fileID: 7500949965791469793}
   m_Layer: 0
   m_Name: Blue_Mage
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1974,6 +1974,8 @@ MonoBehaviour:
   timer: 0
   cooldown: 0
   _playeranim: {fileID: 0}
+  pickUpTreasure: 0
+  carrying: 0
 --- !u!114 &6871852171559625586
 MonoBehaviour:
   m_ObjectHideFlags: 0

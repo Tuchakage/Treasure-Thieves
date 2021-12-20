@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Photon.Pun;
 
+[RequireComponent(typeof(Animator))]
 public class Spellcaster : MonoBehaviourPunCallbacks, IPunObservable
 {
     public GameObject basicattack;
@@ -16,6 +17,7 @@ public class Spellcaster : MonoBehaviourPunCallbacks, IPunObservable
     //The max cooldown value (Where the timer will start counting down from
     public float cooldown;
 
+    [SerializeField] Animator _playeranim;
 
     // Start is called before the first frame update
     void Start()
@@ -26,6 +28,10 @@ public class Spellcaster : MonoBehaviourPunCallbacks, IPunObservable
     // Update is called once per frame
     void Update()
     {
+
+        //Grab Player Animator
+        _playeranim = GetComponent<Animator>();
+
         //Makes sure i am controlling my own player
         if (photonView.IsMine) 
         {
@@ -37,13 +43,12 @@ public class Spellcaster : MonoBehaviourPunCallbacks, IPunObservable
 
             if (Input.GetMouseButton(1))
             {
-
                 //If there is no cooldown (Its at 0) then player can use the basic attack
                 if (timer <= 0)
                 {
                     //Shoots out the lightning bolt
-                    photonView.RPC("Shoot", RpcTarget.All);
-                    cooldown = 1.0f;
+                    _playeranim.SetTrigger("Attack1");
+                    cooldown = 5.0f;
                     //Add cooldown to the basic attack
                     timer = cooldown;
                 }
@@ -100,5 +105,15 @@ public class Spellcaster : MonoBehaviourPunCallbacks, IPunObservable
             attackname = (string)stream.ReceiveNext();
 
         }
+    }
+
+    public void BulletShot()
+    {
+        if (photonView.IsMine)
+        {
+            photonView.RPC("Shoot", RpcTarget.All);
+        }
+
+        Debug.Log("SHOOT HAS BEEN FIRED");
     }
 }

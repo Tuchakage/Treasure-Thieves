@@ -5,6 +5,7 @@ using UnityEngine;
 using Photon.Pun;
 using UnityEngine.AI;
 
+[RequireComponent(typeof(Animator))]
 public class PlayerController : MonoBehaviourPun
 {
     // Link: https://canvas.kingston.ac.uk/courses/19811/pages/pun-guided-programming-part-3-multiplayer-movement
@@ -20,6 +21,7 @@ public class PlayerController : MonoBehaviourPun
     [SerializeField] private float _airMultiplier = 0.4f;
     [SerializeField] private Vector3 _moveDir; //Player move direction
     [SerializeField] private Rigidbody _playerRB; //Player Rigidbody
+    [SerializeField] Animator _playeranim; // Player Animation Referrence
 
     [Header("PlayerJumping")] 
     [SerializeField] private float _playerHeight = 2f;
@@ -53,6 +55,9 @@ public class PlayerController : MonoBehaviourPun
             _playerRB = GetComponent<Rigidbody>();
             fpcam.GetComponent<Camera>().enabled = true;
             nickname.text = " ";
+
+            //Grab Player Animator
+            _playeranim = GetComponent<Animator>();
         }
 
         else  //If its not my client and its another player 
@@ -119,6 +124,10 @@ public class PlayerController : MonoBehaviourPun
             nickname.transform.LookAt(Camera.current.transform);
             nickname.transform.Rotate(0, 180, 0);
         }
+
+        //Player Animation Parameter
+        _playeranim.SetFloat("Speed", Mathf.Abs(_moveDir.x));
+
     }
 
     private void FixedUpdate()
@@ -182,4 +191,14 @@ public class PlayerController : MonoBehaviourPun
             Debug.Log("You cannot pick up Treasure");
         }
     }
+
+    public void FootL()
+    {
+
+    }
+
+    public void FootR()
+    {
+
+    }    
 }

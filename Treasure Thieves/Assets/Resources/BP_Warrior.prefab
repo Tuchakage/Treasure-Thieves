@@ -341,6 +341,7 @@ MonoBehaviour:
   _airMultiplier: 10
   _moveDir: {x: 0, y: 0, z: 0}
   _playerRB: {fileID: 2660640258409252353}
+  _playeranim: {fileID: 0}
   _playerHeight: 2
   _isGrounded: 0
   _jumpForce: 5
@@ -410,6 +411,7 @@ MonoBehaviour:
   attackname: 
   timer: 0
   cooldown: 0
+  _playeranim: {fileID: 0}
 --- !u!114 &2304918763078184740
 MonoBehaviour:
   m_ObjectHideFlags: 0

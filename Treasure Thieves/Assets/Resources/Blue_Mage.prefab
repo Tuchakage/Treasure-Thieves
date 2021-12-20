@@ -1849,6 +1849,7 @@ GameObject:
   - component: {fileID: 6871852171559625581}
   - component: {fileID: 6871852171559625580}
   - component: {fileID: 6871852171559625583}
+  - component: {fileID: 7500949965791469793}
   m_Layer: 0
   m_Name: Blue_Mage
   m_TagString: Untagged
@@ -2047,6 +2048,19 @@ MonoBehaviour:
   _xRot: 0
   _yRot: 0
   _cam: {fileID: 6871852172014012291}
+--- !u!114 &7500949965791469793
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6871852172254074157}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6d5019d4303d48243b2753c6fb9f4b2b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  teamid: 1
 --- !u!1 &6871852172254074159
 GameObject:
   m_ObjectHideFlags: 0

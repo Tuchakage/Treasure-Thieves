@@ -22,6 +22,7 @@ public class NetworkManager : MonoBehaviourPunCallbacks, IPunObservable
     public int bluescore, redscore, bluePlayerCount, redPlayerCount, maxInTeam;
     public int teamPick = 0;
     public bool win = false; // Used to identify if there is a winner
+    bool functionCalledOnce = false; //Makes it so the function is only called once (Used for End game function)
     // Game Object of player
 
     public GameObject player;
@@ -40,6 +41,7 @@ public class NetworkManager : MonoBehaviourPunCallbacks, IPunObservable
     // Start is called before the first frame update
     void Start()
     {
+        functionCalledOnce = false;
         teamPick = 0;
         //Make sure the blue and red score is 0
         bluescore = 0;
@@ -88,9 +90,10 @@ public class NetworkManager : MonoBehaviourPunCallbacks, IPunObservable
         //Keep checking the score
         CheckScore();
         //If there is a winner then End the game
-        if (win)
+        if (win && !functionCalledOnce)
         {
             EndGame();
+            functionCalledOnce = true;
         }
 
         //MAKE SURE TO DELETE LATER
@@ -122,6 +125,7 @@ public class NetworkManager : MonoBehaviourPunCallbacks, IPunObservable
             PhotonNetwork.DestroyAll();
             PhotonNetwork.CurrentRoom.IsVisible = false;
             PhotonNetwork.CurrentRoom.IsOpen = false;
+            PhotonNetwork.AutomaticallySyncScene = false;
         }
         //Wait X seconds and then return to the main menu
         StartCoroutine(End(3f));
@@ -131,7 +135,7 @@ public class NetworkManager : MonoBehaviourPunCallbacks, IPunObservable
     {
         yield return new WaitForSeconds(p_wait);
         //Disconnect
-        PhotonNetwork.AutomaticallySyncScene = false;
+        
         PhotonNetwork.LeaveRoom();
     }
 
@@ -141,12 +145,14 @@ public class NetworkManager : MonoBehaviourPunCallbacks, IPunObservable
         if (bluescore == 1)
         {
             win = true;
+            bluewinnertext.gameObject.SetActive(true);
             bluewinnertext.text = "BLUE TEAM WINS";
             buttonLeave.gameObject.SetActive(false);
         }
         else if (redscore == 1)
         {
             win = true;
+            redwinnertext.gameObject.SetActive(true);
             redwinnertext.text = "RED TEAM WINS";
             buttonLeave.gameObject.SetActive(false);
         }
@@ -176,6 +182,9 @@ public class NetworkManager : MonoBehaviourPunCallbacks, IPunObservable
         spawnLocation = new Vector3(88.551f, 1.07f, 5.1f);
         //Spawn Rotation For Blue Team
         spawnRotation = Quaternion.Euler(0, -90, 0);
+        //Show The Score Of The Game
+        bluescoretext.gameObject.SetActive(true);
+        redscoretext.gameObject.SetActive(true);
 
     }
 
@@ -204,6 +213,9 @@ public class NetworkManager : MonoBehaviourPunCallbacks, IPunObservable
         spawnLocation = new Vector3(-58.29f, 1.07f, 5.1f);
         //Spawn Rotation For Red Team
         spawnRotation = Quaternion.Euler(0, 90, 0);
+        //Show The Score Of The Game
+        bluescoretext.gameObject.SetActive(true);
+        redscoretext.gameObject.SetActive(true);
     }
 
     public void pick_BP_Spell_Class()

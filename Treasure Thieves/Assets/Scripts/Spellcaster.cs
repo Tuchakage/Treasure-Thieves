@@ -100,7 +100,7 @@ public class Spellcaster : MonoBehaviourPunCallbacks, IPunObservable
             //Get the rigidbody of the spell game object that was just spawned
             Rigidbody rb = lightning.GetComponent<Rigidbody>();
             //Shoot the spell forward
-            rb.velocity = transform.forward * 20;
+            rb.velocity = transform.forward * 50;
             attackname = "Basic Attack";
 
         }

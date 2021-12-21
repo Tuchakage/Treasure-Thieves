@@ -29,6 +29,8 @@ public class MainMenuManager : MonoBehaviourPunCallbacks, IPunObservable
         //If not connected to the Photon Network then connect
         if (!PhotonNetwork.IsConnected)
             PhotonNetwork.ConnectUsingSettings();
+        //Make sure Cursor is visible
+        Cursor.visible = true;
     }
 
     // Update is called once per frame

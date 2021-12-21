@@ -89,15 +89,15 @@ public class TreasureTrigger : MonoBehaviourPun
         //Stops the Game Object from floating away (Puts it in place)
         rb.isKinematic = true;
         //Set Collision to false
-        parentObject.gameObject.GetComponent<BoxCollider>().isTrigger = true;
+        parentObject.gameObject.GetComponent<BoxCollider>().enabled = false;
         //Gets The Transform of the Player Object
         Transform playerObject = PhotonView.Find(idofplayer).transform;
         //Set the parent GameObject to be the child GameObject of the player
         parentObject.gameObject.transform.parent = PhotonView.Find(idofplayer).transform;
         //Sets the position of The Treasure GameObject to be above the Player
-        gameObject.transform.position = new Vector3(-0.01f, 1.494f, 0);
+        parentObject.gameObject.transform.localPosition = new Vector3(0.0590000004f, 1.57000005f, 0.437000006f);
         //Make sure the Treasure GameObject has the correct Rotation values and is not tilted
-        parentObject.transform.eulerAngles = new Vector3(0, 0, 0);
+        parentObject.transform.localEulerAngles = new Vector3(0, 180, 0);
 
 
     }
@@ -112,7 +112,7 @@ public class TreasureTrigger : MonoBehaviourPun
         //Allows the Gravity to work for the treasure
         rb.isKinematic = false;
         //Set Collision to true
-        parentObject.gameObject.GetComponent<BoxCollider>().isTrigger = false;
+        parentObject.gameObject.GetComponent<BoxCollider>().enabled = true;
         Debug.Log("Dropped");
     }
 }

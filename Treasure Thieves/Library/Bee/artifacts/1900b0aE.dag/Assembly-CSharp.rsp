@@ -352,6 +352,7 @@
 "Assets/Photon/PhotonLibs/WebSocket/SocketWebTcp.cs"
 "Assets/Photon/PhotonLibs/WebSocket/WebSocket.cs"
 "Assets/Photon/PhotonRealtime/Demos/DemoLoadBalancing/ConnectAndJoinRandomLb.cs"
+"Assets/ProgressBar.cs"
 "Assets/Scripts/BasicEnemyAI.cs"
 "Assets/Scripts/DestroyParticles.cs"
 "Assets/Scripts/Goal.cs"

@@ -52,7 +52,6 @@ public class Spellcaster : MonoBehaviourPunCallbacks, IPunObservable
                 {
                     //Shoots out the lightning bolt
                     _playeranim.SetTrigger("Attack1");
-                    cooldown = 2.0f;
                     //Add cooldown to the basic attack
                     timer = cooldown;
                 }

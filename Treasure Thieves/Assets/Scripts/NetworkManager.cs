@@ -13,18 +13,18 @@ public class NetworkManager : MonoBehaviourPunCallbacks, IPunObservable
 
 
     //Variables to connect our Network Manager to the UI elements
-    [SerializeField]
-    private Text nickname, status, room, players, bluescoretext, redscoretext, bluewinnertext, redwinnertext;
-    [SerializeField]
-    private Button buttonLeave, buttonRespawn;
-    [SerializeField]
-    private Button blue_SpellClass, blue_WarriorClass, red_SpellClass, red_WarriorClass, redTeam, blueTeam; //Team Buttons
+
+    [SerializeField] private Text nickname, status, room, players, bluescoretext, redscoretext, bluewinnertext, redwinnertext;
+
+    [SerializeField] private Button buttonLeave, buttonRespawn;
+
+    [SerializeField] private Button blue_SpellClass, blue_WarriorClass, red_SpellClass, red_WarriorClass, redTeam, blueTeam; //Team Buttons
     public int bluescore, redscore, bluePlayerCount, redPlayerCount, maxInTeam;
     public int teamPick = 0;
     public bool win = false; // Used to identify if there is a winner
     bool functionCalledOnce = false; //Makes it so the function is only called once (Used for End game function)
-    // Game Object of player
 
+    // Game Object of player
     public GameObject player;
     //Checks if the player is alive
     public bool isAlive;
@@ -37,6 +37,7 @@ public class NetworkManager : MonoBehaviourPunCallbacks, IPunObservable
     [SerializeField] private GameObject rp_SC_Prefab;
     [SerializeField] private GameObject rp_WR_Prefab;
 
+    [SerializeField] private GameObject spellProgressBar1;
 
     // Start is called before the first frame update
     void Start()
@@ -223,6 +224,7 @@ public class NetworkManager : MonoBehaviourPunCallbacks, IPunObservable
         //Change player prefab to spellcaster
         player = bp_SC_Prefab;
         Respawn();
+        spellProgressBar1.SetActive(true);
         //Debug.Log("Blue Team: Class type changed to Spellcaster");
     }
     public void pick_BP_Warrior_Class()
@@ -238,6 +240,7 @@ public class NetworkManager : MonoBehaviourPunCallbacks, IPunObservable
         //Change player prefab to spellcaster
         player = rp_SC_Prefab;
         Respawn();
+        spellProgressBar1.SetActive(true);
         //Debug.Log("Class type changed to spellcaster");
     }
     public void pick_RP_Warrior_Class()

@@ -40,7 +40,7 @@ public class PlayerController : MonoBehaviourPun
     TextMesh nickname;
 
     [SerializeField]
-    bool pickUpTreasure = false; // Check if the Player can pick up the Treasure
+    bool canBePickedUp = false; // Check if the Player can pick up the Treasure
     public bool carrying = false; // Player is carrying the Treasure, also used to notify the treasure that it is being carried
 
     // Start is called before the first frame update
@@ -78,36 +78,34 @@ public class PlayerController : MonoBehaviourPun
 
             PlayerInput();
             ControlDrag();
-            
+
             //if the player is on the floor and press the jump key then the player should jump
             /*if (Input.GetKeyDown(_jumpKey) && _isGrounded)
             {
                 //RENABLE AFTER DEMO
                 Jump();
             }*/
-            
-            if (Input.GetKeyDown(KeyCode.F))
+
+            //If the player can pickup the treasure
+            if (canBePickedUp)
             {
-                //If the player can pickup the treasure
-                if (pickUpTreasure)
+                if (Input.GetKeyDown(KeyCode.F))
                 {
                     //Start Carrying the Treasure
                     carrying = true;
                     //Treasure Animation is true
                     _playeranim.SetBool("Carrying", true);
                     //Cannot pick up the treasure again because its already holding it
-                    pickUpTreasure = false;
+                    canBePickedUp = false;
                     Debug.Log("Pickup Treasure");
                 }
+
             }
-            else if (Input.GetKeyUp(KeyCode.F)) 
+            //If the Treasure cannot be picked up yet and you try to pick something up make sure the carrying variable is false so that the player cant just walk and pickup the Treasure
+            if (!canBePickedUp && !carrying)
             {
-                //If the Treasure cannot be picked up yet and you try to pick something up make sure the carrying variable is false so that the player cant just walk and pickup the Treasure
-                if (!pickUpTreasure && !carrying) 
-                {
-                    //Make sure the player cant pick it up
-                    carrying = false;
-                }
+                //Make sure the player cant pick it up
+                carrying = false;
             }
 
             if (Input.GetKeyDown(KeyCode.G))
@@ -184,7 +182,7 @@ public class PlayerController : MonoBehaviourPun
     public void NotifyPickup(bool canyou) 
     {
 
-        pickUpTreasure = canyou;
+        canBePickedUp = canyou;
         if (canyou)
         {
             Debug.Log("You can pick up Treasure");

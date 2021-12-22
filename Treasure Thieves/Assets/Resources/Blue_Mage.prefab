@@ -1989,6 +1989,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 100
+  deathtimer: 0
+  dead: 0
+  _playeranim: {fileID: 0}
 --- !u!114 &6871852171559625581
 MonoBehaviour:
   m_ObjectHideFlags: 0

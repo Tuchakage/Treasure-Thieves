@@ -15,6 +15,11 @@ public class Health : MonoBehaviourPunCallbacks, IPunObservable
 
     Teams ct;
 
+    public float deathtimer;
+    public bool dead = false;
+
+    [SerializeField] Animator _playeranim;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -23,6 +28,9 @@ public class Health : MonoBehaviourPunCallbacks, IPunObservable
         nm = GameObject.Find("NetworkManager").GetComponent<NetworkManager>();
         //Get The Player Controller from this Player Object
         pc = GetComponent<PlayerController>();
+        //Grab Player Animator
+        _playeranim = GetComponent<Animator>();
+        deathtimer = 5.0f;
     }
 
     // Update is called once per frame
@@ -31,10 +39,25 @@ public class Health : MonoBehaviourPunCallbacks, IPunObservable
         // When the health is less than or equal to 0 then destroy the Player Game Object
         if (health <= 0) 
         {
-            //Tells the Network Manager that the player is not alive which means display the Respawn Button
-            nm.isAlive = false;
-            //Destroy The Player Game Object
-            photonView.RPC("DestroyObject", RpcTarget.All, GetComponent<PhotonView>().ViewID);
+            //Start the countdown
+            deathtimer -= Time.deltaTime;
+            //Disable Scripts
+            pc.enabled = false;
+            spell.enabled = false;
+
+            if (dead == false)
+            {
+                _playeranim.SetTrigger("Death");
+                dead = true;
+            }
+
+            if (deathtimer == 0 || deathtimer <= 0)
+            {
+                //Tells the Network Manager that the player is not alive which means display the Respawn Button
+                nm.isAlive = false;
+                //Destroy The Player Game Object
+                photonView.RPC("DestroyObject", RpcTarget.All, GetComponent<PhotonView>().ViewID);
+            }
         }
     }
 
@@ -125,5 +148,7 @@ public class Health : MonoBehaviourPunCallbacks, IPunObservable
         //Find the Id of the Game Object that needs to be destroyed
         Destroy(PhotonView.Find(go).gameObject);
     }
+
+
 
 }

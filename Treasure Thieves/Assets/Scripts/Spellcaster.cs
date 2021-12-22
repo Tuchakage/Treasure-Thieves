@@ -26,15 +26,14 @@ public class Spellcaster : MonoBehaviourPunCallbacks, IPunObservable
     // Start is called before the first frame update
     void Start()
     {
+        //Grab Player Animator
+        _playeranim = GetComponent<Animator>();
 
     }
 
     // Update is called once per frame
     void Update()
     {
-
-        //Grab Player Animator
-        _playeranim = GetComponent<Animator>();
 
         //Makes sure i am controlling my own player
         if (photonView.IsMine) 

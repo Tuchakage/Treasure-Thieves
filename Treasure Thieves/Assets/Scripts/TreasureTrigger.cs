@@ -12,6 +12,9 @@ public class TreasureTrigger : MonoBehaviourPun
     GameObject parentObject;
     Rigidbody rb; // The Rigidbody of the Treasure Game Object
 
+    [SerializeField] Spellcaster spell;
+    [SerializeField] KarateKid karate;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -19,14 +22,19 @@ public class TreasureTrigger : MonoBehaviourPun
         parentObject = this.gameObject.transform.parent.gameObject;
         //Find the Rigidbody of the Treasure Game Object (Parent GameObject)
         rb = parentObject.GetComponent<Rigidbody>();
-
+        karate = parentObject.GetComponent<KarateKid>();
+        spell = parentObject.GetComponent<Spellcaster>();
 
     }
 
     // Update is called once per frame
     void Update()
     {
-
+        if (isPickedUp == true)
+        {
+            karate = parentObject.GetComponent<KarateKid>();
+            spell = parentObject.GetComponent<Spellcaster>();
+        }
     }
 
     private void OnTriggerStay(Collider col)
@@ -94,10 +102,24 @@ public class TreasureTrigger : MonoBehaviourPun
         Transform playerObject = PhotonView.Find(idofplayer).transform;
         //Set the parent GameObject to be the child GameObject of the player
         parentObject.gameObject.transform.parent = PhotonView.Find(idofplayer).transform;
-        //Sets the position of The Treasure GameObject to be above the Player
-        parentObject.gameObject.transform.localPosition = new Vector3(0.0590000004f, 1.57000005f, 0.437000006f);
-        //Make sure the Treasure GameObject has the correct Rotation values and is not tilted
-        parentObject.transform.localEulerAngles = new Vector3(0, 180, 0);
+
+        if (spell != null)
+        {
+            //Sets the position of The Treasure GameObject to be above the Player
+            parentObject.gameObject.transform.localPosition = new Vector3(0.0590000004f, 1.57000005f, 0.437000006f);
+            //Make sure the Treasure GameObject has the correct Rotation values and is not tilted
+            parentObject.transform.localEulerAngles = new Vector3(0, 180, 0);
+            Debug.Log("Spellcaster is holding box");
+        }
+        else if (karate != null)
+
+        {
+            //Sets the position of The Treasure GameObject to be above the Player
+            parentObject.gameObject.transform.localPosition = new Vector3(-0.030000004f, 1.57900005f, 0.510000006f);
+            //Make sure the Treasure GameObject has the correct Rotation values and is not tilted
+            parentObject.transform.localEulerAngles = new Vector3(0, 180, 0);
+            Debug.Log("Karatekid is holding box");
+        }
 
 
     }

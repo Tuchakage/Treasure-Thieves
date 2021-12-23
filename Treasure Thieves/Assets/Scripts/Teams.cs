@@ -8,4 +8,7 @@ public class Teams : MonoBehaviour
     public enum chosenTeam { Red, Blue };
     public chosenTeam teamid;
 
+    public enum chosenClass { _Spellcaster, _Karate };
+    public chosenClass classid;
+
 }

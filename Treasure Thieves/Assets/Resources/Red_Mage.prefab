@@ -2031,6 +2031,7 @@ MonoBehaviour:
   - {fileID: 6871852171559625581}
   - {fileID: 6871852171559625587}
   - {fileID: 6871852171559625586}
+  - {fileID: 6732669728990535162}
   sceneViewId: 0
   InstantiationId: 0
   isRuntimeInstantiated: 0
@@ -2086,13 +2087,13 @@ MonoBehaviour:
     SynchronizeType: 1
     Name: Speed
   - Type: 9
-    SynchronizeType: 0
+    SynchronizeType: 1
     Name: Attack1
   - Type: 4
-    SynchronizeType: 0
+    SynchronizeType: 1
     Name: Carrying
   - Type: 9
-    SynchronizeType: 0
+    SynchronizeType: 1
     Name: Death
   m_SynchronizeLayers:
   - SynchronizeType: 0

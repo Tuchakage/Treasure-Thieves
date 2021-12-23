@@ -12,7 +12,10 @@ public class KarateKid : MonoBehaviourPunCallbacks
     //Timer for the cool down
     public float timer;
     //The max cooldown value (Where the timer will start counting down from
-    public float cooldown;
+    public float cooldown = 5.0f;
+
+    //Box Collider For Attack Trigger
+    [SerializeField] BoxCollider _attackbox;
 
     [SerializeField] Animator _playeranim;
 
@@ -67,10 +70,20 @@ public class KarateKid : MonoBehaviourPunCallbacks
 
     void Attack()
     {
-
+        _attackbox.enabled = true;
     }
 
     void DisableAttack()
+    {
+        _attackbox.enabled = false;
+    }
+
+    void FootL()
+    {
+
+    }
+
+    void FootR()
     {
 
     }

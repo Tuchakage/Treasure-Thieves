@@ -341,6 +341,7 @@
 -r:"Library/Bee/artifacts/1900b0aE.dag/VSSettingsProvider.ref.dll"
 "Assets/Fighter Pack Bundle FREE/Code/CameraControl.cs"
 "Assets/Fighter Pack Bundle FREE/Code/FighterAnimationDemoFREE.cs"
+"Assets/KKProgressBar.cs"
 "Assets/Photon/PhotonChat/Demos/Common/EventSystemSpawner.cs"
 "Assets/Photon/PhotonChat/Demos/Common/OnStartDelete.cs"
 "Assets/Photon/PhotonChat/Demos/Common/TextButtonTransition.cs"

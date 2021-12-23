@@ -38,6 +38,7 @@ public class NetworkManager : MonoBehaviourPunCallbacks, IPunObservable
     [SerializeField] private GameObject rp_WR_Prefab;
 
     [SerializeField] private GameObject spellProgressBar1;
+    [SerializeField] private GameObject KKProgressBar1;
 
     // Start is called before the first frame update
     void Start()
@@ -225,6 +226,7 @@ public class NetworkManager : MonoBehaviourPunCallbacks, IPunObservable
         player = bp_SC_Prefab;
         Respawn();
         spellProgressBar1.SetActive(true);
+        KKProgressBar1.SetActive(false);
         //Debug.Log("Blue Team: Class type changed to Spellcaster");
     }
     public void pick_BP_Warrior_Class()
@@ -232,6 +234,8 @@ public class NetworkManager : MonoBehaviourPunCallbacks, IPunObservable
         //Change player prefab to warrior
         player = bp_WR_Prefab;
         Respawn();
+        KKProgressBar1.SetActive(true);
+        spellProgressBar1.SetActive(false);
         //Debug.Log("Class type changed to warrior");
     }
 
@@ -241,6 +245,7 @@ public class NetworkManager : MonoBehaviourPunCallbacks, IPunObservable
         player = rp_SC_Prefab;
         Respawn();
         spellProgressBar1.SetActive(true);
+        KKProgressBar1.SetActive(false);
         //Debug.Log("Class type changed to spellcaster");
     }
     public void pick_RP_Warrior_Class()
@@ -248,6 +253,8 @@ public class NetworkManager : MonoBehaviourPunCallbacks, IPunObservable
         //Change player prefab to warrior
         player = rp_WR_Prefab;
         Respawn();
+        KKProgressBar1.SetActive(true);
+        spellProgressBar1.SetActive(false);
         //Debug.Log("Class type changed to warrior");
     }
 

@@ -187,6 +187,7 @@ GameObject:
   - component: {fileID: 4421416896841110906}
   - component: {fileID: 4421416896841110905}
   - component: {fileID: 2672980755054108610}
+  - component: {fileID: 8999766750853100525}
   m_Layer: 0
   m_Name: BlueKarate
   m_TagString: Player
@@ -412,6 +413,36 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.56, y: 0.18, z: 0.55}
   m_Center: {x: 0, y: 0.07, z: 0.18}
+--- !u!114 &8999766750853100525
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4421416895300858418}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b8c4a61274f60b4ea5fb4299cfdbf14, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ShowLayerWeightsInspector: 1
+  ShowParameterInspector: 1
+  m_SynchronizeParameters:
+  - Type: 1
+    SynchronizeType: 1
+    Name: Speed
+  - Type: 9
+    SynchronizeType: 0
+    Name: Attack1
+  - Type: 4
+    SynchronizeType: 0
+    Name: Carrying
+  - Type: 9
+    SynchronizeType: 0
+    Name: Death
+  m_SynchronizeLayers:
+  - SynchronizeType: 0
+    LayerIndex: 0
 --- !u!1 &4421416895300858422
 GameObject:
   m_ObjectHideFlags: 0

@@ -1975,8 +1975,6 @@ MonoBehaviour:
   timer: 0
   cooldown: 2
   _playeranim: {fileID: 0}
-  pickUpTreasure: 0
-  carrying: 0
 --- !u!114 &6871852171559625586
 MonoBehaviour:
   m_ObjectHideFlags: 0

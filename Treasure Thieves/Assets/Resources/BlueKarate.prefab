@@ -400,8 +400,6 @@ MonoBehaviour:
   cooldown: 1
   _attackbox: {fileID: 4421416896306242581}
   _playeranim: {fileID: 4421416895308103774}
-  pickUpTreasure: 0
-  carrying: 0
 --- !u!65 &2672980755054108610
 BoxCollider:
   m_ObjectHideFlags: 0

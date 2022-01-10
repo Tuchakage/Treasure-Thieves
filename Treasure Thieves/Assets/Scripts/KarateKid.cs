@@ -19,10 +19,6 @@ public class KarateKid : MonoBehaviourPunCallbacks
 
     [SerializeField] Animator _playeranim;
 
-    [SerializeField]
-    bool pickUpTreasure = false; // Check if the Player can pick up the Treasure
-    public bool carrying = false; // Player is carrying the Treasure, also used to notify the treasure that it is being carried
-
     // Start is called before the first frame update
     void Start()
     {
@@ -42,27 +38,16 @@ public class KarateKid : MonoBehaviourPunCallbacks
                 timer -= Time.deltaTime;
             }
 
-            if (Input.GetMouseButton(1))
+            if (Input.GetMouseButton(1) && !this.gameObject.GetComponent<PlayerController>().carrying)
             {
                 //If there is no cooldown (Its at 0) then player can use the basic attack
-                if (timer <= 0 && carrying == false)
+                if (timer <= 0)
                 {
                     //Shoots out the lightning bolt
                     _playeranim.SetTrigger("Attack1");
                     //Add cooldown to the basic attack
                     timer = cooldown;
                 }
-            }
-
-
-            //If the player can pickup the treasure
-            if (pickUpTreasure)
-            {
-                //Start Carrying the Treasure
-                carrying = true;
-                //Cannot pick up the treasure again because its already holding it
-                pickUpTreasure = false;
-                Debug.Log("Pickup Treasure SpellCASTER");
             }
 
         }

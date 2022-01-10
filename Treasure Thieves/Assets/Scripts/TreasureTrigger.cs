@@ -103,6 +103,12 @@ public class TreasureTrigger : MonoBehaviourPun
         //Set the parent GameObject to be the child GameObject of the player
         parentObject.gameObject.transform.parent = PhotonView.Find(idofplayer).transform;
 
+        //Sets the position of The Treasure GameObject to be above the Player
+        parentObject.gameObject.transform.localPosition = new Vector3(0.0590000004f, 1.57000005f, 0.437000006f);
+        //Make sure the Treasure GameObject has the correct Rotation values and is not tilted
+        parentObject.transform.localEulerAngles = new Vector3(0, 180, 0);
+        Debug.Log("Spellcaster is holding box");
+
         if (spell != null)
         {
             //Sets the position of The Treasure GameObject to be above the Player

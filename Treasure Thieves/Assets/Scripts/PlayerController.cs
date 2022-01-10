@@ -189,7 +189,7 @@ public class PlayerController : MonoBehaviourPun
         }
         else 
         {
-            Debug.Log("You cannot pick up Treasure");
+            //Debug.Log("You cannot pick up Treasure");
         }
     }
 

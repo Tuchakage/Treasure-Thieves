@@ -57,20 +57,16 @@ public class TreasureTrigger : MonoBehaviourPun
                 //Tell the player that it can be picked up
                 playerController.NotifyPickup(canBePickedUp);
                 //Check if the Treasure can be picked up and if the player is trying to carry it
-                if (playerController.carrying && canBePickedUp)
+                if (playerController.carrying)
                 {
                     //If the player is, then Attach the Treasure to the player
                     photonView.RPC("AttachToPlayer", RpcTarget.All, playerid);
                     //Treasure has been picked up
                     isPickedUp = true;
-                    //Treasure can also be thrown
-                    canBeThrown = true;
                     
-                    if (playerController.canBeThrown && canBeThrown)
+                    if (playerController.canBeThrown)
                     {
                         photonView.RPC("ThrownFromPlayer", RpcTarget.All, playerid);
-                        isThrown = true;
-                        photonView.RPC("DetachFromPlayer", RpcTarget.All);
                     }
                 }
             }
@@ -161,7 +157,10 @@ public class TreasureTrigger : MonoBehaviourPun
     void ThrownFromPlayer(int IdOfPlayer)
     {
         PlayerController playerController = PhotonView.Find(IdOfPlayer).GetComponent<PlayerController>();
-        rb.AddForce(playerController.fpcam.forward * thrownForce);
+        DetachFromPlayer();
+        rb.AddForce(playerController.fpcam.forward * thrownForce, ForceMode.Impulse);
+        rb.AddForce(playerController.fpcam.up * thrownForce, ForceMode.Impulse);
         isThrown = false;
+
     }
 }

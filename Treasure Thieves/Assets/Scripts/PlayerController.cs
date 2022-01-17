@@ -103,15 +103,17 @@ public class PlayerController : MonoBehaviourPun
             if (Input.GetKeyDown(KeyCode.G))
             {
                 carrying = false;
-                canBeThrown = false;
                 _playeranim.SetBool("Carrying", false);
                 _moveSpeed = 10f;
                 //Debug.Log("Drop");
             }
             
-            if (canBeThrown && Input.GetKeyDown(KeyCode.Space))
+            //Throw
+            if (Input.GetKeyDown(KeyCode.Space))
             {
+                //Means that it is going to be thrown
                 canBeThrown = true;
+                carrying = false;
                 _playeranim.SetBool("Carrying", false);
                 _moveSpeed = 10f;
                 Debug.Log("Thrown");

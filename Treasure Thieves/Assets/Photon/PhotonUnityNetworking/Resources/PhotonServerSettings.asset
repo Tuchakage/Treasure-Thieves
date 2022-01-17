@@ -50,6 +50,7 @@ MonoBehaviour:
   - IncreaseRedScore
   - IncreaseBluePlayerCount
   - IncreaseRedPlayerCount
+  - ThrownFromPlayer
   DisableAutoOpenWizard: 1
   ShowSettings: 1
   DevRegionSetOnce: 1

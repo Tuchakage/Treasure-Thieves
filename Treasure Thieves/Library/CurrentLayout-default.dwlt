@@ -119,7 +119,7 @@ MonoBehaviour:
   m_MinSize: {x: 679, y: 342}
   m_MaxSize: {x: 12004, y: 8042}
   vertical: 0
-  controlID: 42
+  controlID: 17
 --- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -144,7 +144,7 @@ MonoBehaviour:
   m_MinSize: {x: 403, y: 342}
   m_MaxSize: {x: 8003, y: 8042}
   vertical: 1
-  controlID: 43
+  controlID: 18
 --- !u!114 &7
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -169,7 +169,7 @@ MonoBehaviour:
   m_MinSize: {x: 403, y: 221}
   m_MaxSize: {x: 8003, y: 4021}
   vertical: 0
-  controlID: 44
+  controlID: 19
 --- !u!114 &8
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -276,7 +276,7 @@ MonoBehaviour:
   m_MinSize: {x: 276, y: 292}
   m_MaxSize: {x: 4001, y: 8042}
   vertical: 1
-  controlID: 139
+  controlID: 80
 --- !u!114 &12
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -388,7 +388,7 @@ MonoBehaviour:
     m_HSlider: 0
     m_VSlider: 0
     m_IgnoreScrollWheelUntilClicked: 0
-    m_EnableMouseInput: 0
+    m_EnableMouseInput: 1
     m_EnableSliderZoomHorizontal: 0
     m_EnableSliderZoomVertical: 0
     m_UniformScale: 1
@@ -735,14 +735,14 @@ MonoBehaviour:
   m_LastFolders:
   - Assets/Scenes
   m_LastFoldersGridSize: 96
-  m_LastProjectPath: D:\multi\Github\Treasure-Thieves\Treasure Thieves
+  m_LastProjectPath: C:\Users\hbahe\Documents\Repo\Treasure-Thieves\Treasure Thieves
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 183}
-    m_SelectedIDs: 10590000
-    m_LastClickedID: 22800
-    m_ExpandedIDs: 000000007c5800007e58000080580000825800008458000086580000885800008a5800008c5800008e58000000ca9a3b
+    scrollPos: {x: 0, y: 0}
+    m_SelectedIDs: 6af40000
+    m_LastClickedID: 62570
+    m_ExpandedIDs: 00000000fef2000000f3000002f3000004f3000006f3000008f300000cf300000ef3000010f30000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -770,7 +770,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 000000007c5800007e58000080580000825800008458000086580000885800008a5800008c5800008e580000
+    m_ExpandedIDs: 00000000fef2000000f3000002f3000004f3000006f3000008f300000af300000cf300000ef3000010f30000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -795,8 +795,8 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
   m_ListAreaState:
-    m_SelectedInstanceIDs: 
-    m_LastClickedInstanceID: 0
+    m_SelectedInstanceIDs: 4e1b0100
+    m_LastClickedInstanceID: 72526
     m_HadKeyboardFocusLastEvent: 1
     m_ExpandedInstanceIDs: c6230000000000000e6a00009a750000b25c0000
     m_RenameOverlay:
@@ -907,9 +907,9 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: 32d1fdff
-      m_LastClickedID: -143054
-      m_ExpandedIDs: accefdff42d1fdff26d9fdff00ecfdffa0eefdff22f9fdffa049feff4a67ffffa068ffff4efbffff
+      m_SelectedIDs: 4e1b0100
+      m_LastClickedID: 0
+      m_ExpandedIDs: 18c3fefffccafeff6ed8feff3cdbfeff94e6feff0cebfeff5eebfeff68ebfeff9cedfeff32f0feffb4fafefffafdfeff7408ffff1c0bffff9615ffff6e18ffff4a20ffff0221ffff6a24ffffbc24ffffc624ffff0825ffff928bffff9c9fffff
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 

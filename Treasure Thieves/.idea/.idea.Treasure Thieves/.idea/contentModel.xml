@@ -6,6 +6,13 @@
     <e p="C:\Users\hbahe\Documents\Repo\Treasure-Thieves\Treasure Thieves" t="IncludeRecursive">
       <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
       <e p="Assets" t="Include">
+        <e p="Fighter Pack Bundle FREE" t="Include">
+          <e p="Code" t="Include">
+            <e p="CameraControl.cs" t="Include" />
+            <e p="FighterAnimationDemoFREE.cs" t="Include" />
+          </e>
+        </e>
+        <e p="KKProgressBar.cs" t="Include" />
         <e p="Photon" t="Include">
           <e p="PhotonChat" t="Include">
             <e p="Code" t="Include">
@@ -383,11 +390,14 @@
             <e p="Prototype_Object.shader" t="Include" />
           </e>
         </e>
+        <e p="ProgressBar.cs" t="Include" />
         <e p="Scripts" t="Include">
           <e p="BasicEnemyAI.cs" t="Include" />
           <e p="DestroyParticles.cs" t="Include" />
           <e p="Goal.cs" t="Include" />
           <e p="Health.cs" t="Include" />
+          <e p="KarateKid.cs" t="Include" />
+          <e p="MainMenuManager.cs" t="Include" />
           <e p="NavScript.cs" t="Include" />
           <e p="NetworkManager.cs" t="Include" />
           <e p="OwnerOfSpell.cs" t="Include" />

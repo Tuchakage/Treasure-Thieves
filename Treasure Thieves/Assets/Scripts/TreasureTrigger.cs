@@ -9,8 +9,11 @@ public class TreasureTrigger : MonoBehaviourPun
     bool isPickedUp; //Check if the Treasure has been picked up
     [SerializeField]
     bool canBePickedUp; //Check if the treasure can be picked up
+    [SerializeField] private bool canBeThrown; // Check if the treasure can be thrown
+    [SerializeField] private bool isThrown; // Check if the treasure has been thrown
     GameObject parentObject;
     Rigidbody rb; // The Rigidbody of the Treasure Game Object
+    [SerializeField] private float thrownForce;
 
     [SerializeField] Spellcaster spell;
     [SerializeField] KarateKid karate;
@@ -60,6 +63,15 @@ public class TreasureTrigger : MonoBehaviourPun
                     photonView.RPC("AttachToPlayer", RpcTarget.All, playerid);
                     //Treasure has been picked up
                     isPickedUp = true;
+                    //Treasure can also be thrown
+                    canBeThrown = true;
+                    
+                    if (playerController.canBeThrown && canBeThrown)
+                    {
+                        photonView.RPC("ThrownFromPlayer", RpcTarget.All, playerid);
+                        isThrown = true;
+                        photonView.RPC("DetachFromPlayer", RpcTarget.All);
+                    }
                 }
             }
             else //If it has been picked up 
@@ -71,6 +83,7 @@ public class TreasureTrigger : MonoBehaviourPun
                 {
                     //Player Drops the Treasure
                     photonView.RPC("DetachFromPlayer", RpcTarget.All); 
+                    canBeThrown = false;
                 }
             }
         }
@@ -142,5 +155,13 @@ public class TreasureTrigger : MonoBehaviourPun
         //Set Collision to true
         parentObject.gameObject.GetComponent<BoxCollider>().enabled = true;
         Debug.Log("Dropped");
+    }
+
+    [PunRPC]
+    void ThrownFromPlayer(int IdOfPlayer)
+    {
+        PlayerController playerController = PhotonView.Find(IdOfPlayer).GetComponent<PlayerController>();
+        rb.AddForce(playerController.fpcam.forward * thrownForce);
+        isThrown = false;
     }
 }

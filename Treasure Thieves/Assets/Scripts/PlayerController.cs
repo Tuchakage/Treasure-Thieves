@@ -15,32 +15,27 @@ public class PlayerController : MonoBehaviourPun
 
     [Header("PlayerMovement")] 
     public float _moveSpeed = 10f; //Player movement speed;
+    public float _moveSlowSpeed = 3f; //Player movement speed;
     [SerializeField] private float _horizontalMovement;
     [SerializeField] private float _verticalMovement;
     [SerializeField] private float _movementMultiplier = 10f;
-    [SerializeField] private float _airMultiplier = 0.4f;
     [SerializeField] private Vector3 _moveDir; //Player move direction
     [SerializeField] private Rigidbody _playerRB; //Player Rigidbody
     [SerializeField] Animator _playeranim; // Player Animation Referrence
 
-    [Header("PlayerJumping")] 
+    [Header("GroundSettings")] 
     [SerializeField] private float _playerHeight = 2f;
     [SerializeField] private bool _isGrounded;
-    [SerializeField] private float _jumpForce;
     [SerializeField] private float _groundDrag = 6f; //Player ground Drag
-    [SerializeField] private float _airDrag = 2f; //Player Air Drag
-    
-    [Header("Keybinds")]
-    [SerializeField] private KeyCode _jumpKey = KeyCode.Space;
 
+    [Header("OtherSettings")]
     [SerializeField]
-    private Transform fpcam;    // first person camera
-
+    public Transform fpcam;    // first person camera
     [SerializeField]
     TextMesh nickname;
-
     [SerializeField]
     bool canBePickedUp = false; // Check if the Player can pick up the Treasure
+    public bool canBeThrown = false;
     public bool carrying = false; // Player is carrying the Treasure, also used to notify the treasure that it is being carried
 
     // Start is called before the first frame update
@@ -78,14 +73,7 @@ public class PlayerController : MonoBehaviourPun
 
             PlayerInput();
             ControlDrag();
-
-            //if the player is on the floor and press the jump key then the player should jump
-            /*if (Input.GetKeyDown(_jumpKey) && _isGrounded)
-            {
-                //RENABLE AFTER DEMO
-                Jump();
-            }*/
-
+            
             //If the player can pickup the treasure
             if (canBePickedUp)
             {
@@ -93,8 +81,12 @@ public class PlayerController : MonoBehaviourPun
                 {
                     //Start Carrying the Treasure
                     carrying = true;
+                    //Start Allowing the treasure to be thrown
+                    canBeThrown = true;
                     //Treasure Animation is true
                     _playeranim.SetBool("Carrying", true);
+                    //Set Speed to Slow
+                    _moveSpeed = _moveSlowSpeed;
                     //Cannot pick up the treasure again because its already holding it
                     canBePickedUp = false;
                     Debug.Log("Pickup Treasure");
@@ -111,14 +103,21 @@ public class PlayerController : MonoBehaviourPun
             if (Input.GetKeyDown(KeyCode.G))
             {
                 carrying = false;
+                canBeThrown = false;
                 _playeranim.SetBool("Carrying", false);
+                _moveSpeed = 10f;
                 //Debug.Log("Drop");
             }
+            
+            if (canBeThrown && Input.GetKeyDown(KeyCode.Space))
+            {
+                canBeThrown = true;
+                _playeranim.SetBool("Carrying", false);
+                _moveSpeed = 10f;
+                Debug.Log("Thrown");
+            }
         }
-
-
-
-
+        
         if (Camera.current != null) 
         {
             //nicknames of other players are always facing towards me
@@ -152,10 +151,6 @@ public class PlayerController : MonoBehaviourPun
         {
             _playerRB.AddForce(_movementMultiplier * _moveSpeed * _moveDir.normalized, ForceMode.Acceleration);
         }
-        /*else if (!_isGrounded)
-        {
-            _playerRB.AddForce(_movementMultiplier * _airMultiplier * _moveSpeed * _moveDir.normalized, ForceMode.Acceleration);
-        }*/
     }
 
     //Adding drag to the player to not make them move as if they are floating
@@ -165,19 +160,8 @@ public class PlayerController : MonoBehaviourPun
         {
             _playerRB.drag = _groundDrag;
         }
-        /*else
-        {
-            _playerRB.drag = _airDrag;
-        }*/
     }
 
-    //Player Jump
-    /*void Jump()
-    {
-        _playerRB.AddForce(transform.up * _jumpForce, ForceMode.Impulse);    
-    }
-    */
-    
     //The Treasure Trigger will tell the player if it can be picked up
     public void NotifyPickup(bool canyou) 
     {

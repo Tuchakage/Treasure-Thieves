@@ -704,7 +704,7 @@ MonoBehaviour:
   joinButton: {fileID: 1954112450}
   players: {fileID: 293064082}
   timertxt: {fileID: 411245571}
-  timer: 7
+  timer: 0
 --- !u!114 &450684445
 MonoBehaviour:
   m_ObjectHideFlags: 0

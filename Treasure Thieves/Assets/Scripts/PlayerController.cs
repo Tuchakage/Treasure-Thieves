@@ -21,7 +21,7 @@ public class PlayerController : MonoBehaviourPun
     [SerializeField] private float _movementMultiplier = 10f;
     [SerializeField] private Vector3 _moveDir; //Player move direction
     [SerializeField] private Rigidbody _playerRB; //Player Rigidbody
-    [SerializeField] Animator _playeranim; // Player Animation Referrence
+    public Animator _playeranim; // Player Animation Referrence
 
     [Header("GroundSettings")] 
     [SerializeField] private float _playerHeight = 2f;
@@ -33,9 +33,8 @@ public class PlayerController : MonoBehaviourPun
     public Transform fpcam;    // first person camera
     [SerializeField]
     TextMesh nickname;
-    [SerializeField]
-    bool canBePickedUp = false; // Check if the Player can pick up the Treasure
-    public bool canBeThrown = false;
+
+
     public bool carrying = false; // Player is carrying the Treasure, also used to notify the treasure that it is being carried
 
     // Start is called before the first frame update
@@ -73,51 +72,8 @@ public class PlayerController : MonoBehaviourPun
 
             PlayerInput();
             ControlDrag();
-            
-            //If the player can pickup the treasure
-            if (canBePickedUp)
-            {
-                if (Input.GetKeyDown(KeyCode.F))
-                {
-                    //Start Carrying the Treasure
-                    carrying = true;
-                    //Start Allowing the treasure to be thrown
-                    canBeThrown = true;
-                    //Treasure Animation is true
-                    _playeranim.SetBool("Carrying", true);
-                    //Set Speed to Slow
-                    _moveSpeed = _moveSlowSpeed;
-                    //Cannot pick up the treasure again because its already holding it
-                    canBePickedUp = false;
-                    Debug.Log("Pickup Treasure");
-                }
-
-            }
-            //If the Treasure cannot be picked up yet and you try to pick something up make sure the carrying variable is false so that the player cant just walk and pickup the Treasure
-            if (!canBePickedUp && !carrying)
-            {
-                //Make sure the player cant pick it up
-                carrying = false;
-            }
-
-            if (Input.GetKeyDown(KeyCode.G))
-            {
-                carrying = false;
-                _playeranim.SetBool("Carrying", false);
-                _moveSpeed = 10f;
-                //Debug.Log("Drop");
-            }
-            
-            //Throw
-            if (Input.GetKeyDown(KeyCode.Space))
-            {
-                //Means that it is going to be thrown
-                canBeThrown = true;
-                carrying = false;
-                _playeranim.SetBool("Carrying", false);
-                _moveSpeed = 10f;
-                Debug.Log("Thrown");
-            }
+            //Player Animation Parameter
+            _playeranim.SetFloat("Speed", Mathf.Abs(_moveDir.x));
         }
         
         if (Camera.current != null) 
@@ -127,8 +83,7 @@ public class PlayerController : MonoBehaviourPun
             nickname.transform.Rotate(0, 180, 0);
         }
 
-        //Player Animation Parameter
-        _playeranim.SetFloat("Speed", Mathf.Abs(_moveDir.x));
+
 
     }
 
@@ -164,20 +119,6 @@ public class PlayerController : MonoBehaviourPun
         }
     }
 
-    //The Treasure Trigger will tell the player if it can be picked up
-    public void NotifyPickup(bool canyou) 
-    {
-
-        canBePickedUp = canyou;
-        if (canyou)
-        {
-            Debug.Log("You can pick up Treasure");
-        }
-        else 
-        {
-            //Debug.Log("You cannot pick up Treasure");
-        }
-    }
 
     public void FootL()
     {

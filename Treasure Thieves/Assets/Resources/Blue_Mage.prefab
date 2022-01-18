@@ -1939,22 +1939,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _moveSpeed: 10
+  _moveSlowSpeed: 3
   _horizontalMovement: 0
   _verticalMovement: 0
   _movementMultiplier: 10
-  _airMultiplier: 10
   _moveDir: {x: 0, y: 0, z: 0}
   _playerRB: {fileID: 6871852171559625584}
   _playeranim: {fileID: 0}
   _playerHeight: 2
   _isGrounded: 0
-  _jumpForce: 5
   _groundDrag: 6
-  _airDrag: 2
-  _jumpKey: 32
   fpcam: {fileID: 6871852172014012295}
   nickname: {fileID: 6871852172376863330}
-  canBePickedUp: 0
   carrying: 0
 --- !u!114 &6871852171559625587
 MonoBehaviour:

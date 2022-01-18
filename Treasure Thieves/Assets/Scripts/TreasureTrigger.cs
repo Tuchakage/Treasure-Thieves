@@ -5,12 +5,10 @@ using Photon.Pun;
 
 public class TreasureTrigger : MonoBehaviourPun
 {
-    [SerializeField]
-    bool isPickedUp; //Check if the Treasure has been picked up
+    public bool isPickedUp; //Check if the Treasure has been picked up
     [SerializeField]
     bool canBePickedUp; //Check if the treasure can be picked up
     [SerializeField] private bool canBeThrown; // Check if the treasure can be thrown
-    [SerializeField] private bool isThrown; // Check if the treasure has been thrown
     GameObject parentObject;
     Rigidbody rb; // The Rigidbody of the Treasure Game Object
     [SerializeField] private float thrownForce;
@@ -18,6 +16,9 @@ public class TreasureTrigger : MonoBehaviourPun
     [SerializeField] Spellcaster spell;
     [SerializeField] KarateKid karate;
 
+    PhotonView playerpv; //The Players PhotonView Component
+    public int playerid;
+    bool inTrigger; //Indicates whether a Player is in the Trigger
     // Start is called before the first frame update
     void Start()
     {
@@ -38,63 +39,63 @@ public class TreasureTrigger : MonoBehaviourPun
             karate = parentObject.GetComponent<KarateKid>();
             spell = parentObject.GetComponent<Spellcaster>();
         }
+
+        if (inTrigger) //If there is a player in the Trigger
+        {
+            if (playerpv.IsMine) //Check to see if it is the PLayer pressing the button
+            {
+                if (Input.GetKeyDown(KeyCode.F) && !isPickedUp && inTrigger) //If the F Key Is Pressed and the Treasure hasnt been picked up yet and there is still a player in the trigger
+                {
+                    // The Player will pick up the Treasure
+                    photonView.RPC("AttachToPlayer", RpcTarget.All, playerid);
+                    Debug.Log("Picked Up Treasure");
+                    //Treasure Animation is true
+                    playerpv.gameObject.GetComponent<PlayerController>()._playeranim.SetBool("Carrying", true);
+                    //Set Speed to Slow
+                    playerpv.gameObject.GetComponent<PlayerController>()._moveSpeed = playerpv.gameObject.GetComponent<PlayerController>()._moveSlowSpeed;
+
+                }
+                else if (Input.GetKeyDown(KeyCode.G) && isPickedUp) //If the G Key Is Pressed and the Treasure has been picked up
+                {
+                    //Player Drops the Treasure
+                    photonView.RPC("DetachFromPlayer", RpcTarget.All);              
+                    //Treasure will know it has been dropped
+                    isPickedUp = false;
+                    Debug.Log("Dropped Treasure");
+                    playerpv.gameObject.GetComponent<PlayerController>()._playeranim.SetBool("Carrying", false);
+                    playerpv.gameObject.GetComponent<PlayerController>()._moveSpeed = 10f;
+                }
+                else if (Input.GetKeyDown(KeyCode.Space) && isPickedUp && canBeThrown) //If the Space Key is pressed and the Treasure has been picked up and the Treasure can be thrown
+                {
+                    photonView.RPC("ThrownFromPlayer", RpcTarget.All, playerid);
+                    playerpv.gameObject.GetComponent<PlayerController>()._playeranim.SetBool("Carrying", false);
+                    playerpv.gameObject.GetComponent<PlayerController>()._moveSpeed = 10f;
+                }
+            }
+        }
     }
 
     private void OnTriggerStay(Collider col)
     {
-        if (col.gameObject.tag == "Player") 
+        if (col.gameObject.tag == "Player") //If a Player is in the trigger
         {
-            //Get the Player ID of the object 
-            int playerid = col.gameObject.GetComponent<PhotonView>().ViewID;
+            //If a player is in the Trigger then set this variable to true
+            inTrigger = true;
 
-            //Get the Player Controller script from the player that is touching the Trigger
-            PlayerController playerController = PhotonView.Find(playerid).GetComponent<PlayerController>();
-            //If Treasure hasnt been picked up yet
-            if (!isPickedUp)
-            {
-                //Then it means it can be picked up and the Player will know
-                canBePickedUp = true;
-                //Tell the player that it can be picked up
-                playerController.NotifyPickup(canBePickedUp);
-                //Check if the Treasure can be picked up and if the player is trying to carry it
-                if (playerController.carrying)
-                {
-                    //If the player is, then Attach the Treasure to the player
-                    photonView.RPC("AttachToPlayer", RpcTarget.All, playerid);
-                    //Treasure has been picked up
-                    isPickedUp = true;
-                    
-                    if (playerController.canBeThrown)
-                    {
-                        photonView.RPC("ThrownFromPlayer", RpcTarget.All, playerid);
-                    }
-                }
-            }
-            else //If it has been picked up 
-            {
-                canBePickedUp = false;
-                playerController.NotifyPickup(canBePickedUp);
-                //Check if the player is still carrying and if they are not
-                if (!playerController.carrying) 
-                {
-                    //Player Drops the Treasure
-                    photonView.RPC("DetachFromPlayer", RpcTarget.All); 
-                    canBeThrown = false;
-                }
-            }
+            playerpv = col.gameObject.GetComponent<PhotonView>();
+            //Get the Player ID of the object 
+            playerid = playerpv.ViewID;
         }
     }
     private void OnTriggerExit(Collider col)
     {
         if (col.gameObject.tag == "Player") 
         {
+            //If a player has left the trigger
+            inTrigger = false;
             //Get the Player ID of the object 
             int playerid = col.gameObject.GetComponent<PhotonView>().ViewID;
-            //Get the Player Controller script from the player that has exited The Trigger
-            PlayerController playerController = PhotonView.Find(playerid).GetComponent<PlayerController>();
          
-            //Tell the player that it cannot pick up the Treasure
-            playerController.NotifyPickup(false);
         }
 
     }
@@ -136,6 +137,10 @@ public class TreasureTrigger : MonoBehaviourPun
             Debug.Log("Karatekid is holding box");
         }
 
+        //Treasure will know it has been picked up
+        isPickedUp = true;
+        //Treasure can be thrown
+        canBeThrown = true;
 
     }
     [PunRPC]
@@ -160,7 +165,7 @@ public class TreasureTrigger : MonoBehaviourPun
         DetachFromPlayer();
         rb.AddForce(playerController.fpcam.forward * thrownForce, ForceMode.Impulse);
         rb.AddForce(playerController.fpcam.up * thrownForce, ForceMode.Impulse);
-        isThrown = false;
+        canBeThrown = false;
 
     }
 }

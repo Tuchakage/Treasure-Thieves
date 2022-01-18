@@ -5,11 +5,14 @@ ScriptsOnlyBuild:
     - DestroyParticles
     - Goal
     - Health
+    - KKProgressBar
+    - KarateKid
     - MainMenuManager
     - NetworkManager
     - OwnerOfSpell
     - PlayerController
     - PlayerLook
+    - ProgressBar
     - Spellcaster
     - Teams
     - TreasureTrigger
@@ -103,44 +106,50 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 1528}
     - Class: 114
-      Script: {instanceID: 1674}
+      Script: {instanceID: 1582}
     - Class: 114
-      Script: {instanceID: 2424}
+      Script: {instanceID: 2332}
     - Class: 114
-      Script: {instanceID: 2682}
+      Script: {instanceID: 2538}
     - Class: 114
-      Script: {instanceID: 2726}
+      Script: {instanceID: 2592}
     - Class: 114
-      Script: {instanceID: 2940}
+      Script: {instanceID: 2636}
     - Class: 114
-      Script: {instanceID: 3152}
+      Script: {instanceID: 2850}
     - Class: 114
-      Script: {instanceID: 3234}
+      Script: {instanceID: 3062}
     - Class: 114
-      Script: {instanceID: 3784}
+      Script: {instanceID: 3144}
     - Class: 114
-      Script: {instanceID: 4336}
+      Script: {instanceID: 3698}
     - Class: 114
-      Script: {instanceID: 5340}
+      Script: {instanceID: 4250}
     - Class: 114
-      Script: {instanceID: 5486}
+      Script: {instanceID: 4500}
     - Class: 114
-      Script: {instanceID: 5516}
+      Script: {instanceID: 5256}
     - Class: 114
-      Script: {instanceID: 5884}
+      Script: {instanceID: 5402}
     - Class: 114
-      Script: {instanceID: 6368}
+      Script: {instanceID: 5432}
     - Class: 114
-      Script: {instanceID: 7018}
+      Script: {instanceID: 5800}
     - Class: 114
-      Script: {instanceID: 7834}
+      Script: {instanceID: 5886}
     - Class: 114
-      Script: {instanceID: 8070}
+      Script: {instanceID: 6286}
+    - Class: 114
+      Script: {instanceID: 6294}
+    - Class: 114
+      Script: {instanceID: 6936}
+    - Class: 114
+      Script: {instanceID: 7752}
+    - Class: 114
+      Script: {instanceID: 7988}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
-      Script: {instanceID: 0}
-    - Class: 134
       Script: {instanceID: 0}
     - Class: 136
       Script: {instanceID: 0}
@@ -212,69 +221,71 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 1528}
     - Class: 114
-      Script: {instanceID: 1674}
+      Script: {instanceID: 1582}
     - Class: 114
-      Script: {instanceID: 1714}
+      Script: {instanceID: 1622}
     - Class: 114
-      Script: {instanceID: 1884}
+      Script: {instanceID: 1792}
     - Class: 114
-      Script: {instanceID: 2336}
+      Script: {instanceID: 2244}
     - Class: 114
-      Script: {instanceID: 2424}
+      Script: {instanceID: 2332}
     - Class: 114
-      Script: {instanceID: 2682}
+      Script: {instanceID: 2538}
     - Class: 114
-      Script: {instanceID: 2726}
+      Script: {instanceID: 2592}
     - Class: 114
-      Script: {instanceID: 2940}
+      Script: {instanceID: 2636}
     - Class: 114
-      Script: {instanceID: 2984}
+      Script: {instanceID: 2850}
     - Class: 114
-      Script: {instanceID: 3152}
+      Script: {instanceID: 2894}
     - Class: 114
-      Script: {instanceID: 3234}
+      Script: {instanceID: 3062}
     - Class: 114
-      Script: {instanceID: 3784}
+      Script: {instanceID: 3144}
     - Class: 114
-      Script: {instanceID: 3982}
+      Script: {instanceID: 3698}
     - Class: 114
-      Script: {instanceID: 3984}
+      Script: {instanceID: 3896}
     - Class: 114
-      Script: {instanceID: 4154}
+      Script: {instanceID: 3898}
     - Class: 114
-      Script: {instanceID: 4336}
+      Script: {instanceID: 4068}
     - Class: 114
-      Script: {instanceID: 5206}
+      Script: {instanceID: 4250}
     - Class: 114
-      Script: {instanceID: 5230}
+      Script: {instanceID: 5122}
     - Class: 114
-      Script: {instanceID: 5340}
+      Script: {instanceID: 5146}
     - Class: 114
-      Script: {instanceID: 5486}
+      Script: {instanceID: 5256}
     - Class: 114
-      Script: {instanceID: 5648}
+      Script: {instanceID: 5402}
     - Class: 114
-      Script: {instanceID: 5690}
+      Script: {instanceID: 5564}
     - Class: 114
-      Script: {instanceID: 5884}
+      Script: {instanceID: 5606}
     - Class: 114
-      Script: {instanceID: 6368}
+      Script: {instanceID: 5800}
     - Class: 114
-      Script: {instanceID: 6376}
+      Script: {instanceID: 6286}
     - Class: 114
-      Script: {instanceID: 6968}
+      Script: {instanceID: 6294}
     - Class: 114
-      Script: {instanceID: 7094}
+      Script: {instanceID: 6886}
     - Class: 114
-      Script: {instanceID: 7462}
+      Script: {instanceID: 7012}
     - Class: 114
-      Script: {instanceID: 7834}
+      Script: {instanceID: 7380}
     - Class: 114
-      Script: {instanceID: 7962}
+      Script: {instanceID: 7752}
     - Class: 114
-      Script: {instanceID: 8070}
+      Script: {instanceID: 7880}
     - Class: 114
-      Script: {instanceID: 8266}
+      Script: {instanceID: 7988}
+    - Class: 114
+      Script: {instanceID: 8184}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -340,7 +351,7 @@ ScriptsOnlyBuild:
     className: PanelRaycaster
   - hash:
       serializedVersion: 2
-      Hash: c4e17c1f6352497cc7f8ce6fe59ea046
+      Hash: b9a183cb9081fb30274bfae63d684185
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: Health
@@ -602,6 +613,12 @@ ScriptsOnlyBuild:
     assemblyName: PhotonUnityNetworking.Demos.dll
     namespaceName: Photon.Pun.Demo.Cockpit
     className: CurrentRoomIsVisibleToggle
+  - hash:
+      serializedVersion: 2
+      Hash: 017f3eb26c7e911cd1e7b9085d07c0ba
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: KarateKid
   - hash:
       serializedVersion: 2
       Hash: c656dcc13ae391b68d594cc8f9c590b0
@@ -868,6 +885,12 @@ ScriptsOnlyBuild:
     className: BezierCurve
   - hash:
       serializedVersion: 2
+      Hash: e0ef650ca3d31818e59259fbf746ca11
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: CameraControl
+  - hash:
+      serializedVersion: 2
       Hash: c656dcc13ae391b68d594cc8f9c590b0
     assemblyName: PhotonUnityNetworking.Demos.dll
     namespaceName: Photon.Pun.Demo.Cockpit
@@ -920,6 +943,12 @@ ScriptsOnlyBuild:
     assemblyName: Unity.VisualScripting.Core.dll
     namespaceName: Unity.VisualScripting
     className: UnityOnSelectMessageListener
+  - hash:
+      serializedVersion: 2
+      Hash: 30f3213a6e218a461fa00e428f22d3eb
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: FighterAnimationDemoFREE
   - hash:
       serializedVersion: 2
       Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
@@ -982,7 +1011,7 @@ ScriptsOnlyBuild:
     className: SetRoomCustomPropertyUIForm
   - hash:
       serializedVersion: 2
-      Hash: afeb31aeed2009bff87bde433a7ef4b4
+      Hash: b4a9669726b408545c03458495eee45a
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: TreasureTrigger
@@ -1186,7 +1215,7 @@ ScriptsOnlyBuild:
     className: UnityOnJointBreak2DMessageListener
   - hash:
       serializedVersion: 2
-      Hash: 266bd479765573cc3c7330c355f7b299
+      Hash: be3d9368dc2b5414a4cb44312ef59916
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: Teams
@@ -1244,6 +1273,12 @@ ScriptsOnlyBuild:
     assemblyName: Unity.VisualScripting.Core.dll
     namespaceName: Unity.VisualScripting
     className: UnityOnCancelMessageListener
+  - hash:
+      serializedVersion: 2
+      Hash: 0d172e730ecf6d147ba98c2722e04f14
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: ProgressBar
   - hash:
       serializedVersion: 2
       Hash: e37675de1ea5e56da90f5600d33587bd
@@ -1516,7 +1551,7 @@ ScriptsOnlyBuild:
     className: IngameControlPanel
   - hash:
       serializedVersion: 2
-      Hash: b23b13ab1157cfb74d7e6c48e5bf721d
+      Hash: 842e4c909a1928531aa0f6ce580fa79e
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: Spellcaster
@@ -1534,7 +1569,7 @@ ScriptsOnlyBuild:
     className: GroupTrack
   - hash:
       serializedVersion: 2
-      Hash: b05f1a05a4b3a1333268febf7e8ff0c8
+      Hash: 77c8f695393b682449fa24602478cb00
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: NetworkManager
@@ -1664,6 +1699,12 @@ ScriptsOnlyBuild:
     assemblyName: Unity.VisualScripting.Core.dll
     namespaceName: Unity.VisualScripting
     className: AnimatorMessageListener
+  - hash:
+      serializedVersion: 2
+      Hash: a3235352a0abea31013df90a878d3743
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: KKProgressBar
   - hash:
       serializedVersion: 2
       Hash: 2792936179724025482dc04d68a47ca7
@@ -2248,7 +2289,7 @@ ScriptsOnlyBuild:
     className: PunTurnManager
   - hash:
       serializedVersion: 2
-      Hash: e7c6d1d71ec0882764ac225404721291
+      Hash: 89b106af2a64207e9ef99f7883e2373a
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: PlayerController
@@ -2340,5 +2381,5 @@ ScriptsOnlyBuild:
   scenePathNames:
   - Assets/Scenes/Menu.unity
   - Assets/Scenes/Battle.unity
-  playerPath: D:/University/Year 3/Multiplayer/Treasure-Thieves/Build Version/Test/Jarek
+  playerPath: D:/Users/tucha/Documents/GitHub/Treasure-Thieves/Build Version/Jarek
     Lesson 1.exe

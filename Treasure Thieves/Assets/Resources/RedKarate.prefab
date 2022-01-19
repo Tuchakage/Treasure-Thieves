@@ -324,23 +324,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 47dbe39b57546f3429a3af7be008fa6e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _moveSpeed: 10
+  _moveSpeed: 5
+  _moveSlowSpeed: 3
   _horizontalMovement: 0
   _verticalMovement: 0
   _movementMultiplier: 10
-  _airMultiplier: 10
   _moveDir: {x: 0, y: 0, z: 0}
   _playerRB: {fileID: 4421416896841111172}
   _playeranim: {fileID: 4421416895308103774}
   _playerHeight: 2
   _isGrounded: 0
-  _jumpForce: 5
   _groundDrag: 6
-  _airDrag: 2
-  _jumpKey: 32
   fpcam: {fileID: 4421416896007680228}
   nickname: {fileID: 4421416895812911082}
-  canBePickedUp: 0
   carrying: 0
 --- !u!114 &4421416896841110907
 MonoBehaviour:
@@ -400,8 +396,6 @@ MonoBehaviour:
   cooldown: 1
   _attackbox: {fileID: 4421416896306242581}
   _playeranim: {fileID: 4421416895308103774}
-  pickUpTreasure: 0
-  carrying: 0
 --- !u!65 &1929971394187537587
 BoxCollider:
   m_ObjectHideFlags: 0

@@ -181,7 +181,7 @@ public class NetworkManager : MonoBehaviourPunCallbacks, IPunObservable
         redTeam.gameObject.SetActive(false);
         blueTeam.gameObject.SetActive(false);
         //Spawn Location For Blue Team
-        spawnLocation = new Vector3(88.551f, 1.07f, 5.1f);
+        spawnLocation = new Vector3(33.0f, 2.7f, 30.0f);
         //Spawn Rotation For Blue Team
         spawnRotation = Quaternion.Euler(0, -90, 0);
         //Show The Score Of The Game
@@ -212,7 +212,7 @@ public class NetworkManager : MonoBehaviourPunCallbacks, IPunObservable
         redTeam.gameObject.SetActive(false);
         blueTeam.gameObject.SetActive(false);
         //Spawn Location For Red Team
-        spawnLocation = new Vector3(-58.29f, 1.07f, 5.1f);
+        spawnLocation = new Vector3(-33.0f, 2.7f, -30.0f);
         //Spawn Rotation For Red Team
         spawnRotation = Quaternion.Euler(0, 90, 0);
         //Show The Score Of The Game
@@ -262,7 +262,7 @@ public class NetworkManager : MonoBehaviourPunCallbacks, IPunObservable
     {
         //Spawn Players
         PhotonNetwork.Instantiate(player.name,
-         new Vector3(spawnLocation.x, 1, spawnLocation.z),
+         new Vector3(spawnLocation.x, spawnLocation.y, spawnLocation.z),
         Quaternion.Euler(0, spawnRotation.y, 0)
         , 0);
         //Player Will Be Alive

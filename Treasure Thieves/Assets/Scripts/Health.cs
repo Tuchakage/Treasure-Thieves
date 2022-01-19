@@ -9,6 +9,8 @@ public class Health : MonoBehaviourPunCallbacks, IPunObservable
 
     Spellcaster spell;
 
+    KarateKid kid;
+
     NetworkManager nm;
 
     PlayerController pc;
@@ -25,6 +27,7 @@ public class Health : MonoBehaviourPunCallbacks, IPunObservable
     {
         //Gets The Spellcaster script
         spell = GetComponent<Spellcaster>();
+        kid = GetComponent<KarateKid>();
         nm = GameObject.Find("NetworkManager").GetComponent<NetworkManager>();
         //Get The Player Controller from this Player Object
         pc = GetComponent<PlayerController>();
@@ -120,6 +123,52 @@ public class Health : MonoBehaviourPunCallbacks, IPunObservable
                 photonView.RPC("DestroyObject", RpcTarget.All, col.transform.parent.gameObject.GetComponent<PhotonView>().ViewID);
                 //Allow the player to shoot again without any cooldown
                 spell.timer = 0;
+            }
+
+        }
+
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        //Makes sure that when you get hit its from someone else and not yourself
+        if (photonView.IsMine)
+        {
+            //Gets The "OwnerOfKick" script from the spell the player collided with
+            OwnerOfKick ownerofkick = collision.gameObject.GetComponentInChildren<OwnerOfKick>();
+            Debug.Log("Ok: " + ownerofkick);
+
+            //Get the Owner Id Of The Spell
+            int ownerid = ownerofkick.GetOwner();
+
+            //Find the player id of the owner of the attack and get the Spellcaster script
+            kid = PhotonView.Find(ownerid).GetComponent<KarateKid>();
+            ct = PhotonView.Find(ownerid).GetComponent<Teams>();
+
+            Debug.Log("Owner Of Attack: " + PhotonView.Get(PhotonView.Find(ownerid).gameObject));
+
+            //Make Sure the player isnt get hit by its own spell
+            if (ownerid != this.GetComponent<PhotonView>().ViewID) //If they are not getting hit by their own spell (So being attacked)
+            {
+                Debug.Log("Being attacked");
+
+                //Depending on the attack the player will lose a certain amount of health
+                if (collision.gameObject.tag == "Basic Attack")
+                {
+                    if (ct.teamid != this.GetComponent<Teams>().teamid)
+                    {
+                        //Attacked Player will no longer be able to carry the Treasure
+                        pc.carrying = false;
+                        //Attacked Player will take damage and check how much damage the attack should deal from the owner of the attack
+                        TakeDamage(kid.DealDamage());
+                        Debug.Log("Basic Attack has hit " + collision.gameObject.name);
+                    }
+                    else
+                    {
+                        Debug.Log("Friendly Fire on the red team");
+                    }
+
+                }
             }
 
         }

@@ -14,6 +14,8 @@ public class KarateKid : MonoBehaviourPunCallbacks
     //The max cooldown value (Where the timer will start counting down from
     public float cooldown = 5.0f;
 
+    public string attackname; //Name Of The Attack The Player Is Using
+
     //Box Collider For Attack Trigger
     [SerializeField] BoxCollider _attackbox;
 
@@ -51,6 +53,16 @@ public class KarateKid : MonoBehaviourPunCallbacks
             }
 
         }
+    }
+
+    public float DealDamage()
+    {
+        //Depending on the spell game object depends on the amount of damage the attack will do
+        if (attackname == "Basic Attack")
+        {
+            dmg = 30;
+        }
+        return dmg;
     }
 
     void Attack()

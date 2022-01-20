@@ -46,7 +46,7 @@ public class Health : MonoBehaviourPunCallbacks, IPunObservable
             deathtimer -= Time.deltaTime;
             //Disable Scripts
             pc.enabled = false;
-            spell.enabled = false;
+            //spell.enabled = false;
 
             if (dead == false)
             {
@@ -77,7 +77,7 @@ public class Health : MonoBehaviourPunCallbacks, IPunObservable
         //Makes sure that when you get hit its from someone else and not yourself
         if (photonView.IsMine) 
         {
-            //Gets The "OwnerOfSpell" script from the spell the player collided with
+            //Gets The "OwnerOfSpell" script from the spell the player collided with (We get the parent object since the particle sets off the collision)
             OwnerOfSpell ownerofspell = col.transform.parent.gameObject.GetComponent<OwnerOfSpell>();
             Debug.Log("Ok: " + ownerofspell);
 
@@ -134,42 +134,48 @@ public class Health : MonoBehaviourPunCallbacks, IPunObservable
         //Makes sure that when you get hit its from someone else and not yourself
         if (photonView.IsMine)
         {
-            //Gets The "OwnerOfKick" script from the spell the player collided with
-            OwnerOfKick ownerofkick = collision.gameObject.GetComponentInChildren<OwnerOfKick>();
-            Debug.Log("Ok: " + ownerofkick);
-
-            //Get the Owner Id Of The Spell
-            int ownerid = ownerofkick.GetOwner();
-
-            //Find the player id of the owner of the attack and get the Spellcaster script
-            kid = PhotonView.Find(ownerid).GetComponent<KarateKid>();
-            ct = PhotonView.Find(ownerid).GetComponent<Teams>();
-
-            Debug.Log("Owner Of Attack: " + PhotonView.Get(PhotonView.Find(ownerid).gameObject));
-
-            //Make Sure the player isnt get hit by its own spell
-            if (ownerid != this.GetComponent<PhotonView>().ViewID) //If they are not getting hit by their own spell (So being attacked)
+            if (collision.tag == "Basic Attack") //Makes sure its Colliding with an Attack
             {
-                Debug.Log("Being attacked");
+                //Gets The "OwnerOfKick" script from the spell the player collided with
+                OwnerOfKick ownerofkick = collision.gameObject.GetComponent<OwnerOfKick>();
+                Debug.Log("Victim = " + this.gameObject.name + "Hit by: " + collision.gameObject.name);
+                Debug.Log("Ok: " + ownerofkick);
 
-                //Depending on the attack the player will lose a certain amount of health
-                if (collision.gameObject.tag == "Basic Attack")
+
+                //Get the Owner Id Of The Kick
+                int ownerid = ownerofkick.GetOwner();
+
+                //Find the player id of the owner of the attack and get the Spellcaster script
+                kid = PhotonView.Find(ownerid).GetComponent<KarateKid>();
+                ct = PhotonView.Find(ownerid).GetComponent<Teams>();
+
+                Debug.Log("Owner Of Attack: " + PhotonView.Get(PhotonView.Find(ownerid).gameObject));
+
+                //Make Sure the player isnt get hit by its own spell
+                if (ownerid != this.GetComponent<PhotonView>().ViewID) //If they are not getting hit by their own spell (So being attacked)
                 {
-                    if (ct.teamid != this.GetComponent<Teams>().teamid)
-                    {
-                        //Attacked Player will no longer be able to carry the Treasure
-                        pc.carrying = false;
-                        //Attacked Player will take damage and check how much damage the attack should deal from the owner of the attack
-                        TakeDamage(kid.DealDamage());
-                        Debug.Log("Basic Attack has hit " + collision.gameObject.name);
-                    }
-                    else
-                    {
-                        Debug.Log("Friendly Fire on the red team");
-                    }
+                    Debug.Log("Being attacked");
 
+                    //Depending on the attack the player will lose a certain amount of health
+                    if (collision.gameObject.tag == "Basic Attack")
+                    {
+                        if (ct.teamid != this.GetComponent<Teams>().teamid)
+                        {
+                            //Attacked Player will no longer be able to carry the Treasure
+                            pc.carrying = false;
+                            //Attacked Player will take damage and check how much damage the attack should deal from the owner of the attack
+                            TakeDamage(kid.DealDamage());
+                            Debug.Log("Basic Attack has hit " + collision.gameObject.name);
+                        }
+                        else
+                        {
+                            Debug.Log("Friendly Fire on the red team");
+                        }
+
+                    }
                 }
             }
+
 
         }
 

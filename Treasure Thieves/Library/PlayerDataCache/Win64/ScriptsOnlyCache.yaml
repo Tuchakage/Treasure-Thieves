@@ -40,8 +40,10 @@ ScriptsOnlyBuild:
     UnityEditor.Graphs.dll:
     - UnityEditor.Graphs.AnimationBlendTree.Graph
     - UnityEditor.Graphs.AnimationBlendTree.GraphGUI
+    - UnityEditor.Graphs.AnimationStateMachine.AnyStateNode
     - UnityEditor.Graphs.AnimationStateMachine.Graph
     - UnityEditor.Graphs.AnimationStateMachine.GraphGUI
+    - UnityEditor.Graphs.AnimationStateMachine.StateNode
     - UnityEditor.Graphs.AnimatorControllerTool
     UnityEditor.TestRunner.dll:
     - UnityEditor.TestTools.TestRunner.Api.CallbacksHolder
@@ -107,49 +109,49 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 1528}
     - Class: 114
-      Script: {instanceID: 1582}
+      Script: {instanceID: 1592}
     - Class: 114
-      Script: {instanceID: 1854}
+      Script: {instanceID: 1864}
     - Class: 114
-      Script: {instanceID: 2334}
+      Script: {instanceID: 2344}
     - Class: 114
-      Script: {instanceID: 2540}
+      Script: {instanceID: 2550}
     - Class: 114
-      Script: {instanceID: 2594}
+      Script: {instanceID: 2604}
     - Class: 114
-      Script: {instanceID: 2638}
+      Script: {instanceID: 2648}
     - Class: 114
-      Script: {instanceID: 2852}
+      Script: {instanceID: 2862}
     - Class: 114
-      Script: {instanceID: 3064}
+      Script: {instanceID: 3074}
     - Class: 114
-      Script: {instanceID: 3146}
+      Script: {instanceID: 3156}
     - Class: 114
-      Script: {instanceID: 3700}
+      Script: {instanceID: 3710}
     - Class: 114
-      Script: {instanceID: 4252}
+      Script: {instanceID: 4262}
     - Class: 114
-      Script: {instanceID: 4502}
+      Script: {instanceID: 4512}
     - Class: 114
-      Script: {instanceID: 5258}
+      Script: {instanceID: 5268}
     - Class: 114
-      Script: {instanceID: 5404}
+      Script: {instanceID: 5414}
     - Class: 114
-      Script: {instanceID: 5434}
+      Script: {instanceID: 5444}
     - Class: 114
-      Script: {instanceID: 5802}
+      Script: {instanceID: 5812}
     - Class: 114
-      Script: {instanceID: 5888}
+      Script: {instanceID: 5898}
     - Class: 114
-      Script: {instanceID: 6288}
+      Script: {instanceID: 6298}
     - Class: 114
-      Script: {instanceID: 6296}
+      Script: {instanceID: 6306}
     - Class: 114
-      Script: {instanceID: 6938}
+      Script: {instanceID: 6948}
     - Class: 114
-      Script: {instanceID: 7754}
+      Script: {instanceID: 7764}
     - Class: 114
-      Script: {instanceID: 7990}
+      Script: {instanceID: 8000}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -224,73 +226,73 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 1528}
     - Class: 114
-      Script: {instanceID: 1582}
+      Script: {instanceID: 1592}
     - Class: 114
-      Script: {instanceID: 1622}
+      Script: {instanceID: 1632}
     - Class: 114
-      Script: {instanceID: 1792}
+      Script: {instanceID: 1802}
     - Class: 114
-      Script: {instanceID: 1854}
+      Script: {instanceID: 1864}
     - Class: 114
-      Script: {instanceID: 2246}
+      Script: {instanceID: 2256}
     - Class: 114
-      Script: {instanceID: 2334}
+      Script: {instanceID: 2344}
     - Class: 114
-      Script: {instanceID: 2540}
+      Script: {instanceID: 2550}
     - Class: 114
-      Script: {instanceID: 2594}
+      Script: {instanceID: 2604}
     - Class: 114
-      Script: {instanceID: 2638}
+      Script: {instanceID: 2648}
     - Class: 114
-      Script: {instanceID: 2852}
+      Script: {instanceID: 2862}
     - Class: 114
-      Script: {instanceID: 2896}
+      Script: {instanceID: 2906}
     - Class: 114
-      Script: {instanceID: 3064}
+      Script: {instanceID: 3074}
     - Class: 114
-      Script: {instanceID: 3146}
+      Script: {instanceID: 3156}
     - Class: 114
-      Script: {instanceID: 3700}
+      Script: {instanceID: 3710}
     - Class: 114
-      Script: {instanceID: 3898}
+      Script: {instanceID: 3908}
     - Class: 114
-      Script: {instanceID: 3900}
+      Script: {instanceID: 3910}
     - Class: 114
-      Script: {instanceID: 4070}
+      Script: {instanceID: 4080}
     - Class: 114
-      Script: {instanceID: 4252}
+      Script: {instanceID: 4262}
     - Class: 114
-      Script: {instanceID: 5124}
+      Script: {instanceID: 5134}
     - Class: 114
-      Script: {instanceID: 5148}
+      Script: {instanceID: 5158}
     - Class: 114
-      Script: {instanceID: 5258}
+      Script: {instanceID: 5268}
     - Class: 114
-      Script: {instanceID: 5404}
+      Script: {instanceID: 5414}
     - Class: 114
-      Script: {instanceID: 5566}
+      Script: {instanceID: 5576}
     - Class: 114
-      Script: {instanceID: 5608}
+      Script: {instanceID: 5618}
     - Class: 114
-      Script: {instanceID: 5802}
+      Script: {instanceID: 5812}
     - Class: 114
-      Script: {instanceID: 6288}
+      Script: {instanceID: 6298}
     - Class: 114
-      Script: {instanceID: 6296}
+      Script: {instanceID: 6306}
     - Class: 114
-      Script: {instanceID: 6888}
+      Script: {instanceID: 6898}
     - Class: 114
-      Script: {instanceID: 7014}
+      Script: {instanceID: 7024}
     - Class: 114
-      Script: {instanceID: 7382}
+      Script: {instanceID: 7392}
     - Class: 114
-      Script: {instanceID: 7754}
+      Script: {instanceID: 7764}
     - Class: 114
-      Script: {instanceID: 7882}
+      Script: {instanceID: 7892}
     - Class: 114
-      Script: {instanceID: 7990}
+      Script: {instanceID: 8000}
     - Class: 114
-      Script: {instanceID: 8186}
+      Script: {instanceID: 8196}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -356,7 +358,7 @@ ScriptsOnlyBuild:
     className: PanelRaycaster
   - hash:
       serializedVersion: 2
-      Hash: b9a183cb9081fb30274bfae63d684185
+      Hash: 7f277473377eb284b7e262958d127598
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: Health
@@ -2392,5 +2394,5 @@ ScriptsOnlyBuild:
   scenePathNames:
   - Assets/Scenes/Menu.unity
   - Assets/Scenes/Battle.unity
-  playerPath: C:/Users/K1917661/Documents/Treasure-Thieves/Build Version/Jarek Lesson
-    1.exe
+  playerPath: D:/Users/tucha/Documents/GitHub/Treasure-Thieves/Build Version/Jarek
+    Lesson 1.exe

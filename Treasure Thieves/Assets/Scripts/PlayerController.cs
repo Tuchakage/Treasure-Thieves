@@ -35,12 +35,12 @@ public class PlayerController : MonoBehaviourPun
     TextMesh nickname;
 
 
-    public bool carrying = false; // Player is carrying the Treasure, also used to notify the treasure that it is being carried
+    public bool carrying; // Player is carrying the Treasure, also used to notify the treasure that it is being carried
 
     // Start is called before the first frame update
     void Start()
     {
-
+        
         //photonView.IsMine - It only gets your client and only i can control it
         //If your player is there and your fp camera is there
         if (photonView.IsMine && fpcam != null)
@@ -52,6 +52,8 @@ public class PlayerController : MonoBehaviourPun
 
             //Grab Player Animator
             _playeranim = GetComponent<Animator>();
+
+            carrying = false;
         }
 
         else  //If its not my client and its another player 
@@ -119,14 +121,9 @@ public class PlayerController : MonoBehaviourPun
         }
     }
 
-
-    public void FootL()
+    //So the Player knows when its carrying something or not
+    public void SetCarrying(bool isPickingUp) 
     {
-
+        carrying = isPickingUp;
     }
-
-    public void FootR()
-    {
-
-    }    
 }

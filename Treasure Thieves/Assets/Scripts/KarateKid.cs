@@ -68,6 +68,8 @@ public class KarateKid : MonoBehaviourPunCallbacks
     void Attack()
     {
         _attackbox.enabled = true;
+        OwnerOfKick findowner = _attackbox.GetComponent<OwnerOfKick>();
+        findowner.SetOwner(this.GetComponent<PhotonView>().ViewID);
     }
 
     void DisableAttack()

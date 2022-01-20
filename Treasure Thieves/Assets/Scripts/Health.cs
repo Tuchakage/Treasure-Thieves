@@ -129,7 +129,7 @@ public class Health : MonoBehaviourPunCallbacks, IPunObservable
 
     }
 
-    private void OnCollisionEnter(Collision collision)
+    private void OnTriggerEnter(Collider collision)
     {
         //Makes sure that when you get hit its from someone else and not yourself
         if (photonView.IsMine)

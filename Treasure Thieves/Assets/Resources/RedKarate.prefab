@@ -178,8 +178,8 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2780483849864359152}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 0
+  m_IsTrigger: 1
+  m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 0.638559, y: 0.50187683, z: 1.4816219}
   m_Center: {x: -0.040693745, y: -0.00682846, z: -0.17616135}
@@ -495,7 +495,7 @@ MonoBehaviour:
   timer: 0
   cooldown: 1
   attackname: Basic Attack
-  _attackbox: {fileID: 0}
+  _attackbox: {fileID: 7508877549768589827}
   _playeranim: {fileID: 4421416895308103774}
 --- !u!65 &1929971394187537587
 BoxCollider:

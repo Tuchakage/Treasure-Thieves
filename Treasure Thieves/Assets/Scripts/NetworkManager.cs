@@ -43,6 +43,8 @@ public class NetworkManager : MonoBehaviourPunCallbacks, IPunObservable
     // Start is called before the first frame update
     void Start()
     {
+        Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.None;
         functionCalledOnce = false;
         teamPick = 0;
         //Make sure the blue and red score is 0
@@ -70,7 +72,7 @@ public class NetworkManager : MonoBehaviourPunCallbacks, IPunObservable
         if (!isAlive)
         {
             buttonRespawn.gameObject.SetActive(true);
-            Cursor.visible = true;
+
             //Respawn Option to change classes
             if (teamPick == 1)
             {

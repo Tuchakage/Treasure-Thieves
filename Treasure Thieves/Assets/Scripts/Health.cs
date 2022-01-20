@@ -15,7 +15,7 @@ public class Health : MonoBehaviourPunCallbacks, IPunObservable
 
     PlayerController pc;
 
-    Teams ct;
+    Teams myClass;
 
     public float deathtimer;
     public bool dead = false;
@@ -25,9 +25,18 @@ public class Health : MonoBehaviourPunCallbacks, IPunObservable
     // Start is called before the first frame update
     void Start()
     {
-        //Gets The Spellcaster script
-        spell = GetComponent<Spellcaster>();
-        kid = GetComponent<KarateKid>();
+        myClass = GetComponent<Teams>();
+        if (myClass.classid == Teams.chosenClass._Spellcaster)
+        {
+            spell = GetComponent<Spellcaster>();
+
+        }
+        else if (myClass.classid == Teams.chosenClass._Karate) 
+        {
+            kid = GetComponent<KarateKid>();
+        }
+
+
         nm = GameObject.Find("NetworkManager").GetComponent<NetworkManager>();
         //Get The Player Controller from this Player Object
         pc = GetComponent<PlayerController>();
@@ -46,7 +55,17 @@ public class Health : MonoBehaviourPunCallbacks, IPunObservable
             deathtimer -= Time.deltaTime;
             //Disable Scripts
             pc.enabled = false;
-            //spell.enabled = false;
+            if (myClass.classid == Teams.chosenClass._Spellcaster)
+            {
+                spell.enabled = false;
+                Debug.Log("Spell disabled");
+
+            }
+            else if (myClass.classid == Teams.chosenClass._Karate)
+            {
+                kid.enabled = false;
+            }
+            
 
             if (dead == false)
             {
@@ -86,7 +105,7 @@ public class Health : MonoBehaviourPunCallbacks, IPunObservable
 
             //Find the player id of the owner of the attack and get the Spellcaster script
             spell = PhotonView.Find(ownerid).GetComponent<Spellcaster>();
-            ct = PhotonView.Find(ownerid).GetComponent<Teams>();
+            Teams ct = PhotonView.Find(ownerid).GetComponent<Teams>();
 
             Debug.Log("Owner Of Attack: " + PhotonView.Get(PhotonView.Find(ownerid).gameObject));
 
@@ -147,7 +166,7 @@ public class Health : MonoBehaviourPunCallbacks, IPunObservable
 
                 //Find the player id of the owner of the attack and get the Spellcaster script
                 kid = PhotonView.Find(ownerid).GetComponent<KarateKid>();
-                ct = PhotonView.Find(ownerid).GetComponent<Teams>();
+                Teams ct = PhotonView.Find(ownerid).GetComponent<Teams>();
 
                 Debug.Log("Owner Of Attack: " + PhotonView.Get(PhotonView.Find(ownerid).gameObject));
 

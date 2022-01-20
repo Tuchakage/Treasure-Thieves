@@ -17,7 +17,7 @@ public class Health : MonoBehaviourPunCallbacks, IPunObservable
 
     Teams myClass;
 
-    public float deathtimer;
+    public float deathtimer, hitstuntimer;
     public bool dead = false;
 
     [SerializeField] Animator _playeranim;
@@ -49,7 +49,7 @@ public class Health : MonoBehaviourPunCallbacks, IPunObservable
     void Update()
     {
         // When the health is less than or equal to 0 then destroy the Player Game Object
-        if (health <= 0) 
+        if (health <= 0)
         {
             //Start the countdown
             deathtimer -= Time.deltaTime;
@@ -65,7 +65,7 @@ public class Health : MonoBehaviourPunCallbacks, IPunObservable
             {
                 kid.enabled = false;
             }
-            
+
 
             if (dead == false)
             {
@@ -81,6 +81,19 @@ public class Health : MonoBehaviourPunCallbacks, IPunObservable
                 photonView.RPC("DestroyObject", RpcTarget.All, GetComponent<PhotonView>().ViewID);
             }
         }
+        else 
+        {
+            //Player cant move until the timer is done
+            if (hitstuntimer > 0)
+            {
+                hitstuntimer--;
+            }
+            else 
+            {
+                //Re enable the Player Controller
+                pc.enabled = true;
+            }
+        }
     }
 
     void TakeDamage(float damagetaken)
@@ -88,6 +101,10 @@ public class Health : MonoBehaviourPunCallbacks, IPunObservable
         //Makes sure that when you deal damage you dont take damage from your own attack
         health -= damagetaken;
         Debug.Log("Lost Health");
+        //Make it so player cant move
+        pc.enabled = false;
+        //Add Hitstun
+        hitstuntimer = 3f;
 
     }
 

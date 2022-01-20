@@ -116,7 +116,7 @@ MonoBehaviour:
     y: 30
     width: 1920
     height: 947
-  m_MinSize: {x: 507, y: 492}
+  m_MinSize: {x: 506, y: 492}
   m_MaxSize: {x: 14002, y: 14042}
   vertical: 0
   controlID: 95
@@ -223,8 +223,8 @@ MonoBehaviour:
     y: 0
     width: 552
     height: 947
-  m_MinSize: {x: 276, y: 292}
-  m_MaxSize: {x: 4001, y: 8042}
+  m_MinSize: {x: 275, y: 271}
+  m_MaxSize: {x: 4001, y: 8021}
   vertical: 1
   controlID: 96
 --- !u!114 &10
@@ -272,8 +272,8 @@ MonoBehaviour:
     y: 316
     width: 552
     height: 631
-  m_MinSize: {x: 276, y: 71}
-  m_MaxSize: {x: 4001, y: 4021}
+  m_MinSize: {x: 275, y: 50}
+  m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 20}
   m_Panes:
   - {fileID: 20}
@@ -392,7 +392,7 @@ MonoBehaviour:
   m_Rotation:
     m_Target: {x: -0.030882623, y: -0.9695016, z: 0.17670739, w: -0.16864528}
     speed: 2
-    m_Value: {x: 0.030882625, y: 0.9695016, z: -0.17670739, w: 0.16864528}
+    m_Value: {x: -0.030874074, y: -0.9692332, z: 0.17665847, w: -0.16859859}
   m_Size:
     m_Target: 4.864417
     speed: 2
@@ -467,10 +467,10 @@ MonoBehaviour:
     m_VRangeLocked: 0
     hZoomLockedByDefault: 0
     vZoomLockedByDefault: 0
-    m_HBaseRangeMin: -524.5
-    m_HBaseRangeMax: 524.5
-    m_VBaseRangeMin: -295
-    m_VBaseRangeMax: 295
+    m_HBaseRangeMin: -506
+    m_HBaseRangeMax: 506
+    m_VBaseRangeMin: -284.5
+    m_VBaseRangeMax: 284.5
     m_HAllowExceedBaseRangeMin: 1
     m_HAllowExceedBaseRangeMax: 1
     m_VAllowExceedBaseRangeMin: 1
@@ -487,11 +487,11 @@ MonoBehaviour:
     m_DrawArea:
       serializedVersion: 2
       x: 0
-      y: 0
+      y: 21
       width: 1367
-      height: 590
+      height: 569
     m_Scale: {x: 1, y: 1}
-    m_Translation: {x: 683.5, y: 295}
+    m_Translation: {x: 683.5, y: 284.5}
     m_MarginLeft: 0
     m_MarginRight: 0
     m_MarginTop: 0
@@ -499,9 +499,9 @@ MonoBehaviour:
     m_LastShownAreaInsideMargins:
       serializedVersion: 2
       x: -683.5
-      y: -295
+      y: -284.5
       width: 1367
-      height: 590
+      height: 569
     m_MinimalGUI: 1
   m_defaultScale: 1
   m_LastWindowPixelSize: {x: 1367, y: 590}

@@ -68,7 +68,7 @@ public class Spellcaster : MonoBehaviourPunCallbacks, IPunObservable
         //Depending on the spell game object depends on the amount of damage the attack will do
         if (attackname == "Basic Attack")
         {
-            dmg = 20;
+            dmg = 30;
         }
         return dmg;
     }

@@ -60,7 +60,7 @@ public class KarateKid : MonoBehaviourPunCallbacks
         //Depending on the spell game object depends on the amount of damage the attack will do
         if (attackname == "Basic Attack")
         {
-            dmg = 35;
+            dmg = 30;
         }
         return dmg;
     }

@@ -7,7 +7,6 @@ TagManager:
   - Basic Attack
   - RedTreasure
   - BlueTreasure
-  - HealthTextUI
   layers:
   - Default
   - TransparentFX

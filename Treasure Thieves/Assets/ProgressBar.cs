@@ -24,6 +24,7 @@ public class ProgressBar : MonoBehaviourPun
     // Update is called once per frame
     void Update()
     {
+        spell = GameObject.FindGameObjectWithTag("Player").GetComponent<Spellcaster>();
         //If the current fill is less than the maximum value (The bar is not full) and the countdown is more than 0 (The move is recharging)
         if (spell.timer > 0)
         {

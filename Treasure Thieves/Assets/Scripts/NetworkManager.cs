@@ -100,12 +100,7 @@ public class NetworkManager : MonoBehaviourPunCallbacks, IPunObservable
             functionCalledOnce = true;
         }
 
-        //MAKE SURE TO DELETE LATER
-        if (Input.GetKeyDown(KeyCode.H)) 
-        {
-            bluePlayerCount++;
-            redPlayerCount++;
-        }
+        
     }
 
     //When you press the Leave button
@@ -146,14 +141,14 @@ public class NetworkManager : MonoBehaviourPunCallbacks, IPunObservable
     //Checks to see who the winner is
     void CheckScore()
     {
-        if (bluescore == 1)
+        if (bluescore == 3)
         {
             win = true;
             bluewinnertext.gameObject.SetActive(true);
             bluewinnertext.text = "BLUE TEAM WINS";
             buttonLeave.gameObject.SetActive(false);
         }
-        else if (redscore == 1)
+        else if (redscore == 3)
         {
             win = true;
             redwinnertext.gameObject.SetActive(true);

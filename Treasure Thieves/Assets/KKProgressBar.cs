@@ -21,7 +21,7 @@ public class KKProgressBar : MonoBehaviourPun
     // Update is called once per frame
     void Update()
     {
-
+        basicattack = GameObject.FindGameObjectWithTag("Player").GetComponent<KarateKid>();
         //If the current fill is less than the maximum value (The bar is not full) and the countdown is more than 0 (The move is recharging)
         if (basicattack.timer > 0)
         {

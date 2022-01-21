@@ -493,7 +493,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: df0d05fd876e6114da90e9c2097c56d1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dmg: 30
+  dmg: 25
   timer: 0
   cooldown: 1
   attackname: Basic Attack

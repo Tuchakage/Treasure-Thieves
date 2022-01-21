@@ -1,11 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using Photon.Pun;
 
 public class Health : MonoBehaviourPunCallbacks, IPunObservable
 {
     public float health = 100;
+    public Text healthText;
+    public GameObject healthTextUI;
 
     Spellcaster spell;
 
@@ -29,14 +32,15 @@ public class Health : MonoBehaviourPunCallbacks, IPunObservable
         if (myClass.classid == Teams.chosenClass._Spellcaster)
         {
             spell = GetComponent<Spellcaster>();
-
+            healthTextUI = GameObject.Find("HealthText");
         }
         else if (myClass.classid == Teams.chosenClass._Karate) 
         {
             kid = GetComponent<KarateKid>();
+            healthTextUI = GameObject.Find("HealthText");
         }
 
-
+        healthTextUI.GetComponentInChildren<Text>().text = "Health = " + health;
         nm = GameObject.Find("NetworkManager").GetComponent<NetworkManager>();
         //Get The Player Controller from this Player Object
         pc = GetComponent<PlayerController>();
@@ -48,6 +52,7 @@ public class Health : MonoBehaviourPunCallbacks, IPunObservable
     // Update is called once per frame
     void Update()
     {
+
         // When the health is less than or equal to 0 then destroy the Player Game Object
         if (health <= 0)
         {

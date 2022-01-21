@@ -1965,7 +1965,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   basicattack: {fileID: 6256681316163809565, guid: 1b9e716b6a6bd1e428c92b909cfde200, type: 3}
-  dmg: 0
+  dmg: 20
   wand: {fileID: 6871852171249623814}
   attackname: 
   timer: 0

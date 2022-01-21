@@ -20,7 +20,7 @@ public class Health : MonoBehaviourPunCallbacks, IPunObservable
 
     Teams myClass;
 
-    public float deathtimer, hitstuntimer, hitstun;
+    public float deathtimer, hitstuntimer;
     public bool dead = false;
 
     [SerializeField] Animator _playeranim;
@@ -60,8 +60,16 @@ public class Health : MonoBehaviourPunCallbacks, IPunObservable
             deathtimer -= Time.deltaTime;
             //Disable Scripts
             pc.enabled = false;
-            //Makes it so Players cant attack no more
-            ClassSwitch(false);
+            if (myClass.classid == Teams.chosenClass._Spellcaster)
+            {
+                spell.enabled = false;
+                Debug.Log("Spell disabled");
+
+            }
+            else if (myClass.classid == Teams.chosenClass._Karate)
+            {
+                kid.enabled = false;
+            }
 
 
             if (dead == false)
@@ -83,14 +91,12 @@ public class Health : MonoBehaviourPunCallbacks, IPunObservable
             //Player cant move until the timer is done
             if (hitstuntimer > 0)
             {
-                hitstuntimer-= Time.deltaTime;
+                hitstuntimer--;
             }
             else 
             {
                 //Re enable the Player Controller
                 pc.enabled = true;
-                //Makes it so Players can attack after being hit
-                ClassSwitch(true);
             }
         }
     }
@@ -102,15 +108,8 @@ public class Health : MonoBehaviourPunCallbacks, IPunObservable
         Debug.Log("Lost Health");
         //Make it so player cant move
         pc.enabled = false;
-        //Makes it so Players cant attack no more
-        ClassSwitch(false);
         //Add Hitstun
-        hitstuntimer = hitstun;
-        //Make Player drop the Treasure
-        pc.SetCarrying(false);
-        //Find The Treasure Trigger Script in all the child of this game Object and call the Drop Treasure function
-        GetComponentInChildren<TreasureTrigger>().DropTreasure(pc);
-
+        hitstuntimer = 3f;
 
     }
 
@@ -142,6 +141,8 @@ public class Health : MonoBehaviourPunCallbacks, IPunObservable
                 {
                     if(ct.teamid != this.GetComponent<Teams>().teamid)
                     {
+                        //Attacked Player will no longer be able to carry the Treasure
+                        pc.carrying = false;
                         //Attacked Player will take damage and check how much damage the attack should deal from the owner of the attack
                         TakeDamage(spell.DealDamage());
                         //Destroy The Spell Game Object For Everyone
@@ -201,6 +202,8 @@ public class Health : MonoBehaviourPunCallbacks, IPunObservable
                     {
                         if (ct.teamid != this.GetComponent<Teams>().teamid)
                         {
+                            //Attacked Player will no longer be able to carry the Treasure
+                            pc.carrying = false;
                             //Attacked Player will take damage and check how much damage the attack should deal from the owner of the attack
                             TakeDamage(kid.DealDamage());
                             Debug.Log("Basic Attack has hit " + collision.gameObject.name);
@@ -242,18 +245,6 @@ public class Health : MonoBehaviourPunCallbacks, IPunObservable
         Destroy(PhotonView.Find(go).gameObject);
     }
 
-    //Makes it so that we can turn the Class script on and off (Makes it whether or not the player can attack or not
-    void ClassSwitch(bool onoff) 
-    {
-        if (myClass.classid == Teams.chosenClass._Spellcaster)
-        {
-            spell.enabled = onoff;
 
-        }
-        else if (myClass.classid == Teams.chosenClass._Karate)
-        {
-            kid.enabled = onoff;
-        }
-    }
 
 }

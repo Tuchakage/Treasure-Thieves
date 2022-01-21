@@ -1987,8 +1987,6 @@ MonoBehaviour:
   healthText: {fileID: 0}
   healthTextUI: {fileID: 0}
   deathtimer: 0
-  hitstuntimer: 0
-  hitstun: 2
   dead: 0
   _playeranim: {fileID: 0}
 --- !u!114 &6871852171559625581

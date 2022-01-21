@@ -42,43 +42,35 @@ public class TreasureTrigger : MonoBehaviourPun
 
         if (inTrigger) //If there is a player in the Trigger
         {
-            if (playerpv.IsMine) //Check to see if it is the Payer pressing the button
+            if (playerpv.IsMine) //Check to see if it is the PLayer pressing the button
             {
-                PlayerController pc = playerpv.GetComponent<PlayerController>();
-                if (Input.GetKeyDown(KeyCode.F) && !isPickedUp && inTrigger && !pc.carrying) //If the F Key Is Pressed and the Treasure hasnt been picked up yet and there is still a player in the trigger and the player is not carrying
+                if (Input.GetKeyDown(KeyCode.F) && !isPickedUp && inTrigger) //If the F Key Is Pressed and the Treasure hasnt been picked up yet and there is still a player in the trigger
                 {
                     // The Player will pick up the Treasure
                     photonView.RPC("AttachToPlayer", RpcTarget.All, playerid);
                     Debug.Log("Picked Up Treasure");
                     //Treasure Animation is true
-                    pc._playeranim.SetBool("Carrying", true);
+                    playerpv.gameObject.GetComponent<PlayerController>()._playeranim.SetBool("Carrying", true);
                     //Set Speed to Slow
-                    pc._moveSpeed = pc._moveSlowSpeed;
-                    //Notify the Player object that it is carrying something
-                    pc.SetCarrying(true);
+                    playerpv.gameObject.GetComponent<PlayerController>()._moveSpeed = playerpv.gameObject.GetComponent<PlayerController>()._moveSlowSpeed;
 
                 }
-                else if (Input.GetKeyDown(KeyCode.G) && isPickedUp && pc.carrying) //If the G Key Is Pressed and the Treasure has been picked up
+                else if (Input.GetKeyDown(KeyCode.G) && isPickedUp) //If the G Key Is Pressed and the Treasure has been picked up
                 {
                     //Player Drops the Treasure
                     photonView.RPC("DetachFromPlayer", RpcTarget.All);              
                     //Treasure will know it has been dropped
                     isPickedUp = false;
                     Debug.Log("Dropped Treasure");
-                    pc._playeranim.SetBool("Carrying", false);
-                    pc._moveSpeed = 10f;
-                    //Notify the Player object that it is carrying something
-                    pc.SetCarrying(false);
+                    playerpv.gameObject.GetComponent<PlayerController>()._playeranim.SetBool("Carrying", false);
+                    playerpv.gameObject.GetComponent<PlayerController>()._moveSpeed = 10f;
                 }
-                else if (Input.GetKeyDown(KeyCode.Space) && isPickedUp && canBeThrown && pc.carrying) //If the Space Key is pressed and the Treasure has been picked up and the Treasure can be thrown
+                else if (Input.GetKeyDown(KeyCode.Space) && isPickedUp && canBeThrown) //If the Space Key is pressed and the Treasure has been picked up and the Treasure can be thrown
                 {
                     photonView.RPC("ThrownFromPlayer", RpcTarget.All, playerid);
-                    pc._playeranim.SetBool("Carrying", false);
-                    pc._moveSpeed = 10f;
-                    //Notify the Player object that it is not carrying no more
-                    pc.SetCarrying(false);
+                    playerpv.gameObject.GetComponent<PlayerController>()._playeranim.SetBool("Carrying", false);
+                    playerpv.gameObject.GetComponent<PlayerController>()._moveSpeed = 10f;
                 }
-
             }
         }
     }
@@ -175,16 +167,5 @@ public class TreasureTrigger : MonoBehaviourPun
         rb.AddForce(playerController.fpcam.up * thrownForce, ForceMode.Impulse);
         canBeThrown = false;
 
-    }
-
-    public void DropTreasure(PlayerController pController) 
-    {
-        //Player Drops the Treasure
-        photonView.RPC("DetachFromPlayer", RpcTarget.All);
-        //Treasure will know it has been dropped
-        isPickedUp = false;
-        Debug.Log("Dropped Treasure");
-        pController._playeranim.SetBool("Carrying", false);
-        pController._moveSpeed = 10f;
     }
 }

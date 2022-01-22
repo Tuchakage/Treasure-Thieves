@@ -223,6 +223,8 @@ public class NetworkManager : MonoBehaviourPunCallbacks, IPunObservable
         player = bp_SC_Prefab;
         Respawn();
         spellProgressBar1.SetActive(true);
+        ProgressBar spellBar = spellProgressBar1.gameObject.GetComponent<ProgressBar>();
+        spellBar.spell = GameObject.FindGameObjectWithTag("Player").GetComponent<Spellcaster>();
         KKProgressBar1.SetActive(false);
         //Debug.Log("Blue Team: Class type changed to Spellcaster");
     }
@@ -232,6 +234,8 @@ public class NetworkManager : MonoBehaviourPunCallbacks, IPunObservable
         player = bp_WR_Prefab;
         Respawn();
         KKProgressBar1.SetActive(true);
+        KKProgressBar karateBar = KKProgressBar1.gameObject.GetComponent<KKProgressBar>();
+        karateBar.basicattack = GameObject.FindGameObjectWithTag("Player").GetComponent<KarateKid>();
         spellProgressBar1.SetActive(false);
         //Debug.Log("Class type changed to warrior");
     }
@@ -242,6 +246,8 @@ public class NetworkManager : MonoBehaviourPunCallbacks, IPunObservable
         player = rp_SC_Prefab;
         Respawn();
         spellProgressBar1.SetActive(true);
+        ProgressBar spellBar = spellProgressBar1.gameObject.GetComponent<ProgressBar>();
+        spellBar.spell = GameObject.FindGameObjectWithTag("Player").GetComponent<Spellcaster>();
         KKProgressBar1.SetActive(false);
         //Debug.Log("Class type changed to spellcaster");
     }
@@ -251,6 +257,8 @@ public class NetworkManager : MonoBehaviourPunCallbacks, IPunObservable
         player = rp_WR_Prefab;
         Respawn();
         KKProgressBar1.SetActive(true);
+        KKProgressBar karateBar = KKProgressBar1.gameObject.GetComponent<KKProgressBar>();
+        karateBar.basicattack = GameObject.FindGameObjectWithTag("Player").GetComponent<KarateKid>();
         spellProgressBar1.SetActive(false);
         //Debug.Log("Class type changed to warrior");
     }

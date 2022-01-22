@@ -1,125 +1,125 @@
 Using pre-set license
 Built from '2021.1/release' branch; Version is '2021.1.10f1 (b15f561b2cef) revision 11624278'; Using compiler version '192528614'; Build Type 'Release'
-OS: 'Windows 10 Education; OS build 19042.1466; Version 2009; 64bit' Language: 'en' Physical Memory: 16331 MB
+OS: 'Windows 10 Home; OS build 19042.1466; Version 2009; 64bit' Language: 'en' Physical Memory: 16333 MB
 BatchMode: 1, IsHumanControllingUs: 0, StartBugReporterOnCrash: 0, Is64bit: 1, IsPro: 0
 
  COMMAND LINE ARGUMENTS:
-C:\Apps\Unity\Editor\Unity.exe
+C:\Program Files\Unity\Hub\Editor\2021.1.10f1\Editor\Unity.exe
 -adb2
 -batchMode
 -noUpm
 -name
 AssetImportWorker0
 -projectPath
-C:/Users/k1916419/Documents/Treasure-Thieves/Treasure Thieves
+D:/Users/tucha/Documents/GitHub/Treasure-Thieves/Treasure Thieves
 -logFile
 Logs/AssetImportWorker0.log
 -srvPort
-61209
-Successfully changed project path to: C:/Users/k1916419/Documents/Treasure-Thieves/Treasure Thieves
-C:/Users/k1916419/Documents/Treasure-Thieves/Treasure Thieves
+59478
+Successfully changed project path to: D:/Users/tucha/Documents/GitHub/Treasure-Thieves/Treasure Thieves
+D:/Users/tucha/Documents/GitHub/Treasure-Thieves/Treasure Thieves
 Using Asset Import Pipeline V2.
-Refreshing native plugins compatible for Editor in 194.64 ms, found 3 plugins.
+Refreshing native plugins compatible for Editor in 106.21 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Initialize engine version: 2021.1.10f1 (b15f561b2cef)
-[Subsystems] Discovering subsystems at path C:/Apps/Unity/Editor/Data/Resources/UnitySubsystems
-[Subsystems] Discovering subsystems at path C:/Users/k1916419/Documents/Treasure-Thieves/Treasure Thieves/Assets
+[Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/2021.1.10f1/Editor/Data/Resources/UnitySubsystems
+[Subsystems] Discovering subsystems at path D:/Users/tucha/Documents/GitHub/Treasure-Thieves/Treasure Thieves/Assets
 GfxDevice: creating device client; threaded=0; jobified=0
 Direct3D:
     Version:  Direct3D 11.0 [level 11.1]
-    Renderer: NVIDIA GeForce GTX 1080 (ID=0x1b80)
+    Renderer: NVIDIA GeForce GTX 1660 SUPER (ID=0x21c4)
     Vendor:   NVIDIA
-    VRAM:     8079 MB
-    Driver:   30.0.14.7111
+    VRAM:     5991 MB
+    Driver:   30.0.15.1123
 Initialize mono
-Mono path[0] = 'C:/Apps/Unity/Editor/Data/Managed'
-Mono path[1] = 'C:/Apps/Unity/Editor/Data/MonoBleedingEdge/lib/mono/unityjit'
-Mono config path = 'C:/Apps/Unity/Editor/Data/MonoBleedingEdge/etc'
-Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56256
+Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/2021.1.10f1/Editor/Data/Managed'
+Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/2021.1.10f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit'
+Mono config path = 'C:/Program Files/Unity/Hub/Editor/2021.1.10f1/Editor/Data/MonoBleedingEdge/etc'
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56964
 Begin MonoManager ReloadAssembly
 Registering precompiled unity dll's ...
-Register platform support module: C:/Apps/Unity/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
-Registered in 0.006055 seconds.
+Register platform support module: C:/Program Files/Unity/Hub/Editor/2021.1.10f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
+Registered in 0.001675 seconds.
 Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 126.29 ms, found 3 plugins.
+Refreshing native plugins compatible for Editor in 102.42 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  2.222 seconds
+- Completed reload, in  2.363 seconds
 Domain Reload Profiling:
-	ReloadAssembly (2222ms)
-		BeginReloadAssembly (151ms)
+	ReloadAssembly (2363ms)
+		BeginReloadAssembly (50ms)
 			ExecutionOrderSort (0ms)
 			DisableScriptedObjects (0ms)
 			BackupInstance (0ms)
 			ReleaseScriptingObjects (0ms)
 			CreateAndSetChildDomain (1ms)
-		EndReloadAssembly (566ms)
-			LoadAssemblies (146ms)
+		EndReloadAssembly (434ms)
+			LoadAssemblies (47ms)
 			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (192ms)
+			SetupTypeCache (145ms)
 			ReleaseScriptCaches (0ms)
-			RebuildScriptCaches (33ms)
-			SetupLoadedEditorAssemblies (271ms)
+			RebuildScriptCaches (27ms)
+			SetupLoadedEditorAssemblies (222ms)
 				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (7ms)
+				InitializePlatformSupportModulesInManaged (5ms)
 				SetLoadedEditorAssemblies (0ms)
-				RefreshPlugins (126ms)
+				RefreshPlugins (103ms)
 				BeforeProcessingInitializeOnLoad (1ms)
-				ProcessInitializeOnLoadAttributes (101ms)
-				ProcessInitializeOnLoadMethodAttributes (35ms)
+				ProcessInitializeOnLoadAttributes (86ms)
+				ProcessInitializeOnLoadMethodAttributes (26ms)
 				AfterProcessingInitializeOnLoad (0ms)
 				EditorAssembliesLoaded (0ms)
 			ExecutionOrderSort2 (0ms)
 			AwakeInstancesAfterBackupRestoration (0ms)
 Platform modules already initialized, skipping
 Registering precompiled user dll's ...
-Registered in 0.032760 seconds.
+Registered in 0.006827 seconds.
 Begin MonoManager ReloadAssembly
-Symbol file LoadedFromMemory doesn't match image C:\Users\k1916419\Documents\Treasure-Thieves\Treasure Thieves\Library\PackageCache\com.unity.visualscripting@1.6.1\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
-Symbol file LoadedFromMemory doesn't match image C:\Users\k1916419\Documents\Treasure-Thieves\Treasure Thieves\Library\PackageCache\com.unity.visualscripting@1.6.1\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
+Symbol file LoadedFromMemory doesn't match image D:\Users\tucha\Documents\GitHub\Treasure-Thieves\Treasure Thieves\Library\PackageCache\com.unity.visualscripting@1.6.1\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
+Symbol file LoadedFromMemory doesn't match image D:\Users\tucha\Documents\GitHub\Treasure-Thieves\Treasure Thieves\Library\PackageCache\com.unity.visualscripting@1.6.1\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
 Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 0.88 ms, found 3 plugins.
+Refreshing native plugins compatible for Editor in 1.16 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  1.504 seconds
+- Completed reload, in  2.145 seconds
 Domain Reload Profiling:
-	ReloadAssembly (1504ms)
-		BeginReloadAssembly (233ms)
+	ReloadAssembly (2146ms)
+		BeginReloadAssembly (129ms)
 			ExecutionOrderSort (0ms)
 			DisableScriptedObjects (4ms)
 			BackupInstance (0ms)
 			ReleaseScriptingObjects (0ms)
-			CreateAndSetChildDomain (19ms)
-		EndReloadAssembly (1180ms)
-			LoadAssemblies (304ms)
+			CreateAndSetChildDomain (18ms)
+		EndReloadAssembly (1960ms)
+			LoadAssemblies (1169ms)
 			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (391ms)
+			SetupTypeCache (331ms)
 			ReleaseScriptCaches (1ms)
-			RebuildScriptCaches (56ms)
-			SetupLoadedEditorAssemblies (391ms)
+			RebuildScriptCaches (57ms)
+			SetupLoadedEditorAssemblies (309ms)
 				LogAssemblyErrors (0ms)
 				InitializePlatformSupportModulesInManaged (5ms)
 				SetLoadedEditorAssemblies (0ms)
 				RefreshPlugins (1ms)
-				BeforeProcessingInitializeOnLoad (99ms)
-				ProcessInitializeOnLoadAttributes (255ms)
+				BeforeProcessingInitializeOnLoad (68ms)
+				ProcessInitializeOnLoadAttributes (221ms)
 				ProcessInitializeOnLoadMethodAttributes (7ms)
-				AfterProcessingInitializeOnLoad (23ms)
+				AfterProcessingInitializeOnLoad (6ms)
 				EditorAssembliesLoaded (0ms)
 			ExecutionOrderSort2 (0ms)
 			AwakeInstancesAfterBackupRestoration (6ms)
 Platform modules already initialized, skipping
 ========================================================================
 Worker process is ready to serve import requests
-Launched and connected shader compiler UnityShaderCompiler.exe after 0.08 seconds
-Refreshing native plugins compatible for Editor in 0.91 ms, found 3 plugins.
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.04 seconds
+Refreshing native plugins compatible for Editor in 1.03 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Unloading 3337 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 137.1 MB.
-System memory in use after: 137.3 MB.
+System memory in use before: 137.0 MB.
+System memory in use after: 137.2 MB.
 
-Unloading 30 unused Assets to reduce memory usage. Loaded Objects now: 3800.
-Total: 2.454400 ms (FindLiveObjects: 0.237000 ms CreateObjectMapping: 0.146200 ms MarkObjects: 1.984700 ms  DeleteObjects: 0.085700 ms)
+Unloading 29 unused Assets to reduce memory usage. Loaded Objects now: 3801.
+Total: 2.298700 ms (FindLiveObjects: 0.321100 ms CreateObjectMapping: 0.088300 ms MarkObjects: 1.814300 ms  DeleteObjects: 0.074000 ms)
 
 AssetImportParameters requested are different than current active one (requested -> active):
   custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
@@ -135,29 +135,47 @@ AssetImportParameters requested are different than current active one (requested
 Received Import Request.
   path: Assets/New Project.png
   artifactKey: Guid(f280d42124dccd646ae425b4b96240c7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/New Project.png using Guid(f280d42124dccd646ae425b4b96240c7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '40b0e63514282c8984e32483193a531f') in 0.125175 seconds 
+Start importing Assets/New Project.png using Guid(f280d42124dccd646ae425b4b96240c7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a23c4c7ddf331a037cddfb21800f4146') in 0.146078 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000333 seconds.
+  Time since last request: 0.000521 seconds.
+  path: Assets/Basic.png
+  artifactKey: Guid(e94508787809a3a4ab89d1a1c8bc2c83) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Basic.png using Guid(e94508787809a3a4ab89d1a1c8bc2c83) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ae9aec04a71565c016349e43c3031e26') in 0.020682 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000565 seconds.
+  path: Assets/Basic Attack Bar.prefab
+  artifactKey: Guid(4f1b1adff323bb44fbed669c20d42bdb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Basic Attack Bar.prefab using Guid(4f1b1adff323bb44fbed669c20d42bdb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ebba69408648cfd54368d5ca79b88036') in 0.023748 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000225 seconds.
   path: Assets/Karate Basic Attack Bar .prefab
   artifactKey: Guid(175c343028804ee498022671f8c7202d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Karate Basic Attack Bar .prefab using Guid(175c343028804ee498022671f8c7202d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5dd68779535fda700881320020801ec9') in 0.029793 seconds 
+Start importing Assets/Karate Basic Attack Bar .prefab using Guid(175c343028804ee498022671f8c7202d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e87bd1959444babc15e2c71731af7d3c') in 0.012227 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000371 seconds.
+  Time since last request: 0.000205 seconds.
   path: Assets/Basic Karate.png
   artifactKey: Guid(6b339497570d72e4db7299248aa84539) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Basic Karate.png using Guid(6b339497570d72e4db7299248aa84539) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f6fe8feaddbd5b5556f4b6c7556b8592') in 0.025202 seconds 
+Start importing Assets/Basic Karate.png using Guid(6b339497570d72e4db7299248aa84539) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1590cd6598f37e7845c1a2b18e72405b') in 0.018720 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000370 seconds.
+  Time since last request: 0.000243 seconds.
+  path: Assets/Basic Karate 1.png
+  artifactKey: Guid(68bc22641f0c89c4c9a0a437606e63cf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Basic Karate 1.png using Guid(68bc22641f0c89c4c9a0a437606e63cf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'eaf82707fc085764e8ea3a7f2768c3c3') in 0.021339 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000168 seconds.
   path: Assets/New Terrain Layer.terrainlayer
   artifactKey: Guid(8628a25684cbe1e4a8678365fa126a43) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/New Terrain Layer.terrainlayer using Guid(8628a25684cbe1e4a8678365fa126a43) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b0cb4ed1a3911e3d6a6a5c9d0e7fc2d8') in 0.037448 seconds 
+Start importing Assets/New Terrain Layer.terrainlayer using Guid(8628a25684cbe1e4a8678365fa126a43) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7d0cf268165786e96730ef7879cfa3b2') in 0.017721 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000179 seconds.
+  Time since last request: 0.000163 seconds.
   path: Assets/New Terrain.asset
   artifactKey: Guid(71105fd641ee8ac489ee6567128d8aeb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/New Terrain.asset using Guid(71105fd641ee8ac489ee6567128d8aeb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd26a784f8dc5f2573469018b6e138b5c') in 0.022013 seconds 
+Start importing Assets/New Terrain.asset using Guid(71105fd641ee8ac489ee6567128d8aeb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1dd5fcb4c56b88cdaf54ab6d6991a651') in 0.012313 seconds 
 AssetImportWorkerClient::OnTransportError - code=2 error=End of file

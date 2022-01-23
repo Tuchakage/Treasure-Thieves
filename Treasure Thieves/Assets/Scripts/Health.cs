@@ -101,10 +101,15 @@ public class Health : MonoBehaviourPunCallbacks, IPunObservable
         ClassSwitch(false);
         //Add Hitstun
         hitstuntimer = hitstun;
-        //Make Player drop the Treasure
-        pc.SetCarrying(false);
-        //Find The Treasure Trigger Script in all the child of this game Object and call the Drop Treasure function
-        GetComponentInChildren<TreasureTrigger>().DropTreasure(pc);
+
+        if (pc.carrying) //If Player is carrying
+        {
+            //Make Player drop the Treasure
+            pc.SetCarrying(false);
+            //Find The Treasure Trigger Script in all the child of this game Object and call the Drop Treasure function
+            GetComponentInChildren<TreasureTrigger>().DropTreasure(pc);
+        }
+
 
 
     }

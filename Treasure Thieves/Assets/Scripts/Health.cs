@@ -35,13 +35,12 @@ public class Health : MonoBehaviourPunCallbacks, IPunObservable
         {
             kid = GetComponent<KarateKid>();
         }
-
-        _playeranim.SetBool("hitStun", false);
         nm = GameObject.Find("NetworkManager").GetComponent<NetworkManager>();
         //Get The Player Controller from this Player Object
         pc = GetComponent<PlayerController>();
         //Grab Player Animator
         _playeranim = GetComponent<Animator>();
+        _playeranim.SetBool("hitStun", false);
         deathtimer = 5.0f;
     }
 
@@ -84,7 +83,7 @@ public class Health : MonoBehaviourPunCallbacks, IPunObservable
             else 
             {
 
-                _playeranim.SetBool("hitStun", true);
+                _playeranim.SetBool("hitStun", false);
                 //Re enable the Player Controller
                 pc.enabled = true;
                 //Makes it so Players can attack after being hit

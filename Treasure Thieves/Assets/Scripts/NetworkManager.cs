@@ -16,7 +16,7 @@ public class NetworkManager : MonoBehaviourPunCallbacks, IPunObservable
 
     [SerializeField] private Text nickname, status, room, players, bluescoretext, redscoretext, bluewinnertext, redwinnertext;
 
-    [SerializeField] private Button buttonLeave, buttonRespawn;
+    [SerializeField] private Button buttonLeave;
 
     [SerializeField] private Button blue_SpellClass, blue_WarriorClass, red_SpellClass, red_WarriorClass, redTeam, blueTeam; //Team Buttons
     public int bluescore, redscore, bluePlayerCount, redPlayerCount, maxInTeam;
@@ -71,7 +71,7 @@ public class NetworkManager : MonoBehaviourPunCallbacks, IPunObservable
         //If the player health is 0
         if (!isAlive)
         {
-            buttonRespawn.gameObject.SetActive(true);
+            
 
             //Respawn Option to change classes
             if (teamPick == 1)
@@ -275,8 +275,6 @@ public class NetworkManager : MonoBehaviourPunCallbacks, IPunObservable
         //Player Will Be Alive
         isAlive = true;
 
-        //Disable The Respawn Button
-        buttonRespawn.gameObject.SetActive(false);
 
         //Disable Classes
         blue_SpellClass.gameObject.SetActive(false);

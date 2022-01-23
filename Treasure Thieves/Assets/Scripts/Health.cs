@@ -40,7 +40,7 @@ public class Health : MonoBehaviourPunCallbacks, IPunObservable
         pc = GetComponent<PlayerController>();
         //Grab Player Animator
         _playeranim = GetComponent<Animator>();
-        _playeranim.SetBool("hitStun", false);
+        
         deathtimer = 5.0f;
     }
 
@@ -77,13 +77,11 @@ public class Health : MonoBehaviourPunCallbacks, IPunObservable
             //Player cant move until the timer is done
             if (hitstuntimer > 0)
             {
-                _playeranim.SetBool("hitStun", true);
+                
                 hitstuntimer-= Time.deltaTime;
             }
             else 
             {
-
-                _playeranim.SetBool("hitStun", false);
                 //Re enable the Player Controller
                 pc.enabled = true;
                 //Makes it so Players can attack after being hit
@@ -103,6 +101,11 @@ public class Health : MonoBehaviourPunCallbacks, IPunObservable
         ClassSwitch(false);
         //Add Hitstun
         hitstuntimer = hitstun;
+
+        if (health > 0)
+        {
+            _playeranim.SetTrigger("hitStun");
+        }
 
         if (pc.carrying) //If Player is carrying
         {
@@ -243,6 +246,7 @@ public class Health : MonoBehaviourPunCallbacks, IPunObservable
         //Find the Id of the Game Object that needs to be destroyed
         Destroy(PhotonView.Find(go).gameObject);
     }
+
 
     //Makes it so that we can turn the Class script on and off (Makes it whether or not the player can attack or not
     void ClassSwitch(bool onoff) 

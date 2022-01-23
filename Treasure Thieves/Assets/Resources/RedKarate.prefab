@@ -411,7 +411,7 @@ MonoBehaviour:
   health: 100
   deathtimer: 0
   hitstuntimer: 0
-  hitstun: 2
+  hitstun: 0.38
   dead: 0
   _playeranim: {fileID: 4421416895308103774}
 --- !u!114 &4421416896841111173

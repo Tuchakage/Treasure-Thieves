@@ -126,6 +126,7 @@ public class NetworkManager : MonoBehaviourPunCallbacks, IPunObservable
             PhotonNetwork.CurrentRoom.IsOpen = false;
             PhotonNetwork.AutomaticallySyncScene = false;
         }
+        Cursor.lockState = CursorLockMode.None;
         //Wait X seconds and then return to the main menu
         StartCoroutine(End(3f));
     }

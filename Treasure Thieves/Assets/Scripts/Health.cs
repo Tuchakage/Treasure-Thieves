@@ -62,6 +62,7 @@ public class Health : MonoBehaviourPunCallbacks, IPunObservable
             if (dead == false)
             {
                 _playeranim.SetTrigger("Death");
+                Cursor.lockState = CursorLockMode.None;
                 dead = true;
             }
 

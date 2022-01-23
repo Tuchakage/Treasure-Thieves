@@ -400,6 +400,7 @@
           <e p="MainMenuManager.cs" t="Include" />
           <e p="NavScript.cs" t="Include" />
           <e p="NetworkManager.cs" t="Include" />
+          <e p="OwnerOfKick.cs" t="Include" />
           <e p="OwnerOfSpell.cs" t="Include" />
           <e p="PlayerController.cs" t="Include" />
           <e p="PlayerLook.cs" t="Include" />

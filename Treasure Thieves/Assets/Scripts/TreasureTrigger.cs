@@ -171,10 +171,9 @@ public class TreasureTrigger : MonoBehaviourPun
     {
         PlayerController playerController = PhotonView.Find(IdOfPlayer).GetComponent<PlayerController>();
         DetachFromPlayer();
-        rb.AddForce(playerController.fpcam.forward * thrownForce, ForceMode.Impulse);
-        rb.AddForce(playerController.fpcam.up * thrownForce, ForceMode.Impulse);
+        rb.AddForce(PhotonView.Find(IdOfPlayer).transform.forward * thrownForce, ForceMode.Impulse);
+        rb.AddForce(PhotonView.Find(IdOfPlayer).transform.up * thrownForce, ForceMode.Impulse);
         canBeThrown = false;
-
     }
 
     public void DropTreasure(PlayerController pController) 

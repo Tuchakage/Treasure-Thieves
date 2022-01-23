@@ -85,7 +85,6 @@ public class Health : MonoBehaviourPunCallbacks, IPunObservable
                         _playeranim.SetTrigger("hitStun");
                         hitStun = true;
                 }
-                
             }
             else 
             {

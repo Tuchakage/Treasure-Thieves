@@ -259,12 +259,18 @@ public class Health : MonoBehaviourPunCallbacks, IPunObservable
     {
         if (myClass.classid == Teams.chosenClass._Spellcaster)
         {
-            spell.enabled = onoff;
+            if (photonView.IsMine)
+            {
+                spell.enabled = onoff;
+            }
 
         }
         else if (myClass.classid == Teams.chosenClass._Karate)
         {
-            kid.enabled = onoff;
+            if (photonView.IsMine)
+            {
+                kid.enabled = onoff;
+            }
         }
     }
 

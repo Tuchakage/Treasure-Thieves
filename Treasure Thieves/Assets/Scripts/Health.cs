@@ -19,6 +19,7 @@ public class Health : MonoBehaviourPunCallbacks, IPunObservable
 
     public float deathtimer, hitstuntimer, hitstun;
     public bool dead = false;
+    public bool hitStun = false;
 
     [SerializeField] Animator _playeranim;
 
@@ -77,8 +78,15 @@ public class Health : MonoBehaviourPunCallbacks, IPunObservable
             //Player cant move until the timer is done
             if (hitstuntimer > 0)
             {
-                
-                hitstuntimer-= Time.deltaTime;
+                if (health > 0)
+                {
+                    if (hitStun == true)
+                    {
+                        _playeranim.SetTrigger("hitStun");
+                        hitStun = false;
+                    }
+                }
+                hitstuntimer -= Time.deltaTime;
             }
             else 
             {
@@ -101,11 +109,11 @@ public class Health : MonoBehaviourPunCallbacks, IPunObservable
         ClassSwitch(false);
         //Add Hitstun
         hitstuntimer = hitstun;
-
-        if (health > 0)
+        hitStun = true;
+       /* if (health > 0)
         {
             _playeranim.SetTrigger("hitStun");
-        }
+        }*/
 
         if (pc.carrying) //If Player is carrying
         {

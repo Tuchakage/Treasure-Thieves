@@ -142,14 +142,14 @@ public class NetworkManager : MonoBehaviourPunCallbacks, IPunObservable
     //Checks to see who the winner is
     void CheckScore()
     {
-        if (bluescore == 3)
+        if (bluescore == 1)
         {
             win = true;
             bluewinnertext.gameObject.SetActive(true);
             bluewinnertext.text = "BLUE TEAM WINS";
             buttonLeave.gameObject.SetActive(false);
         }
-        else if (redscore == 3)
+        else if (redscore == 1)
         {
             win = true;
             redwinnertext.gameObject.SetActive(true);

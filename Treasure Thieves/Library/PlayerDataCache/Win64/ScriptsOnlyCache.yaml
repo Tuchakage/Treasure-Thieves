@@ -147,6 +147,8 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 6938}
     - Class: 114
+      Script: {instanceID: 7382}
+    - Class: 114
       Script: {instanceID: 7754}
     - Class: 114
       Script: {instanceID: 7990}
@@ -590,7 +592,7 @@ ScriptsOnlyBuild:
     className: RawImage
   - hash:
       serializedVersion: 2
-      Hash: 3ae90c347eb6f65186b268e8a1d0941a
+      Hash: aeec18ad647a753e5ab1e0b8019d17d5
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: PlayerLook
@@ -1580,7 +1582,7 @@ ScriptsOnlyBuild:
     className: GroupTrack
   - hash:
       serializedVersion: 2
-      Hash: 77c8f695393b682449fa24602478cb00
+      Hash: 509a12acd38af7214973f2ed97a955d5
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: NetworkManager
@@ -2392,5 +2394,4 @@ ScriptsOnlyBuild:
   scenePathNames:
   - Assets/Scenes/Menu.unity
   - Assets/Scenes/Battle.unity
-  playerPath: D:/University/Year 3/Multiplayer/Treasure-Thieves/Build Version/Jarek
-    Lesson 1.exe
+  playerPath: D:/University/Year 3/Multiplayer/Treasure-Thieves/Build Version/TreasureThieves.exe

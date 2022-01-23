@@ -10,7 +10,7 @@ public class MainMenuManager : MonoBehaviourPunCallbacks, IPunObservable
 {
     //Max Players in a room
     [SerializeField]
-    private byte maxPlayersPerRoom = 4;
+    private byte maxPlayersPerRoom = 8;
 
     [SerializeField]
     private InputField playerName;

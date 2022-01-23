@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
+//Code is not used was originally going to implement basic ai nav mesh
+//This script is not used in the final product
 public class NavScript : MonoBehaviour
 {
     public Transform target;

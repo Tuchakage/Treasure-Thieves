@@ -74,7 +74,7 @@ public class TreasureTrigger : MonoBehaviourPun
                 {
                     photonView.RPC("ThrownFromPlayer", RpcTarget.All, playerid);
                     pc._playeranim.SetBool("Carrying", false);
-                    pc._moveSpeed = 10f;
+                    pc._moveSpeed = 7f;
                     //Notify the Player object that it is not carrying no more
                     pc.SetCarrying(false);
                 }
@@ -185,6 +185,6 @@ public class TreasureTrigger : MonoBehaviourPun
         isPickedUp = false;
         Debug.Log("Dropped Treasure");
         pController._playeranim.SetBool("Carrying", false);
-        pController._moveSpeed = 10f;
+        pController._moveSpeed = 7f;
     }
 }

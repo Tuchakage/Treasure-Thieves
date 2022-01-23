@@ -16,7 +16,7 @@ public class PlayerLook : MonoBehaviourPun
 
     [Header("Camera GameObject")]
     [SerializeField] private Camera _cam;
-    
+    [SerializeField] private Health health;
     
     // Start is called before the first frame update
     void Start()
@@ -31,6 +31,8 @@ public class PlayerLook : MonoBehaviourPun
         {
             _cam = GetComponentInChildren<Camera>();
         }
+
+        health = GetComponent<Health>();
     }
 
     // Update is called once per frame
@@ -41,12 +43,16 @@ public class PlayerLook : MonoBehaviourPun
             Cursor.visible = true;
         }
         
+
         if (photonView.IsMine)
         {
-            CameraInput();
-            
-            _cam.transform.localRotation = Quaternion.Euler(_xRot,0,0);
-            transform.rotation = Quaternion.Euler(0, _yRot, 0);
+            if (health.health > 0)
+            {
+                CameraInput();
+
+                _cam.transform.localRotation = Quaternion.Euler(_xRot, 0, 0);
+                transform.rotation = Quaternion.Euler(0, _yRot, 0);
+            }
         }
     }
 

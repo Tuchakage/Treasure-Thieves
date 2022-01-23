@@ -296,6 +296,7 @@ MonoBehaviour:
   _xRot: 0
   _yRot: 0
   _cam: {fileID: 4421416896007680216}
+  health: {fileID: 0}
 --- !u!114 &4421416896841111174
 MonoBehaviour:
   m_ObjectHideFlags: 0

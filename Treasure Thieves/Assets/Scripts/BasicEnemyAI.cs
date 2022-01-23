@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.AI;
 
+//Code is not used was originally going to implement basic ai
 public class BasicEnemyAI : MonoBehaviour
 {
 	public float patrolSpeed = 2f;                          // The nav mesh agent's speed when patrolling.

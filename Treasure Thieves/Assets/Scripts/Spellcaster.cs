@@ -19,14 +19,14 @@ public class Spellcaster : MonoBehaviourPunCallbacks, IPunObservable
 
     [SerializeField] Animator _playeranim;
 
-
+    public Health health;
 
     // Start is called before the first frame update
     void Start()
     {
         //Grab Player Animator
         _playeranim = GetComponent<Animator>();
-
+        health = GetComponent<Health>();
     }
 
     // Update is called once per frame
@@ -47,7 +47,7 @@ public class Spellcaster : MonoBehaviourPunCallbacks, IPunObservable
                 Debug.Log("Pressed");
 
                 //If there is no cooldown (Its at 0) then player can use the basic attack
-                if (timer <= 0)
+                if (timer <= 0 && health.health > 0)
                 {
                     //Shoots out the lightning bolt
                     _playeranim.SetTrigger("Attack1");

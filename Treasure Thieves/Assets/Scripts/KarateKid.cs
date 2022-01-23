@@ -16,6 +16,8 @@ public class KarateKid : MonoBehaviourPunCallbacks
 
     public string attackname; //Name Of The Attack The Player Is Using
 
+    public Health health;
+
     //Box Collider For Attack Trigger
     [SerializeField] BoxCollider _attackbox;
 
@@ -26,6 +28,7 @@ public class KarateKid : MonoBehaviourPunCallbacks
     {
         //Grab Player Animator
         _playeranim = GetComponent<Animator>();
+        health = GetComponent<Health>();
     }
 
     // Update is called once per frame
@@ -43,7 +46,7 @@ public class KarateKid : MonoBehaviourPunCallbacks
             if (Input.GetMouseButton(1) && !this.gameObject.GetComponent<PlayerController>().carrying)
             {
                 //If there is no cooldown (Its at 0) then player can use the basic attack
-                if (timer <= 0)
+                if (timer <= 0 && health.health > 0)
                 {
                     //Shoots out the lightning bolt
                     _playeranim.SetTrigger("Attack1");

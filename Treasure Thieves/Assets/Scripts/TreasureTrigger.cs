@@ -66,7 +66,7 @@ public class TreasureTrigger : MonoBehaviourPun
                     isPickedUp = false;
                     Debug.Log("Dropped Treasure");
                     pc._playeranim.SetBool("Carrying", false);
-                    pc._moveSpeed = 10f;
+                    pc._moveSpeed = 7f;
                     //Notify the Player object that it is carrying something
                     pc.SetCarrying(false);
                 }

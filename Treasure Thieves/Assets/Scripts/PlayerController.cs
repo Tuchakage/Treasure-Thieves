@@ -14,7 +14,7 @@ public class PlayerController : MonoBehaviourPun
     //public float walkSpeed = 1;
 
     [Header("PlayerMovement")] 
-    public float _moveSpeed = 10f; //Player movement speed;
+    public float _moveSpeed = 7f; //Player movement speed;
     public float _moveSlowSpeed = 3f; //Player movement speed;
     [SerializeField] private float _horizontalMovement;
     [SerializeField] private float _verticalMovement;

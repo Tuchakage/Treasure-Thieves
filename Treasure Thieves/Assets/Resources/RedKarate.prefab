@@ -151,7 +151,7 @@ GameObject:
   - component: {fileID: 566052146555668017}
   m_Layer: 0
   m_Name: Basic Attack
-  m_TagString: Basic Attack
+  m_TagString: Basic Attack2
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -179,7 +179,7 @@ BoxCollider:
   m_GameObject: {fileID: 2780483849864359152}
   m_Material: {fileID: 0}
   m_IsTrigger: 1
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Size: {x: 0.638559, y: 0.50187683, z: 1.4816219}
   m_Center: {x: -0.040693745, y: -0.00682846, z: -0.17616135}
@@ -413,6 +413,7 @@ MonoBehaviour:
   hitstuntimer: 0
   hitstun: 0.38
   dead: 0
+  hitStun: 0
   _playeranim: {fileID: 4421416895308103774}
 --- !u!114 &4421416896841111173
 MonoBehaviour:
@@ -426,7 +427,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 47dbe39b57546f3429a3af7be008fa6e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _moveSpeed: 5
+  _moveSpeed: 7
   _moveSlowSpeed: 3
   _horizontalMovement: 0
   _verticalMovement: 0
@@ -497,6 +498,7 @@ MonoBehaviour:
   timer: 0
   cooldown: 1
   attackname: Basic Attack
+  health: {fileID: 0}
   _attackbox: {fileID: 7508877549768589827}
   _playeranim: {fileID: 4421416895308103774}
 --- !u!65 &1929971394187537587
@@ -539,6 +541,9 @@ MonoBehaviour:
   - Type: 9
     SynchronizeType: 1
     Name: Death
+  - Type: 9
+    SynchronizeType: 0
+    Name: hitStun
   m_SynchronizeLayers:
   - SynchronizeType: 0
     LayerIndex: 0

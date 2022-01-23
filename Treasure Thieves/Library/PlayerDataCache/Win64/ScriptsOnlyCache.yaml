@@ -356,7 +356,7 @@ ScriptsOnlyBuild:
     className: PanelRaycaster
   - hash:
       serializedVersion: 2
-      Hash: 7f277473377eb284b7e262958d127598
+      Hash: 5622ea96aaff06a1656828f9bbb7b5b2
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: Health
@@ -626,7 +626,7 @@ ScriptsOnlyBuild:
     className: CurrentRoomIsVisibleToggle
   - hash:
       serializedVersion: 2
-      Hash: 7721d00a284e7aeedffed6a2cc0a7adf
+      Hash: 7d011992dd8c58ec283705f6a4c67d03
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: KarateKid
@@ -1562,7 +1562,7 @@ ScriptsOnlyBuild:
     className: IngameControlPanel
   - hash:
       serializedVersion: 2
-      Hash: 842e4c909a1928531aa0f6ce580fa79e
+      Hash: 52ec5f11dd7a938e9f99237cc8af4db9
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: Spellcaster
@@ -2392,5 +2392,5 @@ ScriptsOnlyBuild:
   scenePathNames:
   - Assets/Scenes/Menu.unity
   - Assets/Scenes/Battle.unity
-  playerPath: D:/Users/tucha/Documents/GitHub/Treasure-Thieves/Build Version/Jarek
+  playerPath: D:/University/Year 3/Multiplayer/Treasure-Thieves/Build Version/Jarek
     Lesson 1.exe

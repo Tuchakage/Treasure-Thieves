@@ -313,6 +313,7 @@ MonoBehaviour:
   hitstuntimer: 0
   hitstun: 0.38
   dead: 0
+  hitStun: 0
   _playeranim: {fileID: 4421416895308103774}
 --- !u!114 &4421416896841111173
 MonoBehaviour:
@@ -326,7 +327,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 47dbe39b57546f3429a3af7be008fa6e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _moveSpeed: 5
+  _moveSpeed: 7
   _moveSlowSpeed: 3
   _horizontalMovement: 0
   _verticalMovement: 0
@@ -397,6 +398,7 @@ MonoBehaviour:
   timer: 0
   cooldown: 1
   attackname: Basic Attack
+  health: {fileID: 0}
   _attackbox: {fileID: 4421416896306242581}
   _playeranim: {fileID: 4421416895308103774}
 --- !u!65 &2672980755054108610
@@ -2260,7 +2262,7 @@ GameObject:
   - component: {fileID: 4230797342611193896}
   m_Layer: 0
   m_Name: Basic Attack
-  m_TagString: Basic Attack
+  m_TagString: Basic Attack2
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

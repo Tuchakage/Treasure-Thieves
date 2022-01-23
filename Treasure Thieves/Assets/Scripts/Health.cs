@@ -76,17 +76,16 @@ public class Health : MonoBehaviourPunCallbacks, IPunObservable
         else 
         {
             //Player cant move until the timer is done
-            if (hitstuntimer > 0)
+            if (hitstuntimer > 0 && health > 0)
             {
-                if (health > 0)
-                {
-                    if (hitStun == true)
-                    {
-                        _playeranim.SetTrigger("hitStun");
-                        hitStun = false;
-                    }
-                }
                 hitstuntimer -= Time.deltaTime;
+
+                if (hitStun == false)
+                {
+                        _playeranim.SetTrigger("hitStun");
+                        hitStun = true;
+                }
+                
             }
             else 
             {
@@ -109,7 +108,7 @@ public class Health : MonoBehaviourPunCallbacks, IPunObservable
         ClassSwitch(false);
         //Add Hitstun
         hitstuntimer = hitstun;
-        hitStun = true;
+        hitStun = false;
        /* if (health > 0)
         {
             _playeranim.SetTrigger("hitStun");
@@ -187,7 +186,7 @@ public class Health : MonoBehaviourPunCallbacks, IPunObservable
         //Makes sure that when you get hit its from someone else and not yourself
         if (photonView.IsMine)
         {
-            if (collision.tag == "Basic Attack") //Makes sure its Colliding with an Attack
+            if (collision.tag == "Basic Attack2") //Makes sure its Colliding with an Attack
             {
                 //Gets The "OwnerOfKick" script from the spell the player collided with
                 OwnerOfKick ownerofkick = collision.gameObject.GetComponent<OwnerOfKick>();
@@ -210,7 +209,7 @@ public class Health : MonoBehaviourPunCallbacks, IPunObservable
                     Debug.Log("Being attacked");
 
                     //Depending on the attack the player will lose a certain amount of health
-                    if (collision.gameObject.tag == "Basic Attack")
+                    if (collision.gameObject.tag == "Basic Attack2")
                     {
                         if (ct.teamid != this.GetComponent<Teams>().teamid)
                         {

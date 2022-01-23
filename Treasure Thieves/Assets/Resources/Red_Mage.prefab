@@ -1938,7 +1938,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 47dbe39b57546f3429a3af7be008fa6e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _moveSpeed: 5
+  _moveSpeed: 7
   _moveSlowSpeed: 3
   _horizontalMovement: 0
   _verticalMovement: 0
@@ -1971,6 +1971,7 @@ MonoBehaviour:
   timer: 0
   cooldown: 2
   _playeranim: {fileID: 0}
+  health: {fileID: 0}
 --- !u!114 &6871852171559625586
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1988,6 +1989,7 @@ MonoBehaviour:
   hitstuntimer: 0
   hitstun: 0.38
   dead: 0
+  hitStun: 0
   _playeranim: {fileID: 0}
 --- !u!114 &6871852171559625581
 MonoBehaviour:
@@ -2092,6 +2094,9 @@ MonoBehaviour:
   - Type: 9
     SynchronizeType: 1
     Name: Death
+  - Type: 9
+    SynchronizeType: 0
+    Name: hitStun
   m_SynchronizeLayers:
   - SynchronizeType: 0
     LayerIndex: 0
